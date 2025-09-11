@@ -2,4 +2,4 @@
 
 ## Articles
 
-- [AI: The Final Nail in the Coffin for Proprietary Software Languages?](./ai-proprietary-languages)
+- [AI: The Final Nail in the Coffin for Proprietary Software Languages?](./ai-end-of-proprietary-platforms)
