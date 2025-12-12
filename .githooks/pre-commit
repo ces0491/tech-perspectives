@@ -1,0 +1,10 @@
+#!/bin/sh
+# Pre-commit hook to update README with article links
+
+# Check if any markdown files (excluding README) are being committed
+if git diff --cached --name-only | grep -E '^[^/]+\.md$' | grep -v '^README.md$' > /dev/null; then
+    echo "Updating README with article links..."
+    node scripts/update-readme.js
+    git add README.md
+    echo "README.md updated and staged"
+fi
