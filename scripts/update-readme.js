@@ -38,7 +38,7 @@ function getArticles() {
 
     if (title) {
       articles.push({
-        file: file.replace('.md', ''),
+        file,
         title,
         date,
         parsedDate: parseDate(date)
