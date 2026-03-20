@@ -1,0 +1,456 @@
+---
+title: "From Model to Report: How tidylearn Simplifies ML Reporting"
+output: html_document
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 7,
+  fig.height = 5,
+  message = FALSE,
+  warning = FALSE
+)
+```
+
+## The Reporting Problem
+
+Machine learning in R is powerful, but reporting the results often takes more
+effort than building the model itself. Every package returns results in a
+different format — a named vector here, a matrix there, a custom S3 object
+somewhere else. Even with excellent tidying packages like `broom`, the column
+names and available fields change between model types, and many ML packages
+aren't supported at all.
+
+The result is that producing consistent, polished visualisations and tables for
+a report means writing custom extraction and reshaping code for each package you
+use. Change your model, and your reporting code breaks.
+
+**tidylearn** solves this. Every function — across 20+ algorithms — returns tidy
+tibbles, ggplot2 plots, and formatted `gt` tables with a consistent structure.
+Your reporting pipeline becomes model-agnostic: swap the algorithm, and the same
+plot code, table code, and comparison logic work without modification.
+
+This post walks through real-world analysis tasks — PCA, hierarchical
+clustering, regularisation, and multi-model classification — comparing the
+tidylearn workflow against the traditional approach.
+
+```{r setup}
+library(tidylearn)
+library(dplyr)
+library(ggplot2)
+library(gt)
+library(tibble)
+```
+
+---
+
+## 1. PCA: Biplot, Scree Plot, and Variance Tables
+
+PCA is a staple of exploratory analysis, and producing a polished biplot or
+scree plot is one of those tasks that should be straightforward but rarely is.
+
+### With tidylearn
+
+```{r tl-pca}
+pca <- tidy_pca(USArrests, scale = TRUE)
+```
+
+Scree plot with cumulative variance line and 80% threshold:
+
+```{r tl-pca-scree}
+tidy_pca_screeplot(pca)
+```
+
+Publication-ready biplot with observation scores and variable loadings:
+
+```{r tl-pca-biplot}
+tidy_pca_biplot(pca, label_obs = TRUE)
+```
+
+And the tables — variance explained and loadings — are one call each, with
+colour-coded formatting out of the box:
+
+```{r tl-pca-variance-table}
+pca_model <- tl_model(USArrests, method = "pca")
+tl_table_variance(pca_model)
+```
+
+```{r tl-pca-loadings-table}
+tl_table_loadings(pca_model, n_components = 2)
+```
+
+The loadings table uses a diverging red–blue colour scale to highlight strong
+positive and negative loadings — no manual formatting required.
+
+### Without tidylearn
+
+```{r base-pca}
+pca_base <- prcomp(USArrests, scale. = TRUE)
+```
+
+The default R biplot:
+
+```{r base-pca-biplot, fig.height = 6}
+biplot(pca_base)
+```
+
+This produces a functional but visually rough base R graphic — no `theme_minimal()`,
+no consistent colour scheme, no variance-explained axis labels. To get a
+ggplot2 biplot, you need to manually extract and scale the scores and loadings:
+
+```{r base-pca-ggbiplot}
+# Extract scores
+scores <- as.data.frame(pca_base$x[, 1:2])
+scores$label <- rownames(scores)
+
+# Extract loadings and scale to match scores
+loadings <- as.data.frame(pca_base$rotation[, 1:2])
+loadings$variable <- rownames(loadings)
+score_range <- max(abs(scores[, 1:2]))
+loading_range <- max(abs(loadings[, 1:2]))
+scale_factor <- (score_range / loading_range) * 0.8
+
+loadings$PC1_scaled <- loadings$PC1 * scale_factor
+loadings$PC2_scaled <- loadings$PC2 * scale_factor
+
+# Compute variance explained for axis labels
+var_exp <- pca_base$sdev^2 / sum(pca_base$sdev^2) * 100
+
+# Build the ggplot manually
+ggplot() +
+  geom_point(data = scores, aes(x = PC1, y = PC2),
+             colour = "steelblue", alpha = 0.7) +
+  geom_text(data = scores, aes(x = PC1, y = PC2, label = label),
+            size = 2.5, vjust = -0.5) +
+  geom_segment(data = loadings,
+               aes(x = 0, y = 0, xend = PC1_scaled, yend = PC2_scaled),
+               arrow = arrow(length = unit(0.2, "cm")),
+               colour = "red", alpha = 0.7) +
+  geom_text(data = loadings,
+            aes(x = PC1_scaled, y = PC2_scaled, label = variable),
+            colour = "red", size = 3, fontface = "bold", vjust = -0.5) +
+  labs(
+    title = "PCA Biplot",
+    x = sprintf("PC1 (%.1f%% variance)", var_exp[1]),
+    y = sprintf("PC2 (%.1f%% variance)", var_exp[2])
+  ) +
+  coord_equal() +
+  theme_minimal()
+```
+
+```{r base-pca-table}
+# Variance table — manually computed
+var_explained <- data.frame(
+  component = paste0("PC", seq_along(pca_base$sdev)),
+  sdev = pca_base$sdev,
+  variance = pca_base$sdev^2,
+  prop_variance = pca_base$sdev^2 / sum(pca_base$sdev^2),
+  cum_variance = cumsum(pca_base$sdev^2 / sum(pca_base$sdev^2))
+)
+
+knitr::kable(var_explained, digits = 3,
+             caption = "Variance Explained (manual)")
+```
+
+The manual biplot requires extracting matrices, scaling loadings to match score
+ranges, computing variance percentages for axis labels, and assembling the
+ggplot layer by layer. `tidy_pca_biplot()` handles all of that in one call.
+And the `kable()` variance table is functional but plain — no colour coding, no
+cumulative-variance highlighting. `tl_table_variance()` adds these by default.
+
+---
+
+## 2. Hierarchical Clustering
+
+Hierarchical clustering involves computing distances, fitting the tree,
+visualising the dendrogram, cutting it, and augmenting your data with cluster
+assignments. Each step traditionally produces a different data structure.
+
+### With tidylearn
+
+```{r tl-hclust}
+hc <- tidy_hclust(USArrests, method = "ward.D2")
+
+# Dendrogram with cluster rectangles
+tidy_dendrogram(hc, k = 4)
+```
+
+Cut the tree and get a tidy tibble of cluster assignments:
+
+```{r tl-hclust-cut}
+clusters <- tidy_cutree(hc, k = 4)
+knitr::kable(head(clusters, 10), caption = "Cluster Assignments (first 10)")
+```
+
+Augment the original data and produce a formatted cluster summary table:
+
+```{r tl-hclust-table}
+hc_model <- tl_model(USArrests, method = "hclust")
+tl_table_clusters(hc_model, k = 4)
+```
+
+### Without tidylearn
+
+```{r base-hclust}
+# Compute distance matrix
+d <- dist(scale(USArrests), method = "euclidean")
+
+# Fit hierarchical clustering
+hc_base <- hclust(d, method = "ward.D2")
+
+# Plot dendrogram
+plot(hc_base, main = "Hierarchical Clustering Dendrogram",
+     xlab = "", sub = "", cex = 0.7)
+rect.hclust(hc_base, k = 4, border = 2:5)
+```
+
+The dendrogram looks similar — both use base R graphics for this. The real
+difference is in what happens next:
+
+```{r base-hclust-cut}
+# cutree returns a named integer vector — not a tibble
+clusters_base <- cutree(hc_base, k = 4)
+str(clusters_base)
+```
+
+```{r base-hclust-augment}
+# To get a summary table, manually bind and reshape
+USArrests_clustered <- USArrests
+USArrests_clustered$cluster <- clusters_base
+
+USArrests_clustered %>%
+  group_by(cluster) %>%
+  summarise(across(where(is.numeric), mean), .groups = "drop") %>%
+  knitr::kable(digits = 1, caption = "Cluster Means (manual)")
+```
+
+The dendrogram itself is comparable. But `cutree()` returns a named integer
+vector that needs manual binding to your data, and the resulting `kable()` is
+plain text. `tl_table_clusters()` produces a formatted table with cluster sizes,
+styled headers, and consistent theming — ready for a report.
+
+---
+
+## 3. Lasso Regularisation: Coefficient Paths and Tables
+
+Regularised models are a common choice, but visualising how coefficients shrink
+along the regularisation path is one of those tasks where the default output is
+decidedly not report-ready.
+
+### With tidylearn
+
+```{r tl-lasso}
+lasso <- tl_model(mtcars, mpg ~ ., method = "lasso")
+
+# Coefficient path as a ggplot2 object
+tl_plot_regularization_path(lasso)
+```
+
+```{r tl-lasso-cv}
+# Cross-validation curve
+tl_plot_regularization_cv(lasso)
+```
+
+And a formatted coefficient table, sorted by magnitude with zero coefficients
+greyed out:
+
+```{r tl-lasso-table}
+tl_table_coefficients(lasso)
+```
+
+Both plots are ggplot2 objects — `theme_minimal()`, consistent aesthetics, and
+directly passable to `ggplotly()` or `ggsave()`. The table is a `gt` object
+with the same consistent styling.
+
+### Without tidylearn
+
+```{r base-lasso}
+library(glmnet)
+
+# Prepare model matrix (glmnet doesn't accept formulas)
+x <- model.matrix(mpg ~ ., data = mtcars)[, -1]
+y <- mtcars$mpg
+
+# Fit with cross-validation
+cv_fit <- cv.glmnet(x, y, alpha = 1)
+```
+
+The default coefficient path plot:
+
+```{r base-lasso-path}
+plot(cv_fit$glmnet.fit, xvar = "lambda", label = TRUE)
+```
+
+The default cross-validation plot:
+
+```{r base-lasso-cv}
+plot(cv_fit)
+```
+
+These are base R graphics — functional, but they can't be themed, faceted,
+combined with other ggplot2 panels, or converted to interactive plotly charts.
+Building ggplot2 equivalents from the `glmnet` object requires extracting the
+coefficient matrix across all lambda values and pivoting it to long format:
+
+```{r base-lasso-gg}
+# Extract coefficient matrix
+coef_matrix <- as.matrix(cv_fit$glmnet.fit$beta)
+lambda_vals <- cv_fit$glmnet.fit$lambda
+
+# Reshape to long format for ggplot
+coef_df <- as.data.frame(t(coef_matrix))
+coef_df$lambda <- lambda_vals
+coef_long <- tidyr::pivot_longer(coef_df, -lambda,
+                                  names_to = "variable",
+                                  values_to = "coefficient")
+
+ggplot(coef_long, aes(x = log(lambda), y = coefficient, colour = variable)) +
+  geom_line() +
+  labs(title = "Lasso Coefficient Path", x = "log(lambda)",
+       y = "Coefficient", colour = "Variable") +
+  theme_minimal()
+```
+
+```{r base-lasso-coef-table}
+# Extract coefficients at lambda.1se — returns a sparse matrix
+coefs <- as.matrix(coef(cv_fit, s = "lambda.1se"))
+coef_tbl <- data.frame(
+  term = rownames(coefs),
+  estimate = as.vector(coefs)
+)
+coef_tbl <- coef_tbl[order(-abs(coef_tbl$estimate)), ]
+
+knitr::kable(coef_tbl, digits = 4, row.names = FALSE,
+             caption = "Lasso Coefficients at lambda.1se (manual)")
+```
+
+The manual approach works, but it's the kind of reshaping code that's easy to
+get subtly wrong and tedious to repeat. `tl_plot_regularization_path()` handles
+extraction, pivoting, labelling, and theming in one call. And the `kable()`
+coefficient table is plain — `tl_table_coefficients()` adds sorting, zero
+greying, and the selected lambda value in the subtitle.
+
+---
+
+## 4. Multi-Model Classification Comparison
+
+Comparing models across packages is where consistent output structure matters
+most. Each package has its own prediction interface, metric accessors, and
+plot conventions.
+
+### With tidylearn
+
+```{r tl-comparison}
+split <- tl_split(iris, prop = 0.7, stratify = "Species", seed = 42)
+
+# Fit three models — same interface for each
+m_logistic <- tl_model(split$train, Species ~ ., method = "logistic")
+m_forest   <- tl_model(split$train, Species ~ ., method = "forest")
+m_tree     <- tl_model(split$train, Species ~ ., method = "tree")
+```
+
+A formatted comparison table — one call:
+
+```{r tl-comparison-table}
+tl_table_comparison(
+  m_logistic, m_forest, m_tree,
+  new_data = split$test,
+  names = c("Logistic", "Random Forest", "Decision Tree")
+)
+```
+
+And a confusion matrix for any model:
+
+```{r tl-confusion-table}
+tl_table_confusion(m_forest, new_data = split$test)
+```
+
+Adding a fourth model is just another argument in `tl_table_comparison()` — the
+table code stays unchanged.
+
+### Without tidylearn
+
+```{r base-comparison}
+library(randomForest)
+
+set.seed(42)
+train_idx <- unlist(lapply(
+  split(seq_len(nrow(iris)), iris$Species),
+  function(i) sample(i, size = floor(0.7 * length(i)))
+))
+train_data <- iris[train_idx, ]
+test_data  <- iris[-train_idx, ]
+
+# Three different packages, three different interfaces
+fit_glm  <- glm(Species ~ ., data = train_data, family = "binomial")
+fit_rf   <- randomForest(Species ~ ., data = train_data)
+fit_tree <- rpart::rpart(Species ~ ., data = train_data, method = "class")
+
+# Each returns predictions in a different format
+pred_glm  <- predict(fit_glm, newdata = test_data, type = "response")
+pred_rf   <- predict(fit_rf, newdata = test_data)
+pred_tree <- predict(fit_tree, newdata = test_data, type = "class")
+
+# glm doesn't handle multiclass — can't even compute accuracy
+acc_glm  <- NA_real_
+acc_rf   <- mean(pred_rf == test_data$Species)
+acc_tree <- mean(pred_tree == test_data$Species)
+
+comparison_base <- data.frame(
+  model = c("Logistic (GLM)", "Random Forest", "Decision Tree"),
+  accuracy = c(acc_glm, acc_rf, acc_tree)
+)
+
+knitr::kable(comparison_base, digits = 3,
+             caption = "Model Comparison (manual)")
+```
+
+Three different packages, three different prediction interfaces, and `glm()`
+can't even handle the multiclass case without implementing one-vs-rest manually.
+The `kable()` output is plain and limited to one metric. With tidylearn,
+`tl_table_comparison()` produces a styled, multi-metric comparison table and
+`method = "logistic"` handles multiclass dispatching internally.
+
+---
+
+## 5. Interactive Reporting with plotly
+
+Because tidylearn's plot functions return standard ggplot2 objects, converting
+any visualisation to an interactive plotly chart is a one-liner:
+
+```{r plotly-example, eval = FALSE}
+library(plotly)
+
+# tidylearn's plot returns a ggplot2 object — pass it straight to ggplotly
+ggplotly(tidy_pca_biplot(pca, label_obs = TRUE))
+ggplotly(tl_plot_regularization_path(lasso))
+ggplotly(plot(m_forest, type = "confusion"))
+```
+
+`ggplotly()` picks up axis labels, themes, and tooltip data automatically.
+Compare this to the base R plots from `biplot()`, `plot.glmnet()`, or
+`plot.hclust()` — none of which can be converted to plotly without rebuilding
+them from scratch.
+
+---
+
+## Why This Matters
+
+**Consistent, polished output by default.** Every model — whether it's a PCA
+biplot, a lasso coefficient path, or a confusion matrix — returns ggplot2
+plots and `gt` tables with a consistent visual language. You don't need to
+learn each package's idiosyncratic output format or build custom formatting
+code to get report-quality visuals and tables.
+
+**Reproducibility through uniformity.** When your reporting pipeline works the
+same way for every model type, your analysis becomes genuinely reproducible.
+Swap `method = "forest"` for `method = "xgboost"` and rerun — the same
+`tl_table()` calls, the same `plot()` calls, the same comparison logic all
+work without modification. That means you can iterate on model selection
+without touching your reporting layer, and anyone reading your code can follow
+the same pattern across different analyses.
+
+The best analysis code is code that gets out of your way and lets you focus on
+the results. That's what tidylearn is for.
