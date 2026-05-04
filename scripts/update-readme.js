@@ -24,12 +24,14 @@ function parseDate(dateStr) {
   return new Date(dateStr);
 }
 
+const NON_ARTICLE_FILES = new Set(['README.md', 'IDEAS.md']);
+
 function getArticles() {
   const files = fs.readdirSync(ROOT_DIR);
   const articles = [];
 
   for (const file of files) {
-    if (file === 'README.md' || !file.endsWith('.md')) continue;
+    if (NON_ARTICLE_FILES.has(file) || !file.endsWith('.md')) continue;
 
     const filePath = path.join(ROOT_DIR, file);
     const content = fs.readFileSync(filePath, 'utf-8');
@@ -61,6 +63,11 @@ function generateReadme(articles) {
   for (const article of articles) {
     const dateStr = article.date ? ` *(${article.date})*` : '';
     content += `- [${article.title}](./${article.file})${dateStr}\n`;
+  }
+
+  // Add an Ideas link if IDEAS.md exists at root
+  if (fs.existsSync(path.join(ROOT_DIR, 'IDEAS.md'))) {
+    content += `\n## Ideas\n\nConcepts I'm exploring for future pieces — see [IDEAS.md](./IDEAS.md).\n`;
   }
 
   return content;

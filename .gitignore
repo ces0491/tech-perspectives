@@ -1,0 +1,26 @@
+# Claude Code local project state
+.claude/
+
+# Jekyll build artifacts
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Node (defensive — scripts/update-readme.js has no deps today, but might later)
+node_modules/
+
+# R artifacts (from .Rmd files at root)
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# OS clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor swap/backup files
+*.swp
+*.bak
+*~
