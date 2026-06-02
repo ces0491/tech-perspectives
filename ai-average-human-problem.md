@@ -29,3 +29,5 @@ There's a fair caveat. In creative or literary writing, sounding like the averag
 So the scrutiny gap, in the end, is a highly subjective one. What readers are really trying to detect probably isn't AI involvement at all — it's evidence of thought. Whether the writer engaged with what they produced or just shipped a half-baked prompt. That's the fair version of "this reads as AI." The unfair version mistakes careful human prose for the same absence. The test we actually run when we're reading is simpler than the one we invoke when we're complaining: was this worth reading?
 
 ---
+
+May 4, 2026

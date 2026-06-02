@@ -61,3 +61,8 @@ I ran this as an experiment, but the implications go further than one person's s
 ## Conclusion
 
 If you're in data or software development and you've been putting off a hardware migration because of the setup overhead, give it a go. Describe what you need, let the AI generate the automation, review what it produces, and run it. You might be surprised at how little of the process actually needs you, even for something as fiddly as this.
+
+
+---
+
+February 11, 2026

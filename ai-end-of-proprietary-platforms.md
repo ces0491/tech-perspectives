@@ -57,3 +57,5 @@ I loved open source before AI, because it enabled unencumbered innovation.
 Now, with AI copilots lowering the barriers to entry, I believe the migration away from proprietary languages is not just inevitable — it's accelerating.
 
 ---
+
+September 11, 2025

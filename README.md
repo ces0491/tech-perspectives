@@ -2,13 +2,14 @@
 
 ## Articles
 
-- [Squashing New Hardware Headaches](./ai-assisted-laptop-migration.md)
-- [The Average Human Problem: Why AI "Sounds Like AI"](./ai-average-human-problem.md)
-- [AI: The Final Nail in the Coffin for Proprietary Software Languages?](./ai-end-of-proprietary-platforms.md)
-- [Lying Is Lying: AI and the Standard We Already Apply](./ai-lying-is-lying.md)
-- [How Long Is a Piece of String? Bounding AI Code Reviews](./bounding-ai-code-reviews.md)
-- [Everything Old Is New Again: Technology's Fashion Cycles](./tech-fashion-cycles.md)
-- [Musings on the Future of Programming Languages](./the-future-of-programming-languages.md)
+- [Partly Cloudy: Forecasting Your Needs in a Fragmented Cloud](./partly-cloudy.md) *(June 2, 2026)*
+- [The Average Human Problem: Why AI "Sounds Like AI"](./ai-average-human-problem.md) *(May 4, 2026)*
+- [Lying Is Lying: AI and the Standard We Already Apply](./ai-lying-is-lying.md) *(May 4, 2026)*
+- [How Long Is a Piece of String? Bounding AI Code Reviews](./bounding-ai-code-reviews.md) *(May 4, 2026)*
+- [Everything Old Is New Again: Technology's Fashion Cycles](./tech-fashion-cycles.md) *(March 20, 2026)*
+- [Squashing New Hardware Headaches](./ai-assisted-laptop-migration.md) *(February 11, 2026)*
+- [Musings on the Future of Programming Languages](./the-future-of-programming-languages.md) *(December 12, 2025)*
+- [AI: The Final Nail in the Coffin for Proprietary Software Languages?](./ai-end-of-proprietary-platforms.md) *(September 11, 2025)*
 
 ## Ideas
 

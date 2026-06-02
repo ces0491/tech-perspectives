@@ -39,3 +39,5 @@ Both threads end up pointing at the same underlying concern: whether the author 
 The version of this I wanted to write was the one where AI is unfairly held to a higher bar. The version I came out with is more deflating but probably more useful: the bar isn't really about AI at all. It's about whether someone took responsibility for what came out. The interesting question isn't why we judge AI harshly. It's why we sometimes pretend we judge each other any more gently.
 
 ---
+
+May 4, 2026

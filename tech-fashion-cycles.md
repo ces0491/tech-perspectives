@@ -59,3 +59,5 @@ Conversely, when everyone is stampeding toward the latest paradigm — microserv
 Technology doesn't move in a straight line. It spirals. And if you pay attention to where the spiral has been, you get a much better sense of where it's going.
 
 ---
+
+March 20, 2026

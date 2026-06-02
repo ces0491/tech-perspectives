@@ -39,3 +39,5 @@ We used to write code to communicate with computers. And while that is no longer
 Python and JavaScript will survive - embedded in our infrastructure. Stata and MATLAB persist where exact reproducibility matters. Whether we'll still need to understand them is another matter. Reading code might become like reading assembly - technically possible but rarely necessary. They might become invisible to most of us who just want to build things, still running everything but no longer something we need to comprehend.
 
 ---
+
+December 12, 2025

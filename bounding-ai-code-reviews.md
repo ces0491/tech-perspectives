@@ -75,3 +75,5 @@ If you're using AI to review code — or honestly, if you're using any reviewer 
 Done isn't when the reviewer stops finding things. Done is when the project does what it was scoped to do.
 
 ---
+
+May 4, 2026
