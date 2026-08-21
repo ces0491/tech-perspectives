@@ -1,3 +1,11 @@
+---
+title: "Squashing New Hardware Headaches"
+description: >-
+  Rebuilding a developer machine is dozens of tools, hundreds of packages and the one environment variable you always forget. I handed the migration to Claude Code instead.
+date: 2026-02-11
+tags: [ai, tooling]
+---
+
 # Squashing New Hardware Headaches
 
 Getting a new machine should be exciting - a battery that can last for more than 23 minutes, more RAM, a fancy new NPU, and keys that click rather than squelch. But, if you're a data or software professional, it's often not. I recently traded up and just left my new machine in the box for a few days, dreading having to set it up - not that it's hard, it's just really boring and the first thing I run is almost guaranteed to break. My development environment isn't a handful of apps from the Microsoft Store, it's dozens of tools, hundreds of packages, specific configurations, environment variables, path settings, and all the little things that make my machine *mine*. The kind of setup where you only realise something's missing three weeks later when a project won't build.

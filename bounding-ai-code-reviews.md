@@ -1,3 +1,11 @@
+---
+title: "How Long Is a Piece of String? Bounding AI Code Reviews"
+description: >-
+  An AI code review returned 27 findings. Asking how many were left to find turned out to be the more useful question, and the harder one to answer.
+date: 2026-05-04
+tags: [ai, code-review]
+---
+
 # How Long Is a Piece of String? Bounding AI Code Reviews
 
 I've been using Claude Code as my main collaborator on a few tasks for the last few months. Last week I asked it to do an "ultrathink review" of a project — its term for a deeper-than-usual analysis. It came back with 27 findings: critical auth gaps, mislabeled fields, missing test coverage, spec drift, a long tail of nits.

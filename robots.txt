@@ -1,0 +1,9 @@
+---
+# Front matter is what makes Jekyll render the `sitemap` variable below; with
+# none, this file is copied verbatim and the sitemap line names a literal.
+layout: null
+---
+User-agent: *
+Allow: /
+
+Sitemap: {{ "/sitemap.xml" | absolute_url }}

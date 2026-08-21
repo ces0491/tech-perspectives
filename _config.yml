@@ -1,4 +1,56 @@
 title: Tech Perspectives
-description: Thoughts on technology, AI, and software development
+description: >-
+  Essays on AI, software and the shape of technical work, by Cesaire Tobias.
+author: Cesaire Tobias
+lang: en_US
+
+# The origin the canonical URLs, the sitemap and the feed are built from.
+#
+# Deliberately the GitHub Pages URL and not `blog.sheetsolved.com`: the
+# subdomain has no DNS record yet, and a canonical tag naming a host that does
+# not resolve is worse than no custom domain at all — it points every crawler
+# at nothing. Moving is a two-line change once the CNAME is in place: set
+# `url` to https://blog.sheetsolved.com, empty `baseurl`, and add a CNAME file
+# holding the same name.
+url: https://ces0491.github.io
+baseurl: /tech-perspectives
+
 theme: jekyll-theme-minimal
 markdown: kramdown
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# jekyll-feed writes /feed.xml for everything, and one file per category named
+# here. R-bloggers syndicates a feed that carries R content and nothing else,
+# so the R category gets its own at /feed/R.xml rather than the site feed being
+# offered and rejected.
+feed:
+  categories:
+    - R
+
+# Every article is a page at the root rather than a `_posts` entry, so the
+# defaults that would come free from a collection are set here.
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      author: Cesaire Tobias
+
+exclude:
+  - IDEAS.md
+  # README.md is the repo's front page and links to `.md` files, which is right
+  # on GitHub and wrong on the built site, where they serve raw markdown.
+  # `index.md` is the site's front page and links to the rendered pages. The
+  # generator writes both.
+  - README.md
+  - scripts/
+  - .githooks/
+  # The R article has YAML front matter of its own, so Jekyll would treat it as
+  # a page and publish an unknitted document full of raw knitr chunks. Named in
+  # full as well as by glob, because `exclude` matching is not worth guessing at.
+  - "*.Rmd"
+  - tidylearn-reporting-showcase.Rmd

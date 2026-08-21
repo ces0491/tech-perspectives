@@ -1,3 +1,11 @@
+---
+title: "AI: The Final Nail in the Coffin for Proprietary Software Languages?"
+description: >-
+  Open source won on trust and access long before AI. What AI changes is the last argument for paying: the cost of knowing the language.
+date: 2025-09-11
+tags: [languages, ai, open-source]
+---
+
 # AI: The Final Nail in the Coffin for Proprietary Software Languages?
 
 For as long as I've been coding, my preference has always been towards open-source tools. When I started out, more than 10 years ago — long before ChatGPT, GitHub Copilot, or any AI copilots existed — open source just felt like the natural choice.

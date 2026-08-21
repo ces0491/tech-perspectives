@@ -1,3 +1,11 @@
+---
+title: 'The Average Human Problem: Why AI "Sounds Like AI"'
+description: >-
+  The em-dash, the tripled list, the careful hedging: the tells people read as machine fingerprints were learned from us. On whose writing gets smoothed out, and who gets accused.
+date: 2026-05-04
+tags: [ai, writing]
+---
+
 # The Average Human Problem: Why AI "Sounds Like AI"
 
 I keep seeing critiques of AI-generated writing where I think — but that's how I would have written that. The em-dash. The tripled list. The "it's not just X, it's Y" cadence. The careful hedging. Even the use of bullet points! People point at these as if they're machine fingerprints, and increasingly I want to ask: whose writing do you think the machine learned from in the first place?

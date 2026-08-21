@@ -4,8 +4,15 @@ on:
   push:
     branches: [main]
     paths:
+      # `index.md` is generated, and `robots.txt` and the front matter in each
+      # article all feed the built site, so a change to any of them has to
+      # reach Pages. The old filter named `*.md` and `_config.yml` only.
       - "*.md"
       - "_config.yml"
+      - "robots.txt"
+      - "CNAME"
+      - "scripts/**"
+      - ".github/workflows/deploy.yml"
   workflow_dispatch:
 
 permissions:
@@ -23,14 +30,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: "20"
+          node-version: "24"
 
       - name: Update README
         run: node scripts/update-readme.js
@@ -72,7 +79,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: main
 
@@ -80,7 +87,7 @@ jobs:
         run: git pull origin main
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v6
 
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
@@ -89,10 +96,10 @@ jobs:
           destination: ./_site
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./_site
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

@@ -1,3 +1,11 @@
+---
+title: "Partly Cloudy: Forecasting Your Needs in a Fragmented Cloud"
+description: >-
+  The cloud has come apart into components. When a production stack needs no hyperscaler console, the question stops being whether you can run it and becomes which option to choose.
+date: 2026-06-02
+tags: [cloud, infrastructure]
+---
+
 # Partly Cloudy: Forecasting Your Needs in a Fragmented Cloud
 
 You can stand up a serious production stack today without ever opening a hyperscaler console. GPU compute from a neocloud, object storage from Cloudflare, ephemeral functions from Modal, deployment from Vercel — each piece a few lines of config, each one live in minutes. Ten years ago that stack was either science fiction or a maintenance burden no small team would take on. Now it's an ordinary afternoon's work.

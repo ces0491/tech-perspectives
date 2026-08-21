@@ -1,3 +1,11 @@
+---
+title: "Everything Old Is New Again: Technology's Fashion Cycles"
+description: >-
+  A surgeon asked how a phone does what a mainframe once did. It mostly doesn't; it's a frontend. Computing keeps swinging between central and local, and the swing has a pattern.
+date: 2026-03-20
+tags: [infrastructure]
+---
+
 # Everything Old Is New Again: Technology's Fashion Cycles
 
 A while back I was in a maxillofacial surgeon's office, because apparently that's where your thirties take you — and ended up in an unexpected conversation about technology. My surgeon, a man who's been in practice longer than I've been alive, was genuinely baffled at how a phone could do the same things as a much larger, more powerful computer. More RAM, more processing power, bigger everything — and yet this little device in his pocket could do it all?
