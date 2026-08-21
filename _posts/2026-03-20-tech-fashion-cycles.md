@@ -12,7 +12,7 @@ A while back I was in a maxillofacial surgeon's office, because apparently that'
 
 I explained that, in most cases, his phone isn't actually doing the heavy lifting. It's a frontend. The processing happens somewhere else — on servers in a data centre — and his phone just displays the results. He's consuming outputs, not running computations.
 
-It's a conversation I forgot about until recently, when I was training a mixed convolusion network in a Google Colab notebook, borrowing a T4 GPU from Google's infrastructure because my own machine is just too slow for the task. My laptop was doing very little. The real work was happening somewhere else. I was just watching the results stream in through a browser tab.
+It's a conversation I forgot about until recently, when I was training a mixed convolution network in a Google Colab notebook, borrowing a T4 GPU from Google's infrastructure because my own machine is just too slow for the task. My laptop was doing very little. The real work was happening somewhere else. I was just watching the results stream in through a browser tab.
 
 My laptop, in that moment, was a terminal. A pretty, high-resolution terminal with all the modern conveniences — but functionally, a terminal. Connected to someone else's powerful machine in a room somewhere else, doing the actual compute. Which reminded me of the mainframe systems from the 1960s and 70s (not that I was around then).
 
@@ -26,7 +26,7 @@ Even the pricing model echoes the old days. Time-sharing on a mainframe meant yo
 
 ## The Pendulum Swings Back. Again
 
-What's interesting is that the counter-reaction has already started. Companies like Basecamp have publicly pulled workloads off the cloud, citing cost. Amazon moved parts of Prime Video from microservices back to a monolith. Edge computing is pushing processing back to devices. Apple is running LLMs on-device. Your phone has a neural processing unit now.
+What's interesting is that the counter-reaction has already started. Companies like Basecamp have [publicly pulled workloads off the cloud](https://basecamp.com/cloud-exit), citing cost. Amazon moved parts of Prime Video [from microservices back to a monolith](https://www.infoq.com/news/2023/05/prime-ec2-ecs-saves-costs/). Edge computing is pushing processing back to devices. Apple is running LLMs on-device. Your phone has a neural processing unit now.
 
 We centralised, then distributed, then centralised again, and now we're distributing again. It's not a circle — it's a spiral. The same ideas return, but at a higher level of capability.
 

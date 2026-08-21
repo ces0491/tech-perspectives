@@ -12,15 +12,15 @@ For as long as I've been coding, my preference has always been towards open-sour
 
 ## Why? Because there's something powerful about the way open communities work
 
-**Development happens in freely, unencumbered by corporate roadmaps.** That means you can access tools at the bleeding edge, while still relying on older, stable packages.
+**Development happens in the open, unencumbered by corporate roadmaps.** That means you can access tools at the bleeding edge, while still relying on older, stable packages.
 
-**Trust is earned not assumed.** If a library like ggplot2 works brilliantly, it becomes a standard because thousands of users independently choose to use it — not because a vendor told you it was "best in class".
+**Trust is earned, not assumed.** If a library like ggplot2 works well, it becomes a standard because thousands of users independently choose to use it — not because a vendor told you it was "best in class".
 
 **Open source is accessible.** As a student or employee without a company credit card, I didn't need special permission or budget approval to experiment, build, and innovate. I could just download Python or R and get to work.
 
 **And most importantly, open ecosystems are unbounded.** You're not locked into a walled garden; you can extend, remix, and connect your tools however you like.
 
-Meanwhile, proprietary software like Stata, SAS, or MATLAB thrived for decades because they solved a different problem: they made advanced analysis accessible to non-programmers. Their value proposition was simple: you didn't need to be a software engineer to get reliable, reproducible results. Universities taught them. Governments and firms standardized on them. They became safe bets with someone to blame if anything went wrong.
+Meanwhile, proprietary software like Stata, SAS, or MATLAB thrived for decades because they solved a different problem: they made advanced analysis accessible to non-programmers. Their value proposition was simple: you didn't need to be a software engineer to get reliable, reproducible results. Universities taught them. Governments and firms standardised on them. They became safe bets with someone to blame if anything went wrong.
 
 **So what's changed?**
 
@@ -40,15 +40,15 @@ In other words, AI has flattened the learning curve. The unique selling point th
 
 It's true: proprietary vendors are not ignoring this shift.
 
-MathWorks, for example, already offers the MATLAB AI Chat Playground and promotes a MATLAB Copilot to help users turn natural language into MATLAB-ready code. Other vendors will almost certainly follow suit.
+MathWorks, for example, already offers the [MATLAB AI Chat Playground](https://www.mathworks.com/matlabcentral/playground) and promotes a [MATLAB Copilot](https://www.mathworks.com/products/matlab-copilot.html) to help users turn natural language into MATLAB-ready code. Other vendors will almost certainly follow suit.
 
 This matters, because it shows proprietary languages aren't standing still. They are embedding AI directly into their environments, doubling down on their promise of "no setup, no hassle — just results."
 
-However, once AI has leveled the ease-of-use playing field, the remaining differentiators all favor open source:
+However, once AI has leveled the ease-of-use playing field, the remaining differentiators all favour open source:
 
-- **Cost & Access:** Proprietary tools still require expensive licenses. Open source is free.
-- **Ecosystem Breadth:** Proprietary copilots will be limited to their ecosystem. Open source offers near-infinite libraries, integrations, and community contributions.
-- **Portability:** Python/R/Julia code moves seamlessly across industries, academia, and production. Proprietary code keeps you locked in.
+- **Cost & Access:** Proprietary tools still require expensive licences. Open source is free.
+- **Ecosystem Breadth:** Proprietary copilots will be limited to their ecosystem. Open source offers far more libraries, integrations, and community contributions.
+- **Portability:** Python/R/Julia code moves across industries, academia, and production. Proprietary code keeps you locked in.
 - **Trust:** Open source standards emerge organically (e.g. Pandas, ggplot2). Proprietary trust is bought via licensing and support contracts.
 
 So yes, proprietary copilots exist — but they don't solve the underlying disadvantages.
