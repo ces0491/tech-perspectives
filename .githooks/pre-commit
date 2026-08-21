@@ -1,10 +1,15 @@
 #!/bin/sh
-# Pre-commit hook to update README with article links
+# Regenerate the article lists when an article changes.
+#
+# The articles are Jekyll posts, so they live in `_posts/`. Matching top-level
+# markdown missed every one of them and fired on IDEAS.md instead.
+#
+# The generator writes README.md and index.md. Staging only the README left a
+# stale index.md in the commit whenever a title, description or date changed.
 
-# Check if any markdown files (excluding README) are being committed
-if git diff --cached --name-only | grep -E '^[^/]+\.md$' | grep -v '^README.md$' > /dev/null; then
-    echo "Updating README with article links..."
+if git diff --cached --name-only | grep -qE '^_posts/.+\.md$'; then
+    echo "Updating article lists..."
     node scripts/update-readme.js
-    git add README.md
-    echo "README.md updated and staged"
+    git add README.md index.md
+    echo "README.md and index.md updated and staged"
 fi
