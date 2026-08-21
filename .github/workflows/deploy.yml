@@ -8,6 +8,7 @@ on:
       # article all feed the built site, so a change to any of them has to
       # reach Pages. The old filter named `*.md` and `_config.yml` only.
       - "*.md"
+      - "_posts/**"
       - "_config.yml"
       - "robots.txt"
       - "CNAME"

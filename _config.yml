@@ -18,6 +18,16 @@ baseurl: /tech-perspectives
 theme: jekyll-theme-minimal
 markdown: kramdown
 
+# The articles live in `_posts/`, which is what makes them `site.posts` - and
+# `site.posts` is what `jekyll-feed` reads. As root-level pages they published
+# a feed with a title, a subtitle and no entries at all, which is the one thing
+# a feed cannot be.
+#
+# `:title` is the filename with its date prefix removed, so this reproduces the
+# URLs the articles already had: `/ai-lying-is-lying.html`, not the dated path
+# Jekyll would default to. Nothing that links to them breaks.
+permalink: /:title.html
+
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
@@ -36,7 +46,7 @@ feed:
 defaults:
   - scope:
       path: ""
-      type: pages
+      type: posts
     values:
       author: Cesaire Tobias
 

@@ -4,6 +4,8 @@ const path = require('path');
 const ROOT_DIR = path.join(__dirname, '..');
 const README_PATH = path.join(ROOT_DIR, 'README.md');
 const INDEX_PATH = path.join(ROOT_DIR, 'index.md');
+// The articles are Jekyll posts, so they are dated filenames in `_posts/`.
+const POSTS_DIR = path.join(ROOT_DIR, '_posts');
 
 const NON_ARTICLE_FILES = new Set(['README.md', 'IDEAS.md', 'index.md']);
 
@@ -92,13 +94,14 @@ function parseDate(dateStr) {
 }
 
 function getArticles() {
-  const files = fs.readdirSync(ROOT_DIR);
+  if (!fs.existsSync(POSTS_DIR)) return [];
+  const files = fs.readdirSync(POSTS_DIR);
   const articles = [];
 
   for (const file of files) {
     if (NON_ARTICLE_FILES.has(file) || !file.endsWith('.md')) continue;
 
-    const filePath = path.join(ROOT_DIR, file);
+    const filePath = path.join(POSTS_DIR, file);
     const content = fs.readFileSync(filePath, 'utf-8');
     const front = parseFrontMatter(content);
 
@@ -110,7 +113,8 @@ function getArticles() {
     const description = front.description || null;
 
     if (title) {
-      articles.push({ file, title, date, description, parsedDate: parseDate(date) });
+      const slug = file.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/\.md$/, '');
+      articles.push({ file, slug, title, date, description, parsedDate: parseDate(date) });
     }
   }
 
@@ -124,7 +128,8 @@ function generateReadme(articles) {
 
   for (const article of articles) {
     const dateStr = article.date ? ` *(${article.date})*` : '';
-    content += `- [${article.title}](./${article.file})${dateStr}\n`;
+    content += `- [${article.title}](./_posts/${article.file})${dateStr}
+`;
   }
 
   if (fs.existsSync(path.join(ROOT_DIR, 'IDEAS.md'))) {
@@ -149,9 +154,10 @@ function generateIndex(articles) {
   content += 'Essays on AI, software and the shape of technical work.\n\n';
 
   for (const article of articles) {
-    const slug = article.file.replace(/\.md$/, '.html');
     const dateStr = article.date ? ` *(${article.date})*` : '';
-    content += `## [${article.title}](./${slug})\n\n`;
+    content += `## [${article.title}](./${article.slug}.html)
+
+`;
     if (article.description) content += `${article.description}\n\n`;
     if (dateStr) content += `${dateStr.trim()}\n\n`;
   }
