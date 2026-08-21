@@ -26,8 +26,43 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+
+      # Front matter, dates, and descriptions that are present, distinct and
+      # the right length. These are the failures that reach the live site
+      # quietly: a post Jekyll skips, or a description that falls back to the
+      # site's and reads identically on every page in a search result.
+      - name: Check the articles
+        run: node scripts/validate.js
+
+      # The generator has to run before its output can be trusted, and a
+      # syntax error in it currently fails the workflow only after a commit
+      # has already been pushed.
+      - name: Check the generator runs
+        run: node scripts/update-readme.js
+
+      # Jekyll last, because a broken `_config.yml` is the one failure the
+      # checks above cannot see. Building here rather than only in the deploy
+      # job means it fails before the README commit is pushed.
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
   update-readme:
     name: Auto-update Article Links
+    needs: validate
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -73,7 +108,7 @@ jobs:
 
   deploy:
     name: Deploy to GitHub Pages
-    needs: update-readme
+    needs: [validate, update-readme]
     runs-on: ubuntu-latest
     environment:
       name: github-pages
