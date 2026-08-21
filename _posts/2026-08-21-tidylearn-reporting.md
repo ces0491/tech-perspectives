@@ -14,14 +14,17 @@ tags: [r, machine-learning, tidylearn]
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-&#10;.gt-post-table thead, .gt-post-table tbody, .gt-post-table tfoot, .gt-post-table tr, .gt-post-table td, .gt-post-table th {
+
+.gt-post-table thead, .gt-post-table tbody, .gt-post-table tfoot, .gt-post-table tr, .gt-post-table td, .gt-post-table th {
   border-style: none;
 }
-&#10;.gt-post-table p {
+
+.gt-post-table p {
   margin: 0;
   padding: 0;
 }
-&#10;.gt-post-table .gt_table {
+
+.gt-post-table .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -46,11 +49,13 @@ tags: [r, machine-learning, tidylearn]
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-&#10;.gt-post-table .gt_caption {
+
+.gt-post-table .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-&#10;.gt-post-table .gt_title {
+
+.gt-post-table .gt_title {
   color: #FFFFFF;
   font-size: 16px;
   font-weight: initial;
@@ -61,7 +66,8 @@ tags: [r, machine-learning, tidylearn]
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-&#10;.gt-post-table .gt_subtitle {
+
+.gt-post-table .gt_subtitle {
   color: #FFFFFF;
   font-size: 12px;
   font-weight: initial;
@@ -72,7 +78,8 @@ tags: [r, machine-learning, tidylearn]
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-&#10;.gt-post-table .gt_heading {
+
+.gt-post-table .gt_heading {
   background-color: #2C3E50;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -83,12 +90,14 @@ tags: [r, machine-learning, tidylearn]
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;.gt-post-table .gt_bottom_border {
+
+.gt-post-table .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;.gt-post-table .gt_col_headings {
+
+.gt-post-table .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -102,7 +111,8 @@ tags: [r, machine-learning, tidylearn]
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;.gt-post-table .gt_col_heading {
+
+.gt-post-table .gt_col_heading {
   color: #FFFFFF;
   background-color: #34495E;
   font-size: 100%;
@@ -121,7 +131,8 @@ tags: [r, machine-learning, tidylearn]
   padding-right: 5px;
   overflow-x: hidden;
 }
-&#10;.gt-post-table .gt_column_spanner_outer {
+
+.gt-post-table .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #34495E;
   font-size: 100%;
@@ -132,13 +143,16 @@ tags: [r, machine-learning, tidylearn]
   padding-left: 4px;
   padding-right: 4px;
 }
-&#10;.gt-post-table .gt_column_spanner_outer:first-child {
+
+.gt-post-table .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-&#10;.gt-post-table .gt_column_spanner_outer:last-child {
+
+.gt-post-table .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-&#10;.gt-post-table .gt_column_spanner {
+
+.gt-post-table .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -149,10 +163,12 @@ tags: [r, machine-learning, tidylearn]
   display: inline-block;
   width: 100%;
 }
-&#10;.gt-post-table .gt_spanner_row {
+
+.gt-post-table .gt_spanner_row {
   border-bottom-style: hidden;
 }
-&#10;.gt-post-table .gt_group_heading {
+
+.gt-post-table .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -177,7 +193,8 @@ tags: [r, machine-learning, tidylearn]
   vertical-align: middle;
   text-align: left;
 }
-&#10;.gt-post-table .gt_empty_group_heading {
+
+.gt-post-table .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -191,13 +208,16 @@ tags: [r, machine-learning, tidylearn]
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-&#10;.gt-post-table .gt_from_md > :first-child {
+
+.gt-post-table .gt_from_md > :first-child {
   margin-top: 0;
 }
-&#10;.gt-post-table .gt_from_md > :last-child {
+
+.gt-post-table .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-&#10;.gt-post-table .gt_row {
+
+.gt-post-table .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -215,7 +235,8 @@ tags: [r, machine-learning, tidylearn]
   vertical-align: middle;
   overflow-x: hidden;
 }
-&#10;.gt-post-table .gt_stub {
+
+.gt-post-table .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -227,7 +248,8 @@ tags: [r, machine-learning, tidylearn]
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;.gt-post-table .gt_stub_row_group {
+
+.gt-post-table .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -240,13 +262,16 @@ tags: [r, machine-learning, tidylearn]
   padding-right: 5px;
   vertical-align: top;
 }
-&#10;.gt-post-table .gt_row_group_first td {
+
+.gt-post-table .gt_row_group_first td {
   border-top-width: 2px;
 }
-&#10;.gt-post-table .gt_row_group_first th {
+
+.gt-post-table .gt_row_group_first th {
   border-top-width: 2px;
 }
-&#10;.gt-post-table .gt_summary_row {
+
+.gt-post-table .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -255,14 +280,17 @@ tags: [r, machine-learning, tidylearn]
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;.gt-post-table .gt_first_summary_row {
+
+.gt-post-table .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-&#10;.gt-post-table .gt_first_summary_row.thick {
+
+.gt-post-table .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-&#10;.gt-post-table .gt_last_summary_row {
+
+.gt-post-table .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -271,7 +299,8 @@ tags: [r, machine-learning, tidylearn]
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;.gt-post-table .gt_grand_summary_row {
+
+.gt-post-table .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -280,7 +309,8 @@ tags: [r, machine-learning, tidylearn]
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;.gt-post-table .gt_first_grand_summary_row {
+
+.gt-post-table .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -289,7 +319,8 @@ tags: [r, machine-learning, tidylearn]
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-&#10;.gt-post-table .gt_last_grand_summary_row_top {
+
+.gt-post-table .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -298,10 +329,12 @@ tags: [r, machine-learning, tidylearn]
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-&#10;.gt-post-table .gt_striped {
+
+.gt-post-table .gt_striped {
   background-color: #F8F9FA;
 }
-&#10;.gt-post-table .gt_table_body {
+
+.gt-post-table .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -309,7 +342,8 @@ tags: [r, machine-learning, tidylearn]
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;.gt-post-table .gt_footnotes {
+
+.gt-post-table .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -322,7 +356,8 @@ tags: [r, machine-learning, tidylearn]
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;.gt-post-table .gt_footnote {
+
+.gt-post-table .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -330,7 +365,8 @@ tags: [r, machine-learning, tidylearn]
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;.gt-post-table .gt_sourcenotes {
+
+.gt-post-table .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -343,64 +379,81 @@ tags: [r, machine-learning, tidylearn]
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;.gt-post-table .gt_sourcenote {
+
+.gt-post-table .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;.gt-post-table .gt_left {
+
+.gt-post-table .gt_left {
   text-align: left;
 }
-&#10;.gt-post-table .gt_center {
+
+.gt-post-table .gt_center {
   text-align: center;
 }
-&#10;.gt-post-table .gt_right {
+
+.gt-post-table .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-&#10;.gt-post-table .gt_font_normal {
+
+.gt-post-table .gt_font_normal {
   font-weight: normal;
 }
-&#10;.gt-post-table .gt_font_bold {
+
+.gt-post-table .gt_font_bold {
   font-weight: bold;
 }
-&#10;.gt-post-table .gt_font_italic {
+
+.gt-post-table .gt_font_italic {
   font-style: italic;
 }
-&#10;.gt-post-table .gt_super {
+
+.gt-post-table .gt_super {
   font-size: 65%;
 }
-&#10;.gt-post-table .gt_footnote_marks {
+
+.gt-post-table .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-&#10;.gt-post-table .gt_asterisk {
+
+.gt-post-table .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-&#10;.gt-post-table .gt_indent_1 {
+
+.gt-post-table .gt_indent_1 {
   text-indent: 5px;
 }
-&#10;.gt-post-table .gt_indent_2 {
+
+.gt-post-table .gt_indent_2 {
   text-indent: 10px;
 }
-&#10;.gt-post-table .gt_indent_3 {
+
+.gt-post-table .gt_indent_3 {
   text-indent: 15px;
 }
-&#10;.gt-post-table .gt_indent_4 {
+
+.gt-post-table .gt_indent_4 {
   text-indent: 20px;
 }
-&#10;.gt-post-table .gt_indent_5 {
+
+.gt-post-table .gt_indent_5 {
   text-indent: 25px;
 }
-&#10;.gt-post-table .katex-display {
+
+.gt-post-table .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
-&#10;.gt-post-table div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+
+.gt-post-table div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
