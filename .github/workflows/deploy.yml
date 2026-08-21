@@ -9,6 +9,7 @@ on:
       # reach Pages. The old filter named `*.md` and `_config.yml` only.
       - "*.md"
       - "_posts/**"
+      - "assets/**"
       - "_config.yml"
       - "robots.txt"
       - "CNAME"

@@ -346,18 +346,18 @@ plot conventions.
 split <- tl_split(iris, prop = 0.7, stratify = "Species", seed = 42)
 
 # Fit three models — same interface for each
-m_logistic <- tl_model(split$train, Species ~ ., method = "logistic")
 m_forest   <- tl_model(split$train, Species ~ ., method = "forest")
 m_tree     <- tl_model(split$train, Species ~ ., method = "tree")
+m_xgboost  <- tl_model(split$train, Species ~ ., method = "xgboost")
 ```
 
 A formatted comparison table — one call:
 
 ```{r tl-comparison-table}
 tl_table_comparison(
-  m_logistic, m_forest, m_tree,
+  m_forest, m_tree, m_xgboost,
   new_data = split$test,
-  names = c("Logistic", "Random Forest", "Decision Tree")
+  names = c("Random Forest", "Decision Tree", "XGBoost")
 )
 ```
 
@@ -374,6 +374,7 @@ table code stays unchanged.
 
 ```{r base-comparison}
 library(randomForest)
+library(xgboost)
 
 set.seed(42)
 train_idx <- unlist(lapply(
@@ -383,35 +384,51 @@ train_idx <- unlist(lapply(
 train_data <- iris[train_idx, ]
 test_data  <- iris[-train_idx, ]
 
-# Three different packages, three different interfaces
-fit_glm  <- glm(Species ~ ., data = train_data, family = "binomial")
+# Two of the three take a formula and a data frame
 fit_rf   <- randomForest(Species ~ ., data = train_data)
 fit_tree <- rpart::rpart(Species ~ ., data = train_data, method = "class")
 
+# xgboost takes neither: a numeric matrix, integer-encoded labels, and
+# xgb.train() rather than xgboost(), which refuses multiclass outright
+dtrain <- xgb.DMatrix(
+  data  = as.matrix(train_data[, 1:4]),
+  label = as.integer(train_data$Species) - 1
+)
+fit_xgb <- xgb.train(
+  params  = list(objective = "multi:softmax", num_class = 3),
+  data    = dtrain,
+  nrounds = 20,
+  verbose = 0
+)
+
 # Each returns predictions in a different format
-pred_glm  <- predict(fit_glm, newdata = test_data, type = "response")
 pred_rf   <- predict(fit_rf, newdata = test_data)
 pred_tree <- predict(fit_tree, newdata = test_data, type = "class")
+pred_xgb  <- predict(fit_xgb, xgb.DMatrix(as.matrix(test_data[, 1:4])))
 
-# glm doesn't handle multiclass — can't even compute accuracy
-acc_glm  <- NA_real_
+# And the xgboost predictions are zero-based integers, not factor levels
 acc_rf   <- mean(pred_rf == test_data$Species)
 acc_tree <- mean(pred_tree == test_data$Species)
+acc_xgb  <- mean(levels(iris$Species)[pred_xgb + 1] == test_data$Species)
 
 comparison_base <- data.frame(
-  model = c("Logistic (GLM)", "Random Forest", "Decision Tree"),
-  accuracy = c(acc_glm, acc_rf, acc_tree)
+  model = c("Random Forest", "Decision Tree", "XGBoost"),
+  accuracy = c(acc_rf, acc_tree, acc_xgb)
 )
 
 knitr::kable(comparison_base, digits = 3,
              caption = "Model Comparison (manual)")
 ```
 
-Three different packages, three different prediction interfaces, and `glm()`
-can't even handle the multiclass case without implementing one-vs-rest manually.
-The `kable()` output is plain and limited to one metric. With tidylearn,
-`tl_table_comparison()` produces a styled, multi-metric comparison table and
-`method = "logistic"` handles multiclass dispatching internally.
+Three packages, three interfaces. `randomForest` and `rpart` take a formula and
+a data frame; `xgboost` takes a numeric matrix wrapped in a `DMatrix`,
+integer-encoded labels, and `xgb.train()` rather than `xgboost()`, which refuses
+multiclass objectives outright. The predictions come back as factor levels,
+factor levels, and zero-based integers respectively, so each accuracy has to be
+computed its own way. The `kable()` output is plain and limited to one metric.
+
+`tl_table_comparison()` takes the fitted models and produces a styled,
+multi-metric table without any of that reshaping.
 
 ---
 

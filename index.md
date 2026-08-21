@@ -6,6 +6,12 @@ title: Tech Perspectives
 
 Essays on AI, software and the shape of technical work.
 
+## [From Model to Report: How tidylearn Simplifies ML Reporting](./tidylearn-reporting.html)
+
+Every R modelling package returns results in a different shape, so reporting code breaks whenever the model changes. What one tidy interface across twenty algorithms buys you.
+
+*(August 21, 2026)*
+
 ## [Partly Cloudy: Forecasting Your Needs in a Fragmented Cloud](./partly-cloudy.html)
 
 The cloud has come apart into components. When a production stack needs no hyperscaler console, the question stops being whether you can run it and becomes which option to choose.
