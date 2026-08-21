@@ -6,14 +6,12 @@ lang: en_US
 
 # The origin the canonical URLs, the sitemap and the feed are built from.
 #
-# Deliberately the GitHub Pages URL and not `blog.sheetsolved.com`: the
-# subdomain has no DNS record yet, and a canonical tag naming a host that does
-# not resolve is worse than no custom domain at all — it points every crawler
-# at nothing. Moving is a two-line change once the CNAME is in place: set
-# `url` to https://blog.sheetsolved.com, empty `baseurl`, and add a CNAME file
-# holding the same name.
-url: https://ces0491.github.io
-baseurl: /tech-perspectives
+# The CNAME file beside this holds the same name. Both are needed: the file is
+# what tells GitHub Pages which host to serve, and this is what every canonical
+# tag, sitemap entry and feed link is built from. With only the file, the site
+# would serve on the domain and advertise itself at the old one.
+url: https://blog.sheetsolved.com
+baseurl: ""
 
 theme: jekyll-theme-minimal
 markdown: kramdown
