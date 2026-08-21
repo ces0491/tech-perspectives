@@ -14,3 +14,21 @@
 ## Ideas
 
 Concepts I'm exploring for future pieces — see [IDEAS.md](./IDEAS.md).
+
+## Working on this repo
+
+Articles live in `_posts/`, named `YYYY-MM-DD-slug.md`, each carrying its
+title, description, date and tags in front matter. The permalink drops the
+date prefix, so `_posts/2026-06-02-partly-cloudy.md` publishes at
+`/partly-cloudy.html`.
+
+`README.md` and `index.md` are both written by `scripts/update-readme.js`.
+Edit the articles, not these two files. To regenerate them on every commit,
+enable the hook once per clone:
+
+```sh
+git config core.hooksPath .githooks
+```
+
+The deploy workflow regenerates them on push as well, so the hook saves a
+round trip rather than being load-bearing.
