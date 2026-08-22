@@ -2,6 +2,7 @@
 
 ## Articles
 
+- [Is This Package Safe to Depend On?](./_posts/2026-08-22-is-this-package-safe-to-depend-on.md) *(August 22, 2026)*
 - [From Model to Report: How tidylearn Simplifies ML Reporting](./_posts/2026-08-21-tidylearn-reporting.md) *(August 21, 2026)*
 - [Partly Cloudy: Forecasting Your Needs in a Fragmented Cloud](./_posts/2026-06-02-partly-cloudy.md) *(June 2, 2026)*
 - [The Average Human Problem: Why AI "Sounds Like AI"](./_posts/2026-05-04-ai-average-human-problem.md) *(May 4, 2026)*

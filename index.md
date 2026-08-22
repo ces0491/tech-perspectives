@@ -6,6 +6,12 @@ title: Tech Perspectives
 
 Essays on AI, software and the shape of technical work.
 
+## [Is This Package Safe to Depend On?](./is-this-package-safe-to-depend-on.html)
+
+Adding a dependency takes one line and can cost you years. CRAN already publishes enough to answer the question before you commit — it's just spread across three APIs almost nobody checks.
+
+*(August 22, 2026)*
+
 ## [From Model to Report: How tidylearn Simplifies ML Reporting](./tidylearn-reporting.html)
 
 Every R modelling package returns results in a different shape, so reporting code breaks whenever the model changes. What one tidy interface across twenty algorithms buys you.
