@@ -26,7 +26,7 @@ Even the pricing model echoes the old days. Time-sharing on a mainframe meant yo
 
 ## The Pendulum Swings Back. Again
 
-What's interesting is that the counter-reaction has already started. Companies like Basecamp have [publicly pulled workloads off the cloud](https://basecamp.com/cloud-exit), citing cost. Amazon moved parts of Prime Video [from microservices back to a monolith](https://www.infoq.com/news/2023/05/prime-ec2-ecs-saves-costs/). Edge computing is pushing processing back to devices. Apple is running LLMs on-device. Your phone has a neural processing unit now.
+The counter-reaction has already started. Companies like Basecamp have [publicly pulled workloads off the cloud](https://basecamp.com/cloud-exit), citing cost. Amazon moved parts of Prime Video [from microservices back to a monolith](https://www.infoq.com/news/2023/05/prime-ec2-ecs-saves-costs/). Edge computing is pushing processing back to devices. Apple is running LLMs on-device. Your phone has a neural processing unit now.
 
 We centralised, then distributed, then centralised again, and now we're distributing again. It's not a circle — it's a spiral. The same ideas return, but at a higher level of capability.
 
@@ -58,13 +58,13 @@ If the pattern holds, I'd watch a few spaces.
 
 ## Why This Matters
 
-This isn't just trivia. Recognising these cycles is genuinely useful if you're making technology decisions.
+Recognising these cycles is useful if you're making technology decisions.
 
 When an idea is presented as revolutionary, ask whether it's actually new or whether it's a repackaging of something that fell out of fashion. If it fell out of fashion, ask *why*. The reasons it failed last time might still apply — or they might have been solved by other advances in the interim. Cloud computing works better than mainframe time-sharing because the internet is fast and ubiquitous now. The concept is the same; the enabling conditions changed.
 
 Conversely, when everyone is stampeding toward the latest paradigm — microservices, serverless, everything-as-a-service — it's worth asking what we're losing in the transition. The pendulum always swings back, and the people who see it coming early tend to make better decisions than those who follow the herd to the extreme.
 
-Technology doesn't move in a straight line. It spirals. And if you pay attention to where the spiral has been, you get a much better sense of where it's going.
+Technology spirals. Pay attention to where the spiral has been and you get a better sense of where it's going.
 
 ---
 

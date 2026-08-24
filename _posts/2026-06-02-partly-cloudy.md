@@ -62,13 +62,13 @@ The egress story is the opposite. It isn't only a competitive pitch — in the E
 
 ## The skill moved
 
-The thing worth saying plainly is that the cloud didn't simply fragment. It stopped being a decision you make once and became one you make continuously.
+The cloud stopped being a decision you make once and became one you make continuously.
 
 The old skill was provisioning — could you stand the thing up at all? That has been commoditised, and AI tooling has finished the job. The skill that matters now is judgement: choosing well from an overwhelming menu, recognising when a marginal gain isn't worth the integration cost, and holding the discipline to stop chasing the newest name once what you have is good enough. Knowing what to compose, what to consolidate, and when "already integrated" beats "technically better" is harder to teach and harder to hire for than knowing how to configure a VPC. Increasingly it is the work itself — less about standing systems up than about deciding what belongs where, and making the parts hold together once they're chosen.
 
 The barrier has shifted from *can you build it* to *can you choose well without drowning in the options*. That second skill is the one worth investing in now, and we're not convinced it's the easier of the two.
 
-There's a paradox worth sitting with here. The cloud was made easier precisely so you wouldn't need a specialist to use it — and the proliferation that came with that ease has made experienced guidance more valuable, not less. What's become scarce is judgement. When there was one obvious provider, advice was nearly redundant — you learned the platform and got on with it. With dozens of defensible options and a new one most months, the rare and useful thing is someone who has seen enough of these decisions to say which fragments are worth assembling, which are noise, and how to keep the whole thing coherent a year from now. Accessibility didn't remove the need for expertise. It moved it up the stack.
+The cloud was made easier precisely so you wouldn't need a specialist to use it — and the proliferation that came with that ease has made experienced guidance more valuable. What's become scarce is judgement. When there was one obvious provider, advice was nearly redundant — you learned the platform and got on with it. With dozens of defensible options and a new one most months, the rare and useful thing is someone who has seen enough of these decisions to say which fragments are worth assembling, which are noise, and how to keep the whole thing coherent a year from now. Accessibility moved the need for expertise up the stack.
 
 ---
 

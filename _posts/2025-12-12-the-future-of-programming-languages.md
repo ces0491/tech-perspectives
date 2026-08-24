@@ -34,7 +34,7 @@ Second, there's code for exact reproducibility — work that must produce identi
 
 Third, there's code as a deliverable — building systems where infrastructure demands it. Web applications need HTML, CSS, and JavaScript because that's what browsers execute. Data pipelines need code that deployment systems can run. The entire computing stack was built around these languages — we can't just skip them.
 
-The inefficiency isn't just one unnecessary layer either. AI translates my intent to Python, Python gets transpiled to JavaScript, JavaScript gets compiled to bytecode. Each step exists because of decisions made when humans were the ones writing code.
+The inefficiency compounds. AI translates my intent to Python, Python gets transpiled to JavaScript, JavaScript gets compiled to bytecode. Each step exists because of decisions made when humans were the ones writing code.
 
 ---
 

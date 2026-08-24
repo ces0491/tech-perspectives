@@ -9,23 +9,23 @@ tags: [r, cran, dependencies, shiny]
 
 # Is This Package Safe to Depend On?
 
-Adding a package to `DESCRIPTION` takes about four seconds. Taking one back out, three years later, can take weeks.
+Adding a package to `DESCRIPTION` takes a few seconds. Taking one back out, three years later, can take weeks.
 
-That asymmetry is the whole problem. The decision to depend on something is made in a moment, usually while you're focused on something else entirely — you need a date parser, someone on Stack Overflow used this one, it works, move on. The consequence arrives much later and lands on somebody who wasn't in the room: the package stops building against the current R release, or the maintainer's email starts bouncing, or CRAN archives it and suddenly your reverse dependency is your problem.
+The decision to depend on something is made in a moment, usually while you're focused on something else entirely — you need a date parser, someone on Stack Overflow used this one, it works, move on. But every so often, the package stops building against the current R release, or the maintainer's email starts bouncing, or CRAN archives it and that glossed-over reverse dependency becomes a proper headache.
 
-We've built good habits around a lot of things that are cheaper to get wrong than this. We review pull requests that change five lines. We don't review the line that adopts twelve thousand lines of somebody else's code, forever.
+We've built good habits around a lot of things that are cheaper to get wrong than this. We review pull requests that change five lines but we don't review the line that adopts twelve thousand lines of somebody else's code.
 
 ## CRAN already publishes the answer
 
-Here's the frustrating part: the information you'd want is public, free, and machine-readable. It's just spread across three separate services, none of which is the page you land on when you Google a package name.
+The information you'd want is public, free, and machine-readable. It's just spread across three separate services, none of which is the page you land on when you Google a package name.
 
 - [**crandb**](https://crandb.r-pkg.org) has package metadata, the full release timeline, reverse dependency listings (with a caveat I'll come back to), and — importantly — whether the package has ever been archived.
 - [**cranlogs**](https://cranlogs.r-pkg.org) has download counts, daily or aggregated over arbitrary windows.
 - [**search.r-pkg.org**](https://search.r-pkg.org) does full-text search across all of it.
 
-Nobody checks all three before adding a dependency, because checking all three means three tabs, three JSON payloads, and a judgement call about what any of it means. So the check doesn't happen, and the decision gets made on vibes and a GitHub star count.
+Most of us don't check all three before adding a dependency. At least, I didn't. I was fortunate enough to have good training that made me think about these sorts of things but the overhead of a thorough package audit was just too boring and honestly a bit hand-wavy — if there was a good enough package to do a job you needed, you used it. But we have AI for these boring jobs now (like writing tests — I've never seen this many tests in repos ever [which is great btw]) so there's no longer an excuse to implement the good practices you know you should be but don't.
 
-## Five signals, and what each one doesn't tell you
+## The five signals
 
 Five signals are worth weighing. Each is easy to over-read on its own, which matters more than the list.
 
@@ -98,7 +98,7 @@ The `archived` field is worth singling out. A package that has been archived and
 
 ## crandb has two reverse dependency numbers and one of them is a trap
 
-Notice that the reverse dependency count above doesn't come from the same call as everything else. That's deliberate.
+The reverse dependency count above doesn't come from the same call as everything else. That's deliberate.
 
 The `/{package}/all` response carries a `revdeps` field. It arrives in the JSON you already have, it's a single integer, and it is very tempting. It also isn't the number you want:
 
@@ -126,11 +126,11 @@ lengths(revdeps$ggplot2)
 
 That agrees with `tools::package_dependencies()` to within a handful of packages — 4,835 against 4,833 — and the difference is just which mirror snapshot each one saw. Either route is correct. The single integer in the metadata blob is not.
 
-The discrepancy is only visible if you already have a sense of the right magnitude, which is the actual lesson: when you assemble a metric from convenient sources, the field that's easiest to reach is not always the field you want, and a plausible wrong number is much harder to notice than a missing one.
+The discrepancy is only visible if you already have a sense of the right magnitude. When you assemble a metric from convenient sources, the field that's easiest to reach is not always the field you want, and a plausible wrong number is much harder to notice than a missing one.
 
 ## One number, and why you shouldn't trust it entirely
 
-Five signals is four more than most people will weigh in the four seconds the decision actually gets. So I collapsed them into a 0–100 viability score, weighted like this:
+Five signals is four more than most people will weigh in the few seconds the decision actually gets. So I collapsed them into a 0–100 viability score, weighted like this:
 
 | Factor | Weight |
 | --- | --- |
@@ -140,16 +140,16 @@ Five signals is four more than most people will weigh in the four seconds the de
 | Ecosystem adoption | 15% |
 | Maturity | 10% |
 
-Those weights are a judgement call. I can defend them — recency and momentum are the forward-looking signals and volume is the backward-looking one, so the front of the list gets the weight — but somebody with different priorities should weight them differently, and a score that pretends otherwise is doing the same thing I complained about at the top: making a decision look more settled than it is.
+Those weights are a judgement call. Recency and momentum are the forward-looking signals and volume is the backward-looking one, so the front of the list gets the weight — but somebody with different priorities should weight them differently.
 
-So: the score is a triage tool. It's good for sorting a shortlist and for noticing that something you assumed was fine has been declining for eighteen months. It is not a verdict, and a low score on a small, finished, well-written package that does exactly what you need is a false alarm you should overrule.
+The score is a triage tool. It's good for sorting a shortlist and for noticing that something you assumed was fine has been declining for eighteen months. It is not a verdict, and a low score on a small, finished, well-written package that does exactly what you need is probably a false alarm you should overrule.
 
 ## The app
 
-I built [**cranExploreR**](https://github.com/ces0491/cranExploreR) to stop opening three tabs. It's a Shiny app — `bslib`, `plotly`, `httr2` — that pulls the signals above, draws the twelve-month download trend, and lets you put two or three candidate packages side by side, which is usually the actual question.
+I built [**cranExploreR**](https://github.com/ces0491/cranExploreR). It's a Shiny app — `bslib`, `plotly`, `httr2` — that pulls the signals above, draws the twelve-month download trend, and lets you put two or three candidate packages side by side, which is usually the actual question.
 
 It's [running here](https://019d3e9e-b1a7-77dc-9266-40ce0b717eb3.share.connect.posit.cloud/), and the source is on GitHub.
 
-But the app is the least interesting part of this. The interesting part is that the question is answerable — cheaply, in about a second, from data CRAN has been publishing all along — and that almost none of us ask it. We inherited a culture of dependency review from ecosystems where the tooling made it easy. R has the data and never quite got the habit.
+But the app is the least interesting part of this. The question is answerable — cheaply, from data CRAN has been publishing all along — and almost none of us ask it. We inherited a culture of dependency review from ecosystems where the tooling made it easy. R has the data and never quite got the habit.
 
-Four seconds is enough time to run one function.
+The check is one function call.

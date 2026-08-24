@@ -16,7 +16,7 @@ Substantial. Useful. I noted them down. Then I asked something I'd been thinking
 
 The answer (partly expected) was no. Substantially overlapping, but not identical. The 3 to 5 highest-impact items would recur — those are anchored in concrete code that any careful reader would catch. But the long tail of medium and low items would shift. Different session, different sampling path, different scope judgements, different framings.
 
-That may seem frustrating, but that's not just an LLM property. The act of "review", framed openly, has no stop condition. Ask any competent reviewer "is this good?" and the answer is always "could be better." LLMs are just better at articulating the gap, repeatedly, in fresh permutations.
+That may seem frustrating, but the same is true of any reviewer. The act of "review", framed openly, has no stop condition. Ask any competent reviewer "is this good?" and the answer is always "could be better." LLMs are just better at articulating the gap, repeatedly, in fresh permutations.
 
 This is fixable. But the fix isn't to be more clever about what we ask. It's to stop asking open-ended questions in the first place.
 
@@ -80,7 +80,7 @@ The hook is deterministic. Memory and good intentions aren't.
 
 If you're using AI to review code — or any reviewer at all — define the criteria before you ask. Otherwise you're asking how long a piece of string is, and you'll keep getting longer pieces of string back.
 
-Done isn't when the reviewer stops finding things. Done is when the project does what it was scoped to do.
+A project is done when it does what it was scoped to do.
 
 ---
 

@@ -14,7 +14,7 @@ For as long as I've been coding, my preference has always been towards open-sour
 
 **Development happens in the open, unencumbered by corporate roadmaps.** That means you can access tools at the bleeding edge, while still relying on older, stable packages.
 
-**Trust is earned, not assumed.** If a library like ggplot2 works well, it becomes a standard because thousands of users independently choose to use it — not because a vendor told you it was "best in class".
+**Trust is earned.** If a library like ggplot2 works well, it becomes a standard because thousands of users independently choose to use it — not because a vendor told you it was "best in class".
 
 **Open source is accessible.** As a student or employee without a company credit card, I didn't need special permission or budget approval to experiment, build, and innovate. I could just download Python or R and get to work.
 
@@ -62,7 +62,7 @@ But AI has fundamentally undermined their core value proposition. And when you a
 ## My Take
 
 I loved open source before AI, because it enabled unencumbered innovation.
-Now, with AI copilots lowering the barriers to entry, I believe the migration away from proprietary languages is not just inevitable — it's accelerating.
+Now, with AI copilots lowering the barriers to entry, I believe the migration away from proprietary languages is accelerating.
 
 ---
 

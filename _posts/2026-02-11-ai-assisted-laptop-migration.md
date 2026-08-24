@@ -24,7 +24,7 @@ Some of us maintain dotfiles or setup scripts. Most of us don't. And even when w
 
 Instead of reconstructing my setup manually, I described my old environment to Claude and asked it to generate the automation scripts I'd need to replicate everything on a fresh Windows machine (I'm a proud Excel power-user, so yes, Windows).
 
-Here's what it produced:
+It produced:
 
 - **A main PowerShell setup script** that installs 40+ applications via `winget`, creates a clean centralised folder structure under `C:\Dev-Infra`, and configures all the necessary environment variables
 - **A Git configuration script** to set up credentials, default branch naming, line endings, and editor preferences
@@ -47,14 +47,14 @@ What impressed me most wasn't any single script — it was the orchestration. Th
 
 ## What Still Needed a Human
 
-The AI handled about 90% of the process. The remaining 10% was the stuff that inherently requires human involvement:
+The AI handled nearly all of it. What was left was the stuff that inherently requires human involvement:
 
 - **Credentials and authentication**: SSH keys need to be physically transferred. OAuth flows need a browser and a human clicking "Authorise." API keys need to be copied from password managers. No script can do this for you, nor should it.
 - **Licence activation**: JetBrains IDEs, Adobe tools, and similar software needed manual sign-in.
 - **Personal preferences**: Theme choices, font sizes, window layouts. The AI set up sensible defaults, but the final tweaks were mine.
 - **Validation**: I still needed to open each tool, verify it worked, and confirm package installations completed without errors.
 
-None of this was surprising, and none of it was painful. It was the manageable 10% — the kind of work that feels reasonable when everything else has been handled for you.
+None of this was surprising, and none of it was painful. It was a manageable remainder — the kind of work that feels reasonable when everything else has been handled for you.
 
 ## Why I think this is useful
 
