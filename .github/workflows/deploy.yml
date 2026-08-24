@@ -140,3 +140,53 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+  notify-hub:
+    name: Rebuild the hub
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      # The hub reads this feed and caches what it gets for an hour. Firing
+      # the hook the moment the deploy job finishes would race the CDN: the
+      # hub would fetch the previous feed and hold it for an hour, which is
+      # worse than having no hook at all. So wait until the newest post is
+      # actually being served before asking anything to rebuild.
+      - name: Wait for the feed to carry the newest post
+        run: |
+          newest=$(ls -1 _posts/*.md | sort | tail -1)
+          slug=$(basename "$newest" .md | sed -E 's/^[0-9]{4}-[0-9]{2}-[0-9]{2}-//')
+          host=$(cat CNAME)
+          echo "waiting for /$slug.html in https://$host/feed.xml"
+          # Downloaded rather than piped into grep. `grep -q` exits on the
+          # first match and closes the pipe, so curl reports a write failure
+          # on the success path and the log reads like an error.
+          for _ in $(seq 1 30); do
+            if curl -fsS "https://$host/feed.xml" -o feed.xml; then
+              if grep -q "$slug[.]html" feed.xml; then
+                echo "feed is current"
+                exit 0
+              fi
+            fi
+            sleep 10
+          done
+          echo "::error::$host/feed.xml did not carry $slug.html within five minutes"
+          exit 1
+
+      # An absent secret is a valid state rather than a failure: the hub's
+      # one-hour revalidate is what guarantees it does not drift, and this
+      # hook only makes the update immediate. A secret that is present and
+      # rejected does fail the step, because a hook that has quietly stopped
+      # working is the thing worth being told about.
+      - name: Trigger the hub rebuild
+        env:
+          HOOK: ${{ secrets.SHEETSOLVED_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::warning::SHEETSOLVED_DEPLOY_HOOK is not set. The hub will pick this post up within the hour on its own."
+            exit 0
+          fi
+          curl -fsS -X POST "$HOOK" -o /dev/null
+          echo "hub rebuild requested"
