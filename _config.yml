@@ -57,8 +57,8 @@ exclude:
   - README.md
   - scripts/
   - .githooks/
-  # The R article has YAML front matter of its own, so Jekyll would treat it as
-  # a page and publish an unknitted document full of raw knitr chunks. Named in
-  # full as well as by glob, because `exclude` matching is not worth guessing at.
+  # The knitted post is the canonical copy of the R article, so no .Rmd lives
+  # here any more. The glob stays as a guard: an .Rmd carries front matter of
+  # its own, so Jekyll would treat one as a page and publish an unknitted
+  # document full of raw knitr chunks.
   - "*.Rmd"
-  - tidylearn-reporting-showcase.Rmd

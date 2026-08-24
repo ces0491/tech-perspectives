@@ -9,7 +9,7 @@ _site/
 # Node (defensive — scripts/update-readme.js has no deps today, but might later)
 node_modules/
 
-# R artifacts (from .Rmd files at root)
+# R artifacts
 .Rhistory
 .RData
 .Rproj.user/
