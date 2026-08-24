@@ -9,7 +9,7 @@ tags: [r, cran, dependencies, shiny]
 
 # Is This Package Safe to Depend On?
 
-Adding a package to `DESCRIPTION` takes about four seconds. Taking one back out, three years later, has cost me weeks.
+Adding a package to `DESCRIPTION` takes about four seconds. Taking one back out, three years later, can take weeks.
 
 That asymmetry is the whole problem. The decision to depend on something is made in a moment, usually while you're focused on something else entirely — you need a date parser, someone on Stack Overflow used this one, it works, move on. The consequence arrives much later and lands on somebody who wasn't in the room: the package stops building against the current R release, or the maintainer's email starts bouncing, or CRAN archives it and suddenly your reverse dependency is your problem.
 
@@ -27,17 +27,17 @@ Nobody checks all three before adding a dependency, because checking all three m
 
 ## Five signals, and what each one doesn't tell you
 
-I've come to weigh five things. What matters more than the list is that each one is easy to over-read on its own.
+Five signals are worth weighing. Each is easy to over-read on its own, which matters more than the list.
 
 **Recency.** When was the last CRAN release? This is the signal people reach for first and the one most often misread. A package with no release in three years might be abandoned — or it might be *finished*. Some of the best small packages on CRAN do one thing, do it correctly, and have had no reason to change since 2019. Recency only becomes damning in combination: a long gap *plus* failing checks on current R is a package on its way to the archive. A long gap plus clean checks is often just a stable package.
 
-**Download momentum.** Not the absolute number — the direction. A package whose weekly downloads have halved over a year is telling you something that its lifetime total is hiding. This is the signal I'd keep if I could only keep one.
+**Download momentum.** What matters is the direction. A package whose weekly downloads have halved over a year is telling you something that its lifetime total is hiding. It is the most forward-looking of the five.
 
 **Download volume.** Useful, but inflated in ways worth knowing about. cranlogs counts the Posit mirror, not all of CRAN, so it's a sample. It counts CI runs and Docker builds, which means anything sitting in a popular dependency tree posts enormous numbers that reflect *its dependents'* popularity rather than its own adoption. A package with two million downloads a month might have very few humans who chose it deliberately.
 
-**Ecosystem adoption.** How many other CRAN packages depend on this one. This is the most underrated signal on the list, because it's not just a popularity measure — it's a form of insurance. CRAN is reluctant to archive a package that would break a long tail of dependents, and maintainers of widely-depended-on packages get pressure, help, and sometimes successors in a way that solo packages don't. High reverse dependency counts mean the ecosystem itself has a stake in the thing continuing to work.
+**Ecosystem adoption.** How many other CRAN packages depend on this one. This is the most underrated signal on the list, because it functions as a form of insurance. CRAN is reluctant to archive a package that would break a long tail of dependents, and maintainers of widely-depended-on packages get pressure, help, and sometimes successors in a way that solo packages don't. High reverse dependency counts mean the ecosystem itself has a stake in the thing continuing to work.
 
-**Maturity.** Release count over lifetime. This separates a package with 55 releases over 19 years from one with two releases over six months, which the other four signals can't distinguish. It's the weakest of the five and I weight it accordingly, but it catches the "promising new package that may not survive contact with its author's next job" case.
+**Maturity.** Release count over lifetime. This separates a package with 55 releases over 19 years from one with two releases over six months, which the other four signals can't distinguish. It's the weakest of the five, and weighted accordingly, but it catches the "promising new package that may not survive contact with its author's next job" case.
 
 ## Doing it yourself
 
@@ -98,7 +98,7 @@ The `archived` field is worth singling out. A package that has been archived and
 
 ## crandb has two reverse dependency numbers and one of them is a trap
 
-Notice that the reverse dependency count above doesn't come from the same call as everything else. That's deliberate, and it cost me a detour to work out why.
+Notice that the reverse dependency count above doesn't come from the same call as everything else. That's deliberate.
 
 The `/{package}/all` response carries a `revdeps` field. It arrives in the JSON you already have, it's a single integer, and it is very tempting. It also isn't the number you want:
 
@@ -109,7 +109,7 @@ The `/{package}/all` response carries a `revdeps` field. It arrives in the JSON 
 | jsonlite | 63 | 1,653 |
 | httr2 | *absent* | 455 |
 
-dplyr comes back with fewer reverse dependencies than it has releases, and httr2 has no value at all. Whatever that field counts, it isn't what its name suggests, and a score weighted on it would be ranking packages by an artefact.
+dplyr and jsonlite both come back with 63, though dplyr has three times as many actual dependents, and httr2 has no value at all. Whatever that field counts, it isn't what its name suggests, and a score weighted on it would be ranking packages by an artefact.
 
 The number you actually want is at a *different* crandb endpoint, `/-/revdeps/{package}`, which returns the dependent package names split by relationship:
 
@@ -126,7 +126,7 @@ lengths(revdeps$ggplot2)
 
 That agrees with `tools::package_dependencies()` to within a handful of packages — 4,835 against 4,833 — and the difference is just which mirror snapshot each one saw. Either route is correct. The single integer in the metadata blob is not.
 
-I only caught it because ggplot2's figure looked too low against a number I happened to have in my head. That's not a reliable way to catch things, which is the actual lesson: when you assemble a metric from convenient sources, the field that's easiest to reach is not always the field you want, and a plausible wrong number is much harder to notice than a missing one.
+The discrepancy is only visible if you already have a sense of the right magnitude, which is the actual lesson: when you assemble a metric from convenient sources, the field that's easiest to reach is not always the field you want, and a plausible wrong number is much harder to notice than a missing one.
 
 ## One number, and why you shouldn't trust it entirely
 
@@ -140,13 +140,13 @@ Five signals is four more than most people will weigh in the four seconds the de
 | Ecosystem adoption | 15% |
 | Maturity | 10% |
 
-Those weights are a judgement, not a discovery. I can defend them — recency and momentum are the forward-looking signals and volume is the backward-looking one, so the front of the list gets the weight — but somebody with different priorities should weight them differently, and a score that pretends otherwise is doing the same thing I complained about at the top: making a decision look more settled than it is.
+Those weights are a judgement call. I can defend them — recency and momentum are the forward-looking signals and volume is the backward-looking one, so the front of the list gets the weight — but somebody with different priorities should weight them differently, and a score that pretends otherwise is doing the same thing I complained about at the top: making a decision look more settled than it is.
 
 So: the score is a triage tool. It's good for sorting a shortlist and for noticing that something you assumed was fine has been declining for eighteen months. It is not a verdict, and a low score on a small, finished, well-written package that does exactly what you need is a false alarm you should overrule.
 
 ## The app
 
-I built [**cranExploreR**](https://github.com/ces0491/cranExploreR) to stop opening three tabs. It's a Shiny app — `bslib`, `plotly`, `httr2` — that pulls the signals above, draws the twelve-month download trend, and lets you put two or three candidate packages side by side, which is usually the actual question. Not "is this package good" but "which of these three".
+I built [**cranExploreR**](https://github.com/ces0491/cranExploreR) to stop opening three tabs. It's a Shiny app — `bslib`, `plotly`, `httr2` — that pulls the signals above, draws the twelve-month download trend, and lets you put two or three candidate packages side by side, which is usually the actual question.
 
 It's [running here](https://019d3e9e-b1a7-77dc-9266-40ce0b717eb3.share.connect.posit.cloud/), and the source is on GitHub.
 
