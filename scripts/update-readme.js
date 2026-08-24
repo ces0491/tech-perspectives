@@ -37,6 +37,20 @@ const README_FOOTER = [
   '',
 ].join('\n');
 
+/**
+ * The blogroll, on the published front page.
+ *
+ * R-bloggers will not accept a feed until the blog links back to it, and a
+ * person checks for that link by hand before the feed is added. It has to be
+ * on the site rather than inside a post, and `index.md` is generated, so it
+ * belongs in this template rather than in the file the template overwrites.
+ */
+const INDEX_FOOTER = `
+## Blogroll
+
+- [R-bloggers](https://www.r-bloggers.com) — R news and tutorials from hundreds of R bloggers.
+`;
+
 function generateReadme(articles) {
   let content = '# Tech Perspectives\n\n## Articles\n\n';
 
@@ -77,6 +91,8 @@ function generateIndex(articles) {
     if (article.description) content += `${article.description}\n\n`;
     if (dateStr) content += `${dateStr.trim()}\n\n`;
   }
+
+  content += INDEX_FOOTER;
 
   return content;
 }

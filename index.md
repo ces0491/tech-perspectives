@@ -66,3 +66,7 @@ Open source won on trust and access long before AI. What AI changes is the last 
 
 *(September 11, 2025)*
 
+
+## Blogroll
+
+- [R-bloggers](https://www.r-bloggers.com) — R news and tutorials from hundreds of R bloggers.
