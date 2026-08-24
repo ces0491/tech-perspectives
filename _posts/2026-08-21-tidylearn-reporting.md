@@ -510,7 +510,7 @@ Scree plot with cumulative variance line and 80% threshold:
 tidy_pca_screeplot(pca)
 ```
 
-![](/assets/tidylearn/tl-pca-scree-1.png)<!-- -->
+![]({{ '/assets/tidylearn/tl-pca-scree-1.png' | absolute_url }})<!-- -->
 
 Publication-ready biplot with observation scores and variable loadings:
 
@@ -518,7 +518,7 @@ Publication-ready biplot with observation scores and variable loadings:
 tidy_pca_biplot(pca, label_obs = TRUE)
 ```
 
-![](/assets/tidylearn/tl-pca-biplot-1.png)<!-- -->
+![]({{ '/assets/tidylearn/tl-pca-biplot-1.png' | absolute_url }})<!-- -->
 
 And the tables — variance explained and loadings — are one call each,
 with colour-coded formatting out of the box:
@@ -627,7 +627,7 @@ The default R biplot:
 biplot(pca_base)
 ```
 
-![](/assets/tidylearn/base-pca-biplot-1.png)<!-- -->
+![]({{ '/assets/tidylearn/base-pca-biplot-1.png' | absolute_url }})<!-- -->
 
 This produces a functional but visually rough base R graphic — no
 `theme_minimal()`, no consistent colour scheme, no variance-explained
@@ -674,7 +674,7 @@ ggplot() +
   theme_minimal()
 ```
 
-![](/assets/tidylearn/base-pca-ggbiplot-1.png)<!-- -->
+![]({{ '/assets/tidylearn/base-pca-ggbiplot-1.png' | absolute_url }})<!-- -->
 
 ``` r
 # Variance table — manually computed
@@ -724,7 +724,7 @@ hc <- tidy_hclust(USArrests, method = "ward.D2")
 tidy_dendrogram(hc, k = 4)
 ```
 
-![](/assets/tidylearn/tl-hclust-1.png)<!-- -->
+![]({{ '/assets/tidylearn/tl-hclust-1.png' | absolute_url }})<!-- -->
 
 Cut the tree and get a tidy tibble of cluster assignments:
 
@@ -823,7 +823,7 @@ plot(hc_base, main = "Hierarchical Clustering Dendrogram",
 rect.hclust(hc_base, k = 4, border = 2:5)
 ```
 
-![](/assets/tidylearn/base-hclust-1.png)<!-- -->
+![]({{ '/assets/tidylearn/base-hclust-1.png' | absolute_url }})<!-- -->
 
 The dendrogram looks similar — both use base R graphics for this. The
 real difference is in what happens next:
@@ -879,14 +879,14 @@ lasso <- tl_model(mtcars, mpg ~ ., method = "lasso")
 tl_plot_regularization_path(lasso)
 ```
 
-![](/assets/tidylearn/tl-lasso-1.png)<!-- -->
+![]({{ '/assets/tidylearn/tl-lasso-1.png' | absolute_url }})<!-- -->
 
 ``` r
 # Cross-validation curve
 tl_plot_regularization_cv(lasso)
 ```
 
-![](/assets/tidylearn/tl-lasso-cv-1.png)<!-- -->
+![]({{ '/assets/tidylearn/tl-lasso-cv-1.png' | absolute_url }})<!-- -->
 
 And a formatted coefficient table, sorted by magnitude with zero
 coefficients greyed out:
@@ -977,7 +977,7 @@ The default coefficient path plot:
 plot(cv_fit$glmnet.fit, xvar = "lambda", label = TRUE)
 ```
 
-![](/assets/tidylearn/base-lasso-path-1.png)<!-- -->
+![]({{ '/assets/tidylearn/base-lasso-path-1.png' | absolute_url }})<!-- -->
 
 The default cross-validation plot:
 
@@ -985,7 +985,7 @@ The default cross-validation plot:
 plot(cv_fit)
 ```
 
-![](/assets/tidylearn/base-lasso-cv-1.png)<!-- -->
+![]({{ '/assets/tidylearn/base-lasso-cv-1.png' | absolute_url }})<!-- -->
 
 These are base R graphics — functional, but they can’t be themed,
 faceted, combined with other ggplot2 panels, or converted to interactive
@@ -1012,7 +1012,7 @@ ggplot(coef_long, aes(x = log(lambda), y = coefficient, colour = variable)) +
   theme_minimal()
 ```
 
-![](/assets/tidylearn/base-lasso-gg-1.png)<!-- -->
+![]({{ '/assets/tidylearn/base-lasso-gg-1.png' | absolute_url }})<!-- -->
 
 ``` r
 # Extract coefficients at lambda.1se — returns a sparse matrix
