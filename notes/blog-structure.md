@@ -53,6 +53,14 @@ imposed — whether something was actually thought about, across writing,
 dependencies, code review and charts. It runs through five posts and both new
 directions. It is a theme to notice and possibly tag, not a constraint.
 
+**3 September 2026 — the study repo is on GitHub, private for now.**
+`ces0491/englishRegisterStudy`, flipping to public when the OSF pre-registration
+is filed and there are results.
+*Because:* the plan already commits to a public repository as part of the
+output, so this is timing rather than a reversal. Private to public is a safe
+move; public to private does not unpublish anything that has been indexed or
+forked.
+
 ---
 
 ## Open
@@ -99,14 +107,6 @@ should promise a cadence the buffer cannot cover.
 **Closes when:** three short pieces are banked and finished, per the triage
 kit's own rule, and the answer is then yes or no in writing here. Announcing a
 cadence before the buffer exists is how a column goes visibly stale.
-
-### 4. Does the register study repo get a remote, and at what visibility?
-
-`Rdev/analysis/englishRegisterStudy` is local git only.
-
-**Closes when:** a remote is added, or a note here says deliberately not yet.
-The plan commits to the repository being public as part of the output, so
-"public eventually" is already implied.
 
 ---
 
