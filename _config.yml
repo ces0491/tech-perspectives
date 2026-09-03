@@ -57,8 +57,10 @@ exclude:
   - README.md
   - scripts/
   - .githooks/
-  # The knitted post is the canonical copy of the R article, so no .Rmd lives
-  # here any more. The glob stays as a guard: an .Rmd carries front matter of
-  # its own, so Jekyll would treat one as a page and publish an unknitted
-  # document full of raw knitr chunks.
+  # `_source/` holds the .Rmd the R article is knitted from, by
+  # `scripts/render-r-post.R`. The post in `_posts/` is its output. Neither the
+  # source nor a stray .Rmd anywhere else should be published: an .Rmd carries
+  # front matter of its own, so Jekyll would treat one as a page and serve an
+  # unknitted document full of raw knitr chunks.
+  - _source/
   - "*.Rmd"

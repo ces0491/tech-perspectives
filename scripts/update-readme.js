@@ -35,6 +35,16 @@ const README_FOOTER = [
   'The deploy workflow regenerates them on push as well, so the hook saves a',
   'round trip rather than being load-bearing.',
   '',
+  'The R article is knitted, not written by hand: its figures, tables and',
+  'printed output come from running the code. The source is',
+  '`_source/tidylearn-reporting.Rmd` and the post is generated from it, so',
+  'edit the source and re-render rather than editing the post:',
+  '',
+  '```sh',
+  'Rscript scripts/render-r-post.R              # against the installed package',
+  'Rscript scripts/render-r-post.R --pkg ../pkg # against a source checkout',
+  '```',
+  '',
 ].join('\n');
 
 /**

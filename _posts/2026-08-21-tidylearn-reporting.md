@@ -465,14 +465,14 @@ more effort than building the model itself. Every package returns
 results in a different format — a named vector here, a matrix there, a
 custom S3 object somewhere else. Even with excellent tidying packages
 like `broom`, the column names and available fields change between model
-types, and many ML packages aren’t supported at all.
+types, and many ML packages aren't supported at all.
 
 The result is that producing consistent, polished visualisations and
 tables for a report means writing custom extraction and reshaping code
 for each package you use. Change your model, and your reporting code
 breaks.
 
-**tidylearn** solves this. Every function — across 20+ algorithms —
+**tidylearn** solves this. Every function — across 20 algorithms —
 returns tidy tibbles, ggplot2 plots, and formatted `gt` tables with a
 consistent structure. Your reporting pipeline becomes model-agnostic:
 swap the algorithm, and the same plot code, table code, and comparison
@@ -510,7 +510,7 @@ Scree plot with cumulative variance line and 80% threshold:
 tidy_pca_screeplot(pca)
 ```
 
-![]({{ '/assets/tidylearn/tl-pca-scree-1.png' | absolute_url }})<!-- -->
+![]({{ '/assets/tidylearn/tl-pca-scree-1.png' | absolute_url }})
 
 Publication-ready biplot with observation scores and variable loadings:
 
@@ -518,7 +518,7 @@ Publication-ready biplot with observation scores and variable loadings:
 tidy_pca_biplot(pca, label_obs = TRUE)
 ```
 
-![]({{ '/assets/tidylearn/tl-pca-biplot-1.png' | absolute_url }})<!-- -->
+![]({{ '/assets/tidylearn/tl-pca-biplot-1.png' | absolute_url }})
 
 And the tables — variance explained and loadings — are one call each,
 with colour-coded formatting out of the box:
@@ -535,7 +535,8 @@ tl_table_variance(pca_model)
     <tr class="gt_heading">
       <td colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>PCA Variance Explained</td>
     </tr>
-    &#10;    <tr class="gt_col_headings">
+    
+    <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="color: #FFFFFF;" scope="col" id="component">Component</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #FFFFFF;" scope="col" id="sdev">Std. Dev.</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #FFFFFF;" scope="col" id="variance">Variance</th>
@@ -584,7 +585,8 @@ tl_table_loadings(pca_model, n_components = 2)
     <tr class="gt_heading">
       <td colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>PCA Loadings</td>
     </tr>
-    &#10;    <tr class="gt_col_headings">
+    
+    <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="color: #FFFFFF;" scope="col" id="variable">Variable</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #FFFFFF;" scope="col" id="PC1">PC1</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #FFFFFF;" scope="col" id="PC2">PC2</th>
@@ -627,7 +629,7 @@ The default R biplot:
 biplot(pca_base)
 ```
 
-![]({{ '/assets/tidylearn/base-pca-biplot-1.png' | absolute_url }})<!-- -->
+![]({{ '/assets/tidylearn/base-pca-biplot-1.png' | absolute_url }})
 
 This produces a functional but visually rough base R graphic — no
 `theme_minimal()`, no consistent colour scheme, no variance-explained
@@ -674,7 +676,7 @@ ggplot() +
   theme_minimal()
 ```
 
-![]({{ '/assets/tidylearn/base-pca-ggbiplot-1.png' | absolute_url }})<!-- -->
+![]({{ '/assets/tidylearn/base-pca-ggbiplot-1.png' | absolute_url }})
 
 ``` r
 # Variance table — manually computed
@@ -724,7 +726,7 @@ hc <- tidy_hclust(USArrests, method = "ward.D2")
 tidy_dendrogram(hc, k = 4)
 ```
 
-![]({{ '/assets/tidylearn/tl-hclust-1.png' | absolute_url }})<!-- -->
+![]({{ '/assets/tidylearn/tl-hclust-1.png' | absolute_url }})
 
 Cut the tree and get a tidy tibble of cluster assignments:
 
@@ -823,7 +825,7 @@ plot(hc_base, main = "Hierarchical Clustering Dendrogram",
 rect.hclust(hc_base, k = 4, border = 2:5)
 ```
 
-![]({{ '/assets/tidylearn/base-hclust-1.png' | absolute_url }})<!-- -->
+![]({{ '/assets/tidylearn/base-hclust-1.png' | absolute_url }})
 
 The dendrogram looks similar — both use base R graphics for this. The
 real difference is in what happens next:
@@ -879,14 +881,14 @@ lasso <- tl_model(mtcars, mpg ~ ., method = "lasso")
 tl_plot_regularization_path(lasso)
 ```
 
-![]({{ '/assets/tidylearn/tl-lasso-1.png' | absolute_url }})<!-- -->
+![]({{ '/assets/tidylearn/tl-lasso-1.png' | absolute_url }})
 
 ``` r
 # Cross-validation curve
 tl_plot_regularization_cv(lasso)
 ```
 
-![]({{ '/assets/tidylearn/tl-lasso-cv-1.png' | absolute_url }})<!-- -->
+![]({{ '/assets/tidylearn/tl-lasso-cv-1.png' | absolute_url }})
 
 And a formatted coefficient table, sorted by magnitude with zero
 coefficients greyed out:
@@ -977,7 +979,7 @@ The default coefficient path plot:
 plot(cv_fit$glmnet.fit, xvar = "lambda", label = TRUE)
 ```
 
-![]({{ '/assets/tidylearn/base-lasso-path-1.png' | absolute_url }})<!-- -->
+![]({{ '/assets/tidylearn/base-lasso-path-1.png' | absolute_url }})
 
 The default cross-validation plot:
 
@@ -985,9 +987,9 @@ The default cross-validation plot:
 plot(cv_fit)
 ```
 
-![]({{ '/assets/tidylearn/base-lasso-cv-1.png' | absolute_url }})<!-- -->
+![]({{ '/assets/tidylearn/base-lasso-cv-1.png' | absolute_url }})
 
-These are base R graphics — functional, but they can’t be themed,
+These are base R graphics — functional, but they can't be themed,
 faceted, combined with other ggplot2 panels, or converted to interactive
 plotly charts. Building ggplot2 equivalents from the `glmnet` object
 requires extracting the coefficient matrix across all lambda values and
@@ -1012,7 +1014,7 @@ ggplot(coef_long, aes(x = log(lambda), y = coefficient, colour = variable)) +
   theme_minimal()
 ```
 
-![]({{ '/assets/tidylearn/base-lasso-gg-1.png' | absolute_url }})<!-- -->
+![]({{ '/assets/tidylearn/base-lasso-gg-1.png' | absolute_url }})
 
 ``` r
 # Extract coefficients at lambda.1se — returns a sparse matrix
@@ -1043,7 +1045,7 @@ knitr::kable(coef_tbl, digits = 4, row.names = FALSE,
 
 Lasso Coefficients at lambda.1se (manual)
 
-The manual approach works, but it’s the kind of reshaping code that’s
+The manual approach works, but it's the kind of reshaping code that's
 easy to get subtly wrong and tedious to repeat.
 `tl_plot_regularization_path()` handles extraction, pivoting, labelling,
 and theming in one call. And the `kable()` coefficient table is plain —
@@ -1098,7 +1100,7 @@ tl_table_comparison(
   </thead>
   <tbody class="gt_table_body">
     <tr><td headers="metric" class="gt_row gt_left">Accuracy</td>
-<td headers="Random Forest" class="gt_row gt_right">0.9333</td>
+<td headers="Random Forest" class="gt_row gt_right">0.9556</td>
 <td headers="Decision Tree" class="gt_row gt_right">0.8889</td>
 <td headers="XGBoost" class="gt_row gt_right">0.9111</td></tr>
   </tbody>
@@ -1123,7 +1125,8 @@ tl_table_confusion(m_forest, new_data = split$test)
     <tr class="gt_heading">
       <td colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>Confusion Matrix</td>
     </tr>
-    &#10;    <tr class="gt_col_headings gt_spanner_row">
+    
+    <tr class="gt_col_headings gt_spanner_row">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="2" colspan="1" scope="col" id="a::stub">Actual</th>
       <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="3" scope="colgroup" id="Predicted">
         <div class="gt_column_spanner">Predicted</div>
@@ -1142,8 +1145,8 @@ tl_table_confusion(m_forest, new_data = split$test)
 <td headers="stub_1_1 virginica" class="gt_row gt_right">0</td></tr>
     <tr><th id="stub_1_2" scope="row" class="gt_row gt_left gt_stub">versicolor</th>
 <td headers="stub_1_2 setosa" class="gt_row gt_right gt_striped">0</td>
-<td headers="stub_1_2 versicolor" class="gt_row gt_right gt_striped" style="background-color: #D4EDDA;">14</td>
-<td headers="stub_1_2 virginica" class="gt_row gt_right gt_striped">1</td></tr>
+<td headers="stub_1_2 versicolor" class="gt_row gt_right gt_striped" style="background-color: #D4EDDA;">15</td>
+<td headers="stub_1_2 virginica" class="gt_row gt_right gt_striped">0</td></tr>
     <tr><th id="stub_1_3" scope="row" class="gt_row gt_left gt_stub">virginica</th>
 <td headers="stub_1_3 setosa" class="gt_row gt_right">0</td>
 <td headers="stub_1_3 versicolor" class="gt_row gt_right">2</td>
@@ -1233,7 +1236,7 @@ multi-metric table without any of that reshaping.
 
 ## 5. Interactive Reporting with plotly
 
-Because tidylearn’s plot functions return standard ggplot2 objects,
+Because tidylearn's plot functions return standard ggplot2 objects,
 converting any visualisation to an interactive plotly chart is a
 one-liner:
 
@@ -1255,10 +1258,10 @@ plotly without rebuilding them from scratch.
 
 ## Why This Matters
 
-**Consistent, polished output by default.** Every model — whether it’s a
+**Consistent, polished output by default.** Every model — whether it's a
 PCA biplot, a lasso coefficient path, or a confusion matrix — returns
 ggplot2 plots and `gt` tables with a consistent visual language. You
-don’t need to learn each package’s idiosyncratic output format or build
+don't need to learn each package's idiosyncratic output format or build
 custom formatting code to get report-quality visuals and tables.
 
 **Reproducibility through uniformity.** When your reporting pipeline
@@ -1271,4 +1274,4 @@ anyone reading your code can follow the same pattern across different
 analyses.
 
 The best analysis code is code that gets out of your way and lets you
-focus on the results. That’s what tidylearn is for.
+focus on the results. That's what tidylearn is for.

@@ -24,3 +24,6 @@ desktop.ini
 *.swp
 *.bak
 *~
+
+# Figures knitted beside the .Rmd; render-r-post.R moves them to assets/
+_source/assets/
