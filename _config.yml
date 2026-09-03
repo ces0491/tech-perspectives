@@ -67,4 +67,7 @@ exclude:
   # here does. Named anyway: an unpublished draft staying unpublished is the
   # whole point of it being there, and that should not rest on a default.
   - _drafts/
+  # Working notes - the triage method and the per-piece case files. They are
+  # part of the writing and belong in version control, and they are not pages.
+  - notes/
   - "*.Rmd"
