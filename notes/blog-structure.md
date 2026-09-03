@@ -37,6 +37,22 @@ nothing `blog.sheetsolved.com` doesn't already do.
 **3 September 2026 — IQR #001 is written and not published.** See
 [iqr-001-case-file.md](iqr-001-case-file.md).
 
+**3 September 2026 — the subject does not narrow.** The remit is tech and stats,
+broadly. AI takes up six of ten posts because it takes up that much room in the
+industry's attention at the moment, not because the blog lost its focus.
+*Because:* Ces wants to write across the space rather than about one thing, and
+the AI share is a snapshot of a moment rather than a permanent tilt.
+
+*What follows:* the breadth is deliberate, so nothing in the structure should be
+built to correct it. The short shelf gets no subject remit either — a name
+promising assorted and unpredictable suits a deliberately broad blog better than
+one implying a beat.
+
+*Also noted:* a through-line has emerged in the recent work without being
+imposed — whether something was actually thought about, across writing,
+dependencies, code review and charts. It runs through five posts and both new
+directions. It is a theme to notice and possibly tag, not a constraint.
+
 ---
 
 ## Open
@@ -67,16 +83,7 @@ Note that `categories` already has a live consumer — R-bloggers reads
 kit's own rule. Announcing a cadence before the buffer exists is how a column
 goes visibly stale.
 
-### 4. Does the subject narrow?
-
-Tags run `ai` ×6 then a long tail of ones — AI writing, cloud economics, R
-packaging, dependency management. The catch-all feeling is probably subject
-sprawl rather than form, and no amount of shelving fixes that.
-
-**Closes when:** it is answered yes or no in writing here. Harder and more
-consequential than naming, so it is the one most likely to be avoided.
-
-### 5. Does the register study repo get a remote, and at what visibility?
+### 4. Does the register study repo get a remote, and at what visibility?
 
 `Rdev/analysis/englishRegisterStudy` is local git only.
 
