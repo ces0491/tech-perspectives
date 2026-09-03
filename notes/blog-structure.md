@@ -57,16 +57,25 @@ directions. It is a theme to notice and possibly tag, not a constraint.
 
 ## Open
 
-### 1. What is the short shelf called?
+### 1. The name is Random Twalks — pending a post shipping under it
 
-| Candidate | Availability | For | Against |
-|---|---|---|---|
-| Random Twalk | unclaimed. Nearest: *A Random Walk* (investment podcast), *Random Walk Random Talk* (self-improvement) | statistical pun, family-consistent with Interquartile Rage, "random walk" promises assorted and unpredictable | "twalk" is not a word and reads as a typo in a URL or a search result |
-| Off on a Tangent | crowded — four-plus podcasts on the exact or near name, no major blog | real English, no typo risk, "tangent" carries a maths sense, matches the digressive voice ("but I digress") | not distinctive, and it apologises for digressing where Random Twalk claims it as method |
+Chosen 3 September 2026 over *Off on a Tangent*, which is crowded (four-plus
+podcasts on the exact or near name) and reads as an apology for digressing where
+Random Twalk claims the wandering as method. Random Twalk is unclaimed; the
+nearest neighbours are *A Random Walk* and *Random Walk Random Talk*, both
+podcasts in unrelated subjects.
 
-**Closes when:** one name is written into `_config.yml` or an `index.md`
-section heading and a post ships under it. Until a post ships, this is not
-decided, whatever has been said.
+Accepted cost: "twalk" is not a word, so it can read as a typo in a URL or a
+search result. Judged worth it for the pun and for the promise of assorted and
+unpredictable, which suits a blog whose breadth is deliberate.
+
+**Outstanding:** singular or plural. Ces wrote "Random Twalks"; the pun is on
+"random walk", singular. The plural reads better as a column of many pieces, the
+singular reads better as the name of the thing. Whichever is picked has to match
+in the tag, the URL and the heading, so pick once.
+
+**Closes when:** the name reaches `_config.yml` or an `index.md` heading and a
+post ships under it.
 
 ### 2. How is the shelf represented in Jekyll?
 
@@ -79,9 +88,17 @@ Note that `categories` already has a live consumer — R-bloggers reads
 
 ### 3. Is there a cadence commitment?
 
+Ces wants weekly and is not sure it can be sustained. Recorded as an aim rather
+than a commitment, which is the honest state of it.
+
+The evidence says be careful: 10 posts over 345 days, gaps of 92, 80, 61 and 45
+days, and clusters of three in a day. Weekly is roughly five times the current
+rate, against a pattern that is bursty rather than slow. Nothing published
+should promise a cadence the buffer cannot cover.
+
 **Closes when:** three short pieces are banked and finished, per the triage
-kit's own rule. Announcing a cadence before the buffer exists is how a column
-goes visibly stale.
+kit's own rule, and the answer is then yes or no in writing here. Announcing a
+cadence before the buffer exists is how a column goes visibly stale.
 
 ### 4. Does the register study repo get a remote, and at what visibility?
 
