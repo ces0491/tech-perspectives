@@ -1,6 +1,6 @@
 # Short-form pipeline
 
-Banked topics for Random Twalks. `IDEAS.md` holds essay concepts — things to
+Banked topics for Random Twalk. `IDEAS.md` holds essay concepts — things to
 think through. These are different: a short piece has to land on the observation
 itself, because the style rules remove the devices that let a piece land on its
 shape. So the bar is on the material, not the length.

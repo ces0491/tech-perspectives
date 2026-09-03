@@ -25,3 +25,8 @@ If readers can't reliably distinguish AI from human writing, the question shifts
 ---
 
 *Add new ideas at the top. Keep them short — a paragraph or two each. If something becomes an article, move the reasoning into the article and remove the entry here.*
+
+*This file holds essay concepts — things that need thinking through. Short-form
+topics, which have to land on a checkable observation instead, live in
+[notes/short-form-pipeline.md](./notes/short-form-pipeline.md). If an idea here
+turns out not to need a build-up, move it there.*

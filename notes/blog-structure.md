@@ -65,7 +65,7 @@ forked.
 
 ## Open
 
-### 1. The name is Random Twalks — pending a post shipping under it
+### 1. The name is Random Twalk — pending a post shipping under it
 
 Chosen 3 September 2026 over *Off on a Tangent*, which is crowded (four-plus
 podcasts on the exact or near name) and reads as an apology for digressing where
@@ -77,22 +77,38 @@ Accepted cost: "twalk" is not a word, so it can read as a typo in a URL or a
 search result. Judged worth it for the pun and for the promise of assorted and
 unpredictable, which suits a blog whose breadth is deliberate.
 
-**Outstanding:** singular or plural. Ces wrote "Random Twalks"; the pun is on
-"random walk", singular. The plural reads better as a column of many pieces, the
-singular reads better as the name of the thing. Whichever is picked has to match
-in the tag, the URL and the heading, so pick once.
+**Singular: Random Twalk.** Settled 3 September 2026. The pun is on "random
+walk", and the singular is the name of the thing rather than a count of pieces.
+It has to match across the category, the URL and the heading.
 
 **Closes when:** the name reaches `_config.yml` or an `index.md` heading and a
 post ships under it.
 
 ### 2. How is the shelf represented in Jekyll?
 
-Options: a `tag`, a `category` (which drives a feed, as `R` already does), or a
-section heading in the generated `index.md`.
+**Decided 3 September 2026: a category.** The three options were never
+alternatives — an index section needs a field to group by, so it is the output
+rather than the mechanism, and the real choice was tag or category.
+
+Category wins on one checkable ground: it buys `/feed/random-twalk.xml` for a
+single line in `feed.categories`, and a tag buys nothing here, because the
+tag-archive plugins are not on the GitHub Pages whitelist. Neither touches URLs,
+since `permalink: /:title.html` carries no `:categories`.
+
+Categories mean *feed memberships* rather than "which one shelf this is on", so
+a short R piece carries `[R, random-twalk]` and lands in both — R-bloggers gets
+it for being R, shelf subscribers for being short. Tags stay purely about
+subject, so the two axes never mix.
+
+Implementation, deferred until the first short post exists:
+
+1. Short pieces get `categories: [random-twalk]`, plus `R` where it applies.
+2. Add `random-twalk` to `feed.categories` in `_config.yml`.
+3. Teach the generator to group `index.md` on whether `random-twalk` is present.
+
+Steps 2 and 3 wait, because an empty section is worse than no section.
 
 **Closes when:** the first short post is published and the generator groups it.
-Note that `categories` already has a live consumer — R-bloggers reads
-`/feed/R.xml` — so adding a category is not free of consequence.
 
 ### 3. Is there a cadence commitment?
 
