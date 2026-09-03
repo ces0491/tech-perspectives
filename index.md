@@ -8,7 +8,7 @@ Essays on AI, software and the shape of technical work.
 
 ## [Is This Package Safe to Depend On?](./is-this-package-safe-to-depend-on.html)
 
-Adding a dependency takes one line and can cost you years. CRAN already publishes enough to answer the question before you commit — it's just spread across three APIs almost nobody checks.
+Adding a dependency takes seconds and removing one can take weeks. CRAN already publishes enough to answer the question before you commit — it's just spread across three APIs most of us don't check.
 
 *(August 22, 2026)*
 
@@ -44,7 +44,7 @@ An AI code review returned 27 findings. Asking how many were left to find turned
 
 ## [Everything Old Is New Again: Technology's Fashion Cycles](./tech-fashion-cycles.html)
 
-A surgeon asked how a phone does what a mainframe once did. It mostly doesn't; it's a frontend. Computing keeps swinging between central and local, and the swing has a pattern.
+A surgeon asked how a phone does what a far bigger computer does. It mostly doesn't; it's a frontend. Computing keeps swinging between central and local, and the swing has a pattern.
 
 *(March 20, 2026)*
 
@@ -56,7 +56,7 @@ Rebuilding a developer machine is dozens of tools, hundreds of packages and the 
 
 ## [Musings on the Future of Programming Languages](./the-future-of-programming-languages.html)
 
-A follow-up on proprietary languages: if AI can write in any of them, what actually decides which languages survive, and what that means for the ones people learn first.
+A follow-up on proprietary languages: if AI can write in any of them, what actually decides which languages survive, and whether we will still need to read them.
 
 *(December 12, 2025)*
 

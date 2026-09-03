@@ -1,7 +1,7 @@
 ---
 title: "Musings on the Future of Programming Languages"
 description: >-
-  A follow-up on proprietary languages: if AI can write in any of them, what actually decides which languages survive, and what that means for the ones people learn first.
+  A follow-up on proprietary languages: if AI can write in any of them, what actually decides which languages survive, and whether we will still need to read them.
 date: 2025-12-12
 tags: [languages, ai]
 ---

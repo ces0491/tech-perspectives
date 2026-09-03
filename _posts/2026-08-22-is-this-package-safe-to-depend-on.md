@@ -1,7 +1,7 @@
 ---
 title: "Is This Package Safe to Depend On?"
 description: >-
-  Adding a dependency takes one line and can cost you years. CRAN already publishes enough to answer the question before you commit — it's just spread across three APIs almost nobody checks.
+  Adding a dependency takes seconds and removing one can take weeks. CRAN already publishes enough to answer the question before you commit — it's just spread across three APIs most of us don't check.
 date: 2026-08-22
 categories: [R]
 tags: [r, cran, dependencies, shiny]
