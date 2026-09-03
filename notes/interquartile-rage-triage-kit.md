@@ -9,10 +9,21 @@ Deleted posts are the main reason these series lose material.
       counts, date. The caption is usually where the actual deception lives.
 - [ ] **Archive the URL** — web.archive.org and archive.today. Do both; they fail
       differently.
+- [ ] **Unless you intend to anonymise.** Archiving publishes a permanent, indexed,
+      unredacted copy under the subject's name, which defeats the anonymisation and
+      cannot be undone. For an anonymised subject, record the platform, the posting
+      and capture dates, the engagement counts and the author's role instead, and
+      accept that nothing external will corroborate the capture. Archive the URL for
+      institutional accounts, brands and anyone else you intend to name.
 - [ ] **Copy the claim verbatim** into your notes. Not your paraphrase of it. You will
       be accused of strawmanning, and the verbatim quote is your defence.
 - [ ] **Record**: account name, follower count at capture, engagement at capture, where
-      you found it, date captured.
+      you found it, date captured. Relative timestamps ("1w", "5d") are the only dates the
+      interface gives you — convert them at capture, while you still know the capture date,
+      and write down that they are approximate.
+- [ ] **Redact on the way in, not on the way out.** Black-box names, headlines and every
+      avatar, then read the result back and look at it. Boxes get placed by coordinate and
+      rows do not all indent the same amount.
 - [ ] **Note any source it cites**, exactly as written, even if it looks fake. Especially
       if it looks fake.
 

@@ -11,6 +11,34 @@ these notes: the repo is public and a name in history stays there.
 
 ---
 
+## Provenance
+
+Everything here is read off the two captures. The captures are the record; the
+unredacted originals are not kept.
+
+| | |
+|---|---|
+| Platform | LinkedIn, public post |
+| Author | Partner at a large international law firm; corporate lawyer, energy and mining |
+| Posted | Shown as "1w" at capture, so 21-27 August 2026. LinkedIn rounds to the week, which is as close as the interface allows |
+| Comments | Question 1 and the author's reply at "6d" (28 August 2026); questions 2 and 3 at "5d" (29 August 2026) |
+| Captured | 3 September 2026, 10:07 and 10:18 SAST, two screenshots |
+| Engagement at capture | 24 reactions, 4 comments |
+| Redacted captures | `assets/iqr-001/` - post, thread, and the chart alone |
+
+**The post URL is deliberately not recorded.** A LinkedIn post URL carries the
+author's profile slug, so writing it down here would undo the anonymisation in
+the same file that argues for it. The same goes for archive.today and the
+Wayback Machine: archiving the URL puts a permanent, indexed, unredacted copy
+in public, under his name, which is a worse outcome than the post disappearing.
+
+The cost is real and worth stating: if the post is deleted, nothing external
+corroborates that it existed. The captures are the evidence, and they are only
+as good as the trust in whoever produced them. For an anonymised subject that
+is the trade being made.
+
+---
+
 ## The artefact
 
 LinkedIn post, ~1 week old at capture, by a Partner at a large international law firm
