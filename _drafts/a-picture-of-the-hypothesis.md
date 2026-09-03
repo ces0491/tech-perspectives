@@ -22,6 +22,10 @@ The caption reports four findings: the two series are cyclically related, price 
 
 It got 24 reactions and 4 comments. Modest reach, which is part of why I'm not naming him.
 
+![]({{ '/assets/iqr-001/post-capture-redacted.png' | absolute_url }})
+
+*The post as captured. Name, photograph and employer are blacked out here and were never in this repository. Everything I quote below is legible in the image.*
+
 ## The comments were better than the chart
 
 A CFA charterholder asked what the construction of the Policy Restrictiveness Index was. The author answered, and the answer was reasonable: laws and policies under the resource nationalism umbrella, increased state participation in projects, higher taxes and royalties, local beneficiation requirements.
@@ -31,6 +35,10 @@ Then two more questions, which went unanswered:
 > does it include all African countries, and how are these weighted? How are the policies or activities scored?
 
 > also which calendar years does your graph correspond to?
+
+![]({{ '/assets/iqr-001/thread-capture-redacted.png' | absolute_url }})
+
+*The complete thread. Four questions, one answer.*
 
 People don't answer LinkedIn follow-ups for all sorts of reasons and I'd read nothing into the silence. But those two questions are the whole post, so I want to spend the rest of this on why.
 
@@ -64,7 +72,7 @@ The chart plots a single continental line, monthly, running from the high twenti
 
 No one in the thread raised this, and it decides whether the lag is a finding or an artefact.
 
-The policy index starts near 25 and ends at 200 — an eightfold rise across eleven years. It doesn't climb in a straight line; there's a plateau around Yr 4 and a real decline between Yr 6 and Yr 8. But the direction over the window is not in doubt. The commodity line trends up as well, its three peaks landing near 130, then 163, then 180.
+The policy index starts near 25 and ends at 200 — an eightfold rise across eleven years. It doesn't climb in a straight line; it plateaus through Yr 3 and Yr 4 and falls away properly between Yr 7 and Yr 9. But the direction over the window is not in doubt. The commodity line trends up as well, its three peaks landing near 130, then 163, then 180.
 
 Two series that both trend will appear to track each other whether or not anything connects them. It is the oldest trap in time series work. Granger and Newbold gave it its modern name in [Spurious regressions in econometrics](https://doi.org/10.1016/0304-4076(74)90034-7) (*Journal of Econometrics*, 1974), and Yule was already asking in 1926 why we sometimes get nonsense correlations between time series.
 
@@ -74,7 +82,11 @@ The eye is good at spotting a lag between two rising lines and bad at telling wh
 
 The grey bands are labelled "Lag Phase (Policy tightening follows peak)". Look at where they sit.
 
-The first band runs up to the Yr 6 commodity peak and stops there. The second stops just short of the Yr 10 peak. Neither begins after a peak — each one ends at one. Whatever the shading marks, the period following a commodity peak isn't it.
+![]({{ '/assets/iqr-001/chart.png' | absolute_url }})
+
+*The chart on its own, so the shading can be checked against the peaks.*
+
+The first band runs up to the second commodity peak and stops just past it. The second stops short of the third peak altogether. Neither begins after a peak — each one ends at one. Whatever the shading marks, the period following a commodity peak isn't it.
 
 There are three visible peaks and two bands, and the Yr 2 peak gets nothing.
 

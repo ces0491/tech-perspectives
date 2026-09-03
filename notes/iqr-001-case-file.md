@@ -146,8 +146,12 @@ are. Lisnic et al., CHI 2023.
 
 - **Anonymise before the first commit.** `ces0491/tech-perspectives` is a public repo.
   A name stripped in a later commit stays in the history permanently.
-- Screenshots are archived locally. Do not commit images containing the author's name,
-  photo, or profile URL.
+- Redacted captures are committed at `assets/iqr-001/` - the post, the full thread, and
+  the chart on its own. Name, photograph, employer and every avatar are blacked out,
+  and the files were re-encoded so no original metadata travels with them.
+- The unredacted originals stay out of the repo. They are the only record of the post
+  and want a deliberate home rather than the Screenshots folder they are in.
+- Do not commit an image containing the author's name, photo, or profile URL.
 
 ## Open items
 
