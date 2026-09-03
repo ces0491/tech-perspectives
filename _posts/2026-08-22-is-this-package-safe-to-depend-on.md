@@ -9,11 +9,11 @@ tags: [r, cran, dependencies, shiny]
 
 # Is This Package Safe to Depend On?
 
-Adding a package to `DESCRIPTION` takes a few seconds. Taking one back out, three years later, can take weeks.
+Adding a package to `DESCRIPTION` takes a few seconds. Taking one back out, three years later, can take weeks (probably just days with some AI assistance).
 
-The decision to depend on something is made in a moment, usually while you're focused on something else entirely — you need a date parser, someone on Stack Overflow used this one, it works, move on. But every so often, the package stops building against the current R release, or the maintainer's email starts bouncing, or CRAN archives it and that glossed-over reverse dependency becomes a proper headache.
+The decision to depend on something is made in a moment, usually while you're focused on something else entirely — you need a date parser, someone on Stack Overflow (remember Stack Overflow?) used this one, it works, move on. But every so often, the package stops building against the current R release, or the maintainer's email starts bouncing, or CRAN archives it and that glossed-over reverse dependency becomes a proper headache.
 
-We've built good habits around a lot of things that are cheaper to get wrong than this. We review pull requests that change five lines but we don't review the line that adopts twelve thousand lines of somebody else's code.
+We've built good habits around a lot of things that are cheaper to get wrong than this. We review pull requests that change five lines but we don't review the line that adopts twelve thousand lines of somebody else's code. Which probably says more about human nature than the explicit habits of coders, but I digress.
 
 ## CRAN already publishes the answer
 
@@ -29,7 +29,7 @@ Most of us don't check all three before adding a dependency. At least, I didn't.
 
 Five signals are worth weighing. Each is easy to over-read on its own, which matters more than the list.
 
-**Recency.** When was the last CRAN release? This is the signal people reach for first and the one most often misread. A package with no release in three years might be abandoned — or it might be *finished*. Some of the best small packages on CRAN do one thing, do it correctly, and have had no reason to change since 2019. Recency only becomes damning in combination: a long gap *plus* failing checks on current R is a package on its way to the archive. A long gap plus clean checks is often just a stable package.
+**Recency.** When was the last CRAN release? This is the signal most reach for but is also easy to misinterpret. A package with no release in three years might be abandoned — or it might be *finished*. Some of the best small packages on CRAN do one thing, do it correctly, and have had no reason to change. Recency only becomes damning in combination: a long gap *plus* failing checks on current R is a package on its way to the archive. A long gap plus clean checks is often just a stable package.
 
 **Download momentum.** What matters is the direction. A package whose weekly downloads have halved over a year is telling you something that its lifetime total is hiding. It is the most forward-looking of the five.
 
