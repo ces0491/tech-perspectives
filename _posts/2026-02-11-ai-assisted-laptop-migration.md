@@ -37,7 +37,7 @@ What impressed me most wasn't any single script — it was the orchestration. Th
 
 ## What Went Well
 
-**Speed.** What would have taken me most of a day was reduced to about 45 minutes of automated installation time, plus some manual steps for credentials and authentication. The actual *thinking* — deciding what to install, where to put it, how to configure it — was handled almost entirely by the AI.
+**Speed.** What would have taken me most of a day was reduced to under an hour of automated installation time, plus some manual steps for credentials and authentication. The actual *thinking* — deciding what to install, where to put it, how to configure it — was handled almost entirely by the AI.
 
 **Completeness.** When you set up a machine manually, you inevitably forget things. The AI was methodical in a way I wouldn't have been. It asked clarifying questions about my workflow, then produced a list that included tools I'd have remembered only weeks later.
 

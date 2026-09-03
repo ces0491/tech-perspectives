@@ -46,6 +46,14 @@ jobs:
       - name: Check the articles
         run: node scripts/validate.js
 
+      # The writing rules in CLAUDE.md, over bodies and front matter both.
+      # They were applied by hand until four descriptions drifted from the
+      # articles under them - one promised a dependency "can cost you years"
+      # where its own body said weeks. A description is what a search result
+      # shows, so it is both the easiest text to forget and the most public.
+      - name: Check the writing
+        run: node scripts/check-style.js
+
       # The generator has to run before its output can be trusted, and a
       # syntax error in it currently fails the workflow only after a commit
       # has already been pushed.
