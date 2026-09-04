@@ -24,10 +24,10 @@ const MONTHS = [
 /**
  * The YAML front matter block, as a flat map.
  *
- * Deliberately not a YAML parser. The three keys read here are written by this
- * repo in one shape - a quoted scalar, a date, or a `>-` folded block - and a
- * dependency for that would have to be installed in CI before the README could
- * be regenerated.
+ * Deliberately not a YAML parser. The keys read here are written by this repo
+ * in one shape each - a quoted scalar, a date, a `>-` folded block, or a
+ * bracketed list - and a dependency for that would have to be installed in CI
+ * before the README could be regenerated.
  */
 function parseFrontMatter(content) {
   const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
@@ -52,6 +52,19 @@ function parseFrontMatter(content) {
         i += 1;
       }
       value = folded.join(' ');
+    }
+
+    // A flow sequence, which is how `categories` and `tags` are written.
+    // Read as an array so a caller can ask whether a category is present
+    // rather than matching against the raw text, where `random-twalk` would
+    // also match a category merely containing it.
+    if (value.startsWith('[') && value.endsWith(']')) {
+      fields[key] = value
+        .slice(1, -1)
+        .split(',')
+        .map((item) => item.trim().replace(/^['"]|['"]$/g, ''))
+        .filter(Boolean);
+      continue;
     }
 
     // A quoted scalar. Single quotes are what this repo uses for a title
@@ -118,10 +131,13 @@ function getArticles() {
     const title = front.title || extractTitle(content);
     const date = (front.date && formatIsoDate(front.date)) || extractDate(content);
     const description = front.description || null;
+    const categories = Array.isArray(front.categories) ? front.categories : [];
 
     if (title) {
       const slug = file.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/\.md$/, '');
-      articles.push({ file, slug, title, date, description, parsedDate: parseDate(date) });
+      articles.push({
+        file, slug, title, date, description, categories, parsedDate: parseDate(date),
+      });
     }
   }
 
@@ -130,4 +146,15 @@ function getArticles() {
 }
 
 
-module.exports = { getArticles, parseFrontMatter, formatIsoDate, POSTS_DIR, ROOT_DIR };
+/**
+ * The short-form shelf, which is a category rather than a tag so that
+ * jekyll-feed can give it its own feed. See the note in `_config.yml`.
+ */
+const SHORT_FORM_CATEGORY = 'random-twalk';
+
+const isShortForm = (article) => article.categories.includes(SHORT_FORM_CATEGORY);
+
+module.exports = {
+  getArticles, parseFrontMatter, formatIsoDate, isShortForm,
+  SHORT_FORM_CATEGORY, POSTS_DIR, ROOT_DIR,
+};

@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const { getArticles, ROOT_DIR } = require('./articles');
+const { getArticles, isShortForm, ROOT_DIR } = require('./articles');
 
 const README_PATH = path.join(ROOT_DIR, 'README.md');
 const INDEX_PATH = path.join(ROOT_DIR, 'index.md');
@@ -23,6 +23,12 @@ const README_FOOTER = [
   'title, description, date and tags in front matter. The permalink drops the',
   'date prefix, so `_posts/2026-06-02-partly-cloudy.md` publishes at',
   '`/partly-cloudy.html`.',
+  '',
+  'A post carrying `random-twalk` in its `categories` is a short piece: it is',
+  'listed under that heading on `index.md` and gets its own feed at',
+  '`/feed/random-twalk.xml`. Categories are feed memberships rather than one',
+  'shelf per post, so a short R piece carries `[R, random-twalk]` and appears',
+  'in both that feed and `/feed/R.xml`.',
   '',
   '`README.md` and `index.md` are both written by `scripts/update-readme.js`.',
   'Edit the articles, not these two files. To regenerate them on every commit,',
@@ -89,17 +95,40 @@ function generateReadme(articles) {
  * description so the index says what a piece is about rather than only naming
  * it.
  */
+function renderArticle(article, level) {
+  let content = `${'#'.repeat(level)} [${article.title}](./${article.slug}.html)\n\n`;
+  if (article.description) content += `${article.description}\n\n`;
+  if (article.date) content += `*(${article.date})*\n\n`;
+  return content;
+}
+
+/**
+ * The short-form shelf, which appears only once something is on it.
+ *
+ * A named section promises a cadence, and an empty one says the promise is
+ * already being missed. So the index stays a flat list until the first short
+ * piece exists, and the headings arrive with it.
+ */
+const SHORT_FORM_HEADING = 'Random Twalk';
+const SHORT_FORM_BLURB = 'Short pieces on whatever turns up, usually something small I went and checked. [Feed](/feed/random-twalk.xml)';
+
 function generateIndex(articles) {
   let content = '---\ntitle: Tech Perspectives\n---\n\n# Tech Perspectives\n\n';
-  content += 'Essays on AI, software and the shape of technical work.\n\n';
 
-  for (const article of articles) {
-    const dateStr = article.date ? ` *(${article.date})*` : '';
-    content += `## [${article.title}](./${article.slug}.html)
+  const short = articles.filter(isShortForm);
+  const essays = articles.filter((a) => !isShortForm(a));
 
-`;
-    if (article.description) content += `${article.description}\n\n`;
-    if (dateStr) content += `${dateStr.trim()}\n\n`;
+  if (short.length === 0) {
+    content += 'Essays on AI, software and the shape of technical work.\n\n';
+    for (const article of articles) content += renderArticle(article, 2);
+  } else {
+    // The blog's line rather than the essays', since with the shelf listed
+    // below, an intro naming only the essays describes half the page.
+    content += 'Writing on AI, software and the shape of technical work.\n\n';
+    content += '## Essays\n\n';
+    for (const article of essays) content += renderArticle(article, 3);
+    content += `## ${SHORT_FORM_HEADING}\n\n${SHORT_FORM_BLURB}\n\n`;
+    for (const article of short) content += renderArticle(article, 3);
   }
 
   content += INDEX_FOOTER;

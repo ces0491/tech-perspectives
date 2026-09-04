@@ -35,9 +35,18 @@ plugins:
 # here. R-bloggers syndicates a feed that carries R content and nothing else,
 # so the R category gets its own at /feed/R.xml rather than the site feed being
 # offered and rejected.
+#
+# `random-twalk` is the short-form shelf, and a category rather than a tag for
+# the same reason: it buys /feed/random-twalk.xml for one line here, where a
+# tag buys nothing, since the tag-archive plugins are not on the GitHub Pages
+# whitelist. Categories are feed memberships rather than one shelf a post sits
+# on, so a short R piece carries both and lands in both feeds - R-bloggers
+# takes it for being R, shelf subscribers for being short. Neither touches
+# URLs, because the permalink above carries no :categories.
 feed:
   categories:
     - R
+    - random-twalk
 
 # Every article is a page at the root rather than a `_posts` entry, so the
 # defaults that would come free from a collection are set here.
