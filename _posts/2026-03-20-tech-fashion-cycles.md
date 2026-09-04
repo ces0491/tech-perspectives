@@ -28,7 +28,7 @@ Even the pricing model echoes the old days. Time-sharing on a mainframe meant yo
 
 The counter-reaction has already started. Companies like Basecamp have [publicly pulled workloads off the cloud](https://basecamp.com/cloud-exit), citing cost. Amazon moved parts of Prime Video [from microservices back to a monolith](https://www.infoq.com/news/2023/05/prime-ec2-ecs-saves-costs/). Edge computing is pushing processing back to devices. Apple is running LLMs on-device. Your phone has a neural processing unit now.
 
-We centralised, then distributed, then centralised again, and now we're distributing again. It's not a circle — it's a spiral. The same ideas return, but at a higher level of capability.
+We centralised, then distributed, then centralised again, and now we're distributing again. The shape is a spiral rather than a circle. The same ideas return, but at a higher level of capability.
 
 This pattern repeats across the industry.
 
@@ -56,7 +56,7 @@ If the pattern holds, I'd watch a few spaces.
 
 **Owned infrastructure.** The cloud made it easy to not think about hardware. But as costs climb and data sovereignty becomes a regulatory concern, more companies are reconsidering what they actually need to rent versus what they should own. It's not a full retreat to on-prem, but it's a correction — hybrid models that look a lot like the managed data centres of the early 2000s.
 
-## Why This Matters
+## Reading the Cycle
 
 Recognising these cycles is useful if you're making technology decisions.
 

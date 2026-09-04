@@ -33,7 +33,7 @@ It produced:
 
 The whole thing followed a clear nine-step workflow: run the main installer, refresh the shell, configure Git, set up Node via NVM, install language-specific packages, and handle credentials last.
 
-What impressed me most wasn't any single script — it was the orchestration. The AI understood the dependency chain. It knew that environment variables needed to be set before package managers could install to custom paths. It knew NVM needed to be configured before Node packages could be installed. It structured everything in the right order without me having to think about sequencing.
+The orchestration impressed me more than any single script. The AI understood the dependency chain. It knew that environment variables needed to be set before package managers could install to custom paths. It knew NVM needed to be configured before Node packages could be installed. It structured everything in the right order without me having to think about sequencing.
 
 ## What Went Well
 
@@ -56,7 +56,7 @@ The AI handled nearly all of it. What was left was the stuff that inherently req
 
 None of this was surprising, and none of it was painful. It was a manageable remainder — the kind of work that feels reasonable when everything else has been handled for you.
 
-## Why I think this is useful
+## Where Else This Applies
 
 I ran this as an experiment, but the implications go further than one person's setup.
 
@@ -66,7 +66,7 @@ I ran this as an experiment, but the implications go further than one person's s
 
 **For IT departments**, this could shift laptop provisioning from a manual, error-prone process to something closer to infrastructure-as-code, but without requiring everyone to learn Ansible or write Dockerfiles.
 
-## Conclusion
+## If You're Putting One Off
 
 If you're in data or software development and you've been putting off a hardware migration because of the setup overhead, give it a go. Describe what you need, let the AI generate the automation, review what it produces, and run it. You might be surprised at how little of the process actually needs you, even for something as fiddly as this.
 

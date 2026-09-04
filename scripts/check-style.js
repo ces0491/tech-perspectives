@@ -49,6 +49,34 @@ const RULES = [
     note: '"it\'s not X, it\'s Y"; state the point directly',
   },
   {
+    // The same tic with the halves split by a dash, which the rule above
+    // never saw. It was the most common form in the corpus by some way.
+    name: 'contrastive-dash',
+    pattern:
+      /\b(?:isn'?t|aren'?t|wasn'?t|weren'?t|doesn'?t|don'?t|didn'?t|is not|are not|was not|not)\b[^.\n]{0,60}[—-]{1,2}\s*(?:it|they|that|this|what)(?:'?s|'?re| is| are| was)\b/gi,
+    note: 'the "X — it\'s Y" form of the same tic; make the point in one clause',
+  },
+  {
+    // "isn't only" and "isn't merely" read as hedged versions of the same
+    // move, and passed the tic rule because it names `just` and `only`
+    // separately rather than the negation that precedes them.
+    name: 'hedged-contrast',
+    pattern: /\b(?:isn'?t|aren'?t|wasn'?t|is not|are not|was not)\s+(?:only|merely|simply|purely)\b/gi,
+    note: 'a softened "not X, but Y"; say what it is',
+  },
+  {
+    // A heading that states the conclusion its own section argues. These
+    // collected at the end of a piece, where the section under them was
+    // usually the article said a second time.
+    // Narrow on purpose: "Why it came apart" and "What I changed" name their
+    // section, which is what a heading is for. What this catches is a heading
+    // claiming significance the section below has to earn.
+    name: 'heading-asserts',
+    pattern:
+      /^#{2,6}\s+(?:Why (?:This|It|These|We) (?:Matters|Matter|Is Useful|Are Useful)|Why I (?:think|believe)|What This (?:Matters|Leaves|Means)|The (?:takeaway|deeper realisation|deeper realization|real lesson|actual point|bigger picture)|My Take|Conclusion)\b/gi,
+    note: 'the section proves it; a heading that asserts it says it twice',
+  },
+  {
     name: 'unchecked-quantifier',
     pattern: /\b(?:nobody|no one|everyone|everybody) (?:checks|does|has|knows|tests|reads|uses)\b/gi,
     note: 'a claim about people rather than evidence; check it or drop it',

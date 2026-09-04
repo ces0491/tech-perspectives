@@ -1256,7 +1256,7 @@ plotly without rebuilding them from scratch.
 
 ------------------------------------------------------------------------
 
-## Why This Matters
+## What the Uniformity Buys
 
 **Consistent, polished output by default.** Every model — whether it's a
 PCA biplot, a lasso coefficient path, or a confusion matrix — returns

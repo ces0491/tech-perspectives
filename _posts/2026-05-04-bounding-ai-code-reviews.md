@@ -14,7 +14,7 @@ Substantial. Useful. I noted them down. Then I asked something I'd been thinking
 
 > If I started a fresh session and ran the exact same prompt tomorrow, would you come up with the same suggestions?
 
-The answer (partly expected) was no. Substantially overlapping, but not identical. The 3 to 5 highest-impact items would recur — those are anchored in concrete code that any careful reader would catch. But the long tail of medium and low items would shift. Different session, different sampling path, different scope judgements, different framings.
+The answer (partly expected) was no. Substantially overlapping, but not identical. The three to five highest-impact items would recur — those are anchored in concrete code that any careful reader would catch. But the long tail of medium and low items would shift. Different session, different sampling path, different scope judgements, different framings.
 
 That may seem frustrating, but the same is true of any reviewer. The act of "review", framed openly, has no stop condition. Ask any competent reviewer "is this good?" and the answer is always "could be better." LLMs are just better at articulating the gap, repeatedly, in fresh permutations.
 
@@ -32,7 +32,7 @@ Treat the core and the tail the same way, and you've conflated signal with sampl
 
 Some areas of software have known ceilings. Authentication, for instance: a typical SaaS auth implementation has a definable upper bound — JWT or OAuth2, RBAC or capabilities, audit on privileged actions, rate limiting, MFA, key rotation. You can list the complete set. Same with input validation, money handling, concurrency primitives, test coverage tiers.
 
-For those domains, the right question isn't "is the auth good?" — it's "does it meet this ceiling?" That's binary. Reviews terminate.
+For those domains, the question to ask is "does it meet this ceiling?" That's binary. Reviews terminate.
 
 Other areas don't have ceilings. Performance is workload-dependent. API ergonomics is taste. Architectural shape is contextual. For those, you can't propose a complete spec — you have to propose criteria specific to the project.
 
@@ -58,7 +58,7 @@ Once it exists, reviews terminate. "Does this meet the criteria in SCOPE.md?" ha
 
 The same trick works for AI reviews. If I tell Claude up front "review against criteria A, B, C — anything outside that is out of scope," I get a bounded answer. Without that, I get the next layer of an infinite spiral.
 
-## The deeper realisation
+## Why LLMs surface it
 
 The instinct to review against an undefined ideal isn't an LLM problem. It's a software discipline problem that LLMs make visible.
 
@@ -76,7 +76,7 @@ Then, because habits decay, I wired it into Claude Code itself with a `SessionSt
 
 The hook is deterministic. Memory and good intentions aren't.
 
-## The takeaway
+## Define the criteria first
 
 If you're using AI to review code — or any reviewer at all — define the criteria before you ask. Otherwise you're asking how long a piece of string is, and you'll keep getting longer pieces of string back.
 
