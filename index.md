@@ -6,6 +6,12 @@ title: Tech Perspectives
 
 Essays on AI, software and the shape of technical work.
 
+## [Pulling on Threads: Scoring Bands I Never Checked](./scoring-bands-i-never-checked.html)
+
+I banded monthly downloads by powers of ten without checking where the packages actually were. A sample of 600 put 532 of them in one band, and the band below caught nothing at all.
+
+*(September 4, 2026)*
+
 ## [Is This Package Safe to Depend On?](./is-this-package-safe-to-depend-on.html)
 
 Adding a dependency takes seconds and removing one can take weeks. CRAN already publishes enough to answer the question before you commit — it's just spread across three APIs most of us don't check.

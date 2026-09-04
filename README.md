@@ -2,6 +2,7 @@
 
 ## Articles
 
+- [Pulling on Threads: Scoring Bands I Never Checked](./_posts/2026-09-04-scoring-bands-i-never-checked.md) *(September 4, 2026)*
 - [Is This Package Safe to Depend On?](./_posts/2026-08-22-is-this-package-safe-to-depend-on.md) *(August 22, 2026)*
 - [From Model to Report: How tidylearn Simplifies ML Reporting](./_posts/2026-08-21-tidylearn-reporting.md) *(August 21, 2026)*
 - [Partly Cloudy: Forecasting Your Needs in a Fragmented Cloud](./_posts/2026-06-02-partly-cloudy.md) *(June 2, 2026)*
@@ -23,6 +24,12 @@ Articles live in `_posts/`, named `YYYY-MM-DD-slug.md`, each carrying its
 title, description, date and tags in front matter. The permalink drops the
 date prefix, so `_posts/2026-06-02-partly-cloudy.md` publishes at
 `/partly-cloudy.html`.
+
+A post carrying `random-twalk` in its `categories` is a short piece: it is
+listed under that heading on `index.md` and gets its own feed at
+`/feed/random-twalk.xml`. Categories are feed memberships rather than one
+shelf per post, so a short R piece carries `[R, random-twalk]` and appears
+in both that feed and `/feed/R.xml`.
 
 `README.md` and `index.md` are both written by `scripts/update-readme.js`.
 Edit the articles, not these two files. To regenerate them on every commit,
