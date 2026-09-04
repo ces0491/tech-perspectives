@@ -1,15 +1,31 @@
 # Short-form pipeline
 
-Banked topics for Random Twalk. `IDEAS.md` holds essay concepts — things to
-think through. These are different: a short piece has to land on the observation
-itself, because the style rules remove the devices that let a piece land on its
-shape. So the bar is on the material, not the length.
+Banked material for Random Twalk. `IDEAS.md` holds essay concepts — things to
+think through. These are different: a quick bite that lands on the observation
+itself, in a paragraph, with no set-up and nothing a reader has to have read
+first. Closer to a social post than to a short article.
 
 **A candidate qualifies if:** the observation is surprising, checkable by a
-reader in a couple of minutes, and complete in 300–500 words without a build-up.
+reader in a couple of minutes, and complete in a paragraph. If it needs a
+section to get going, a code block to make its point, or a sequence of events to
+carry it, it is not this.
 
 Triage kit rule: keep three finished and banked at all times. Aim to capture
 three to four times what gets published.
+
+**Bar revised 4 September 2026.** It previously read "complete in 300–500 words
+without a build-up", which describes a short article. The first piece written to
+it came out at 567 words with a build-up, a code block and a narrative, and
+shipped as an ordinary post instead — see
+[*Pulling on Threads*](../_posts/2026-09-04-scoring-bands-i-never-checked.md).
+A piece whose content is the sequence — found this, pulled the thread, found
+worse — is an essay however short it is. It goes in `_posts` without the
+category, and the generator leaves the index ungrouped until an actual short
+piece exists.
+
+The six banked entries below were written as summaries and all six already sit
+at or near a paragraph, so none needs re-triaging against the new bar. What
+changes is that they get trimmed to land rather than expanded to fill.
 
 ---
 
@@ -97,7 +113,8 @@ nothing external corroborates the capture.
 - **Poisson intervals on rates.** A frame seen 4 times and one seen 4,000 both
   render as "per million", and the interval is what carries the difference.
   True and useful, but dry on its own — probably a paragraph inside the study
-  write-up rather than a piece.
+  write-up rather than a piece. *Worth re-reading against the revised bar: it
+  was disqualified for being only a paragraph, which is now the target.*
 - **Detectors are biased against non-native writers** (Liang et al. 2023). Real
   and citable, but the interesting version needs the register argument around
   it, which makes it an essay.
@@ -108,4 +125,6 @@ nothing external corroborates the capture.
 
 Move an item to an article and delete the entry. Add new ones at the top of
 **Banked**. If something turns out to need a build-up to land, it was an essay —
-move it to `IDEAS.md` rather than forcing it short.
+move it to `IDEAS.md` rather than forcing it short. If it needs a build-up and
+is already written, it is a post: put it in `_posts` with subject categories
+only, and leave `random-twalk` off.

@@ -2,6 +2,12 @@
 
 A working list of concepts I'm thinking through for future pieces. These are unfinished — half-formed observations, questions I haven't resolved, threads I want to pull on. Some will become articles; some won't. Worth keeping in one place either way.
 
+## What counts as enough rigour to ship
+
+cranExploreR went live at the end of March with band edges I'd picked off a log scale, a momentum baseline that was wrong for any package under a year old, release count standing in for age, and a leaf package's zero reverse dependencies rendered in red. It was usable the whole time and got the obvious cases right, which is why none of it surfaced for five months — the errors sat in the middle of the distribution, where nobody looks closely. Two days of actually checking turned up one in each of the four factors, and every fix exposed the next.
+
+The tension worth testing is that the recalibration only happened because the thing shipped and I kept using it; holding it back for rigour might have meant no app at all. So the useful question is what minimum earns publication, and whether that minimum shifts when the output carries a number somebody will act on. AI makes a first version cheap and polished at the same time, which widens the gap between looking finished and being right. Related to *Evidence of thought as the new literacy* below, from the producer's side rather than the reader's. Worked example in [*Look Before You Leap*](./_posts/2026-09-04-scoring-bands-i-never-checked.md), which is the incident rather than the argument.
+
 ## Infrastructure lock-in as a transition problem
 
 Code embedded in the computing stack looks less like a technology choice than like fossil-fuel infrastructure: the replacement can be strictly better and the switch still takes decades, because the cost sits in everything built around it rather than in the thing itself. Cut from [*Musings on the Future of Programming Languages*](./_posts/2025-12-12-the-future-of-programming-languages.md), which gestured at the analogy without making it. Worth testing how far it holds — where it predicts something non-obvious about which languages persist, and where it breaks.

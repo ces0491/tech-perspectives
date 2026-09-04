@@ -108,6 +108,17 @@ Implementation, deferred until the first short post exists:
 
 Steps 2 and 3 wait, because an empty section is worse than no section.
 
+**Updated 4 September 2026: steps 2 and 3 are done, ahead of step 1.** The
+reason for deferring them no longer applies — `generateIndex` only emits the
+headings when a post actually carries the category, so with none the index stays
+the flat list it was, byte for byte. `feed.categories` names `random-twalk`, and
+a feed with no entries is not served to anyone.
+
+Step 1 is still outstanding, and now depends on the revised bar in
+[short-form-pipeline.md](short-form-pipeline.md): the shelf is for
+paragraph-length quick bites, so the 567-word piece drafted for it shipped as an
+ordinary post instead.
+
 **Closes when:** the first short post is published and the generator groups it.
 
 ### 3. Is there a cadence commitment?
