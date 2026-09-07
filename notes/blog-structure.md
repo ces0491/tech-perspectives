@@ -34,6 +34,22 @@ survives is the sharp version the name was always promising.
 *Because:* naming both halves doubles the branding work and the second name does
 nothing `blog.sheetsolved.com` doesn't already do.
 
+**7 September 2026 — the site description is "Writing on tech and stats."**
+It read "Essays on AI, software and the shape of technical work", which named a
+form the short shelf breaks and a subject the 3 September decision above says
+is deliberately not narrowed.
+*Because:* Ces does not want the blog reading as an exclusively formal, essay-only
+archive, and the old line promised exactly that. The new one commits to neither
+a length nor a beat, so Random Twalk needs no rewrite of it.
+
+*What follows:* `scripts/update-readme.js` now reads `description` from
+`_config.yml` instead of holding its own copy, so the index, the feed subtitle
+and the meta description cannot disagree. That also retires the two-variant
+intro — one line served whether or not the shelf was stocked, and the variants
+only existed because the sentence named the form. `sheetsolved.com` reads the
+feed's `<subtitle>` for its Writing heading, so the hub follows within its
+one-hour revalidate without anyone editing it.
+
 **3 September 2026 — IQR #001 is written and not published.** See
 [iqr-001-case-file.md](iqr-001-case-file.md).
 

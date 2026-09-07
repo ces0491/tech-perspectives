@@ -4,7 +4,7 @@ title: Tech Perspectives
 
 # Tech Perspectives
 
-Essays on AI, software and the shape of technical work.
+Writing on tech and stats.
 
 ## [Pulling on Threads: Scoring Bands I Never Checked](./scoring-bands-i-never-checked.html)
 
