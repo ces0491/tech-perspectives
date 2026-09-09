@@ -77,6 +77,17 @@ output, so this is timing rather than a reversal. Private to public is a safe
 move; public to private does not unpublish anything that has been indexed or
 forked.
 
+**9 September 2026 — the blog hosts the writing, LinkedIn announces it.** Both
+shelves live here, short form and long. LinkedIn's job is to say a new piece is
+out and link to it, so the copy for a post is an announcement rather than a
+second version of the piece.
+*Because:* the blog is where the content lives and LinkedIn is the outlet for
+sharing that it exists. Reproducing the piece in the announcement gives a reader
+no reason to arrive.
+
+*What follows:* a LinkedIn announcement is derivative of a post, so it does not
+need banking the way short-form material does — the post is the record.
+
 ---
 
 ## Open
@@ -150,6 +161,53 @@ should promise a cadence the buffer cannot cover.
 **Closes when:** three short pieces are banked and finished, per the triage
 kit's own rule, and the answer is then yes or no in writing here. Announcing a
 cadence before the buffer exists is how a column goes visibly stale.
+
+### 4. Does a tool launch get a post, or only a mention inside one?
+
+Raised 9 September 2026 by the tokenwise plugin. The blog has carried a piece
+about a tool of Ces's before — [*From Model to
+Report*](../_posts/2026-08-21-tidylearn-reporting.md) demonstrates tidylearn —
+but that demonstrates the package rather than announcing it. No post here has
+been an announcement.
+
+The complication is overlap. *Marking My Own Homework* already carries the token
+mechanism, what the plugin does, the benchmark and what changed, in 1,568 words.
+A separate launch post repeats most of that. What it holds that the article does
+not is the install: the article links the repository in its closing line and
+never says `/plugin marketplace add`.
+
+Random Twalk does not take it either way. Its bar is a checkable observation
+complete in a paragraph, and an announcement is not an observation, so the
+length question never arises.
+
+**Decided 9 September 2026: it ships as a post.** Published the same day as
+[*tokenwise for Claude Code*](../_posts/2026-09-09-save-it-for-the-hard-part.md),
+an ordinary post with no category. The slug keeps the working title it was
+drafted under, since a slug is settled before the first push.
+*Because:* it is a piece of writing in its own right, and the rule above already
+says the blog hosts the writing. Folding the install into the article was the
+alternative, and it puts the tool 1,568 words into a self-review of it.
+
+The overlap is handled by splitting on subject rather than trimming: the launch
+post carries the mechanism, what the plugin does and what it does not know; the
+article carries the benchmark, the tables and the graders. The launch post
+covers the benchmark only as a limitation of the routing table, and does not link
+forward to the article, per the backward-links rule in
+[house-style.md](house-style.md).
+
+**The launch post goes out first**, matching the order already written in
+[tokenwise-linkedin.md](tokenwise-linkedin.md). *Marking My Own Homework* is the
+later piece, so it carries the cross-link, from the sentence introducing the
+skill. The launch post gains no link back: under the backward-links rule in
+[house-style.md](house-style.md) a reader of the earlier piece does not need the
+sequel, and its own closing line already says the write-up exists.
+
+*Outstanding:* the article. It is dated 8 September, a day before the launch post
+that is now live, so its front matter date moves to whenever it actually goes
+out. The 8 September in its closing line is when the benchmark ran and stays as
+it is.
+
+**Closes when:** the article is published, dated the day it shipped.
 
 ---
 

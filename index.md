@@ -6,6 +6,12 @@ title: Tech Perspectives
 
 Writing on tech and stats.
 
+## [tokenwise for Claude Code](./save-it-for-the-hard-part.html)
+
+On a subscription the cost of a task is a share of your usage limit. A Claude Code plugin for not spending that share on work that never needed it.
+
+*(September 9, 2026)*
+
 ## [Pulling on Threads: Scoring Bands I Never Checked](./scoring-bands-i-never-checked.html)
 
 I banded monthly downloads by powers of ten without checking where the packages actually were. A sample of 600 put 532 of them in one band, and the band below caught nothing at all.
