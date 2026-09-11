@@ -68,7 +68,9 @@ colon separates the halves; a dash gets normalised to one.
 
 The filename slug is short and usually carries one half rather than the whole
 title. Renaming a post after publication changes its URL, so the slug is
-settled before the first push and left alone after.
+settled before the first push and left alone after. A post renamed anyway
+carries its old URL as `redirect_from` in its front matter, so shared links
+still resolve.
 
 ## Numbers that came from somewhere else
 

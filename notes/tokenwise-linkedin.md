@@ -40,11 +40,11 @@ On a subscription none of this arrives as a bill. It is a share of your month, a
 
 Install and the reasoning:
 
-https://blog.sheetsolved.com/save-it-for-the-hard-part.html
+https://blog.sheetsolved.com/tokenwise-for-claude.html
 
 ---
 
-## For *tokenwise: When Asking Which Model to Use Pays for Itself*
+## For *The Price of Asking*
 
 Leads on the plugin costing something to use, which a reader of the launch
 announcement has not been asked to think about. The table and the bands stay in
@@ -58,7 +58,7 @@ I measured what a route costs from three Claude Code settings and set it against
 
 The chart, the task sizes where the line falls, and two free commands that check the figures:
 
-https://blog.sheetsolved.com/tokenwise.html
+https://blog.sheetsolved.com/price-of-asking.html
 
 ---
 

@@ -12,7 +12,7 @@ I kept hitting my usage limit at the same rate whether I asked Claude Code to re
 
 Every API call re-sends the whole conversation. What a run consumes is context size multiplied by the number of calls. A review reads much of the repository into context early and then carries it for hundreds of calls, which is why it lands in the same place as a feature build.
 
-So I wrote [a skill](save-it-for-the-hard-part.html) that recommends a model and effort level per phase of work: plan on the expensive model, implement on the cheap one, keep effort high for judgment-dense work like debugging and code review, delegate reading to subagents. It codified what I believed about where the tokens go.
+So I wrote [a skill](tokenwise-for-claude.html) that recommends a model and effort level per phase of work: plan on the expensive model, implement on the cheap one, keep effort high for judgment-dense work like debugging and code review, delegate reading to subagents. It codified what I believed about where the tokens go.
 
 Then I built a benchmark to check whether any of it was true.
 
@@ -71,7 +71,7 @@ The third error was mine, in the pre-registration. I wrote the test for "raise e
 
 There was also a stretch where 23 runs returned HTTP 429 because I hit my own session limit, and the summariser cheerfully scored every one of them as a task failure. Zero-dollar medians, verdicts flipping. A usage limit is not a failure to do the work, and the runner now says so.
 
-The benchmark also left out the plugin itself. The task runs loaded no plugins, so every saving above ignores what asking for a route costs. Once I measured it, a route in version 1.0.1 left 9.6K tokens in context for every later call, and cost about what moving a small chore to a cheaper model saved. The skill now runs in a forked subagent, so only its answer comes back, and [when a route pays for itself](tokenwise.html) is written up on its own.
+The benchmark also left out the plugin itself. The task runs loaded no plugins, so every saving above ignores what asking for a route costs. Once I measured it, a route in version 1.0.1 left 9.6K tokens in context for every later call, and cost about what moving a small chore to a cheaper model saved. The skill now runs in a forked subagent, so only its answer comes back, and [when a route pays for itself](price-of-asking.html) is written up on its own.
 
 ## What I actually changed
 

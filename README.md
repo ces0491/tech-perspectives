@@ -2,8 +2,8 @@
 
 ## Articles
 
-- [tokenwise: When Asking Which Model to Use Pays for Itself](./_posts/2026-09-11-tokenwise.md) *(September 11, 2026)*
-- [tokenwise for Claude Code](./_posts/2026-09-09-save-it-for-the-hard-part.md) *(September 9, 2026)*
+- [The Price of Asking: When a tokenwise Route Pays for Itself](./_posts/2026-09-11-price-of-asking.md) *(September 11, 2026)*
+- [tokenwise for Claude Code](./_posts/2026-09-09-tokenwise-for-claude.md) *(September 9, 2026)*
 - [Pulling on Threads: Scoring Bands I Never Checked](./_posts/2026-09-04-scoring-bands-i-never-checked.md) *(September 4, 2026)*
 - [Is This Package Safe to Depend On?](./_posts/2026-08-22-is-this-package-safe-to-depend-on.md) *(August 22, 2026)*
 - [From Model to Report: How tidylearn Simplifies ML Reporting](./_posts/2026-08-21-tidylearn-reporting.md) *(August 21, 2026)*

@@ -1,14 +1,15 @@
 ---
-title: 'tokenwise: When Asking Which Model to Use Pays for Itself'
+title: 'The Price of Asking: When a tokenwise Route Pays for Itself'
 description: >-
   A tokenwise route has a cost of its own. What asking costs from three Claude Code settings, and the task size below which the answer costs more than it saves.
 date: 2026-09-11
+redirect_from: [/penny-wise.html, /tokenwise.html]
 tags: [ai, claude, tooling]
 ---
 
-# tokenwise: When Asking Which Model to Use Pays for Itself
+# The Price of Asking: When a tokenwise Route Pays for Itself
 
-[tokenwise](save-it-for-the-hard-part.html) answers one question for Claude Code: which model and effort level a piece of work needs. The answer comes from a model as well, so asking has a cost. On a small enough task that cost is more than the cheaper setting saves, and you would have done better picking a setting yourself.
+[tokenwise](tokenwise-for-claude.html) answers one question for Claude Code: which model and effort level a piece of work needs. The answer comes from a model as well, so asking has a cost. On a small enough task that cost is more than the cheaper setting saves, and you would have done better picking a setting yourself.
 
 I measured the cost of asking from three session settings and set it against what the cheaper settings saved on the benchmark behind the plugin's routing table.
 

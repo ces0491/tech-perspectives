@@ -181,9 +181,8 @@ complete in a paragraph, and an announcement is not an observation, so the
 length question never arises.
 
 **Decided 9 September 2026: it ships as a post.** Published the same day as
-[*tokenwise for Claude Code*](../_posts/2026-09-09-save-it-for-the-hard-part.md),
-an ordinary post with no category. The slug keeps the working title it was
-drafted under, since a slug is settled before the first push.
+[*tokenwise for Claude Code*](../_posts/2026-09-09-tokenwise-for-claude.md),
+an ordinary post with no category.
 *Because:* it is a piece of writing in its own right, and the rule above already
 says the blog hosts the writing. Folding the install into the article was the
 alternative, and it puts the tool 1,568 words into a self-review of it.
@@ -208,7 +207,7 @@ out. The 8 September in its closing line is when the benchmark ran and stays as
 it is.
 
 **11 September 2026 — a third piece, and a date for the article.**
-[*tokenwise: When Asking Which Model to Use Pays for Itself*](../_posts/2026-09-11-tokenwise.md)
+[*The Price of Asking*](../_posts/2026-09-11-price-of-asking.md)
 went out on 11 September. It
 carries what asking for a route costs and the task size at which asking pays,
 which neither the launch post nor the article covers, so it splits on subject the

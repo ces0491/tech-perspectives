@@ -30,6 +30,11 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
+  # A post renamed after it went live keeps its old URL as `redirect_from` in
+  # its front matter, so links already shared, on LinkedIn or anywhere else,
+  # still land on it. On the GitHub Pages plugin list, so the build needs nothing
+  # extra.
+  - jekyll-redirect-from
 
 # jekyll-feed writes /feed.xml for everything, and one file per category named
 # here. R-bloggers syndicates a feed that carries R content and nothing else,
