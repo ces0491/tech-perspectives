@@ -20,13 +20,13 @@ A route runs on whatever model and effort your session is on, in a forked subage
 
 | Asking from | A route mid-session | Answer left in context |
 |---|---|---|
-| Sonnet 5, medium | $0.04 | 687 tokens |
-| Opus 5, high | $0.10 | 620 tokens |
-| Opus 5, xhigh | $0.14 | 826 tokens |
+| Sonnet 5, medium | $0.04 | 689 tokens |
+| Opus 5, high | $0.10 | 622 tokens |
+| Opus 5, xhigh | $0.14 | 828 tokens |
 
 Claude Code's model configuration docs put Max, Team Premium, Enterprise and API users on Opus 5 at high effort unless they change it, so the middle row is the default on those plans.
 
-The answer is carried on every later call until you clear. Anthropic's pricing page lists an Opus 5 cache read at $0.50 per million tokens, so 826 tokens comes to $0.0004 a call.
+The answer is carried on every later call until you clear. Anthropic's pricing page lists an Opus 5 cache read at $0.50 per million tokens, so 828 tokens comes to $0.0004 a call.
 
 Asking from a cheaper session costs less and gets a shorter answer. Sonnet 5 at medium recommended the same settings as the Opus sessions, in 178 and 200 words against 263 to 360.
 
