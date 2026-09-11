@@ -207,6 +207,16 @@ that is now live, so its front matter date moves to whenever it actually goes
 out. The 8 September in its closing line is when the benchmark ran and stays as
 it is.
 
+**11 September 2026 — a third piece, and a date for the article.**
+[*Penny Wise*](../_posts/2026-09-11-penny-wise.md) went out on 11 September. It
+carries what asking for a route costs and the task size at which asking pays,
+which neither the launch post nor the article covers, so it splits on subject the
+same way. The article is corrected against the published bench (the token
+figures, the review grader's four corrections, the debug and review test
+descriptions) and gains a paragraph on the plugin's own cost that links back to
+*Penny Wise*. It publishes from 14 September, the week after the launch, with its
+front matter date and filename moved to the day it ships.
+
 **Closes when:** the article is published, dated the day it shipped.
 
 ---

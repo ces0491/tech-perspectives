@@ -1,39 +1,64 @@
 # LinkedIn announcements for the tokenwise posts
 
-Two posts, so two announcements, per the 9 September 2026 decision in
+Three posts, so three announcements, per the 9 September 2026 decision in
 [blog-structure.md](blog-structure.md): the blog hosts the writing and LinkedIn
-says a new piece is out. Both bodies below are a hook and a link. A reader who
+says a new piece is out. Each body below is a hook and a link. A reader who
 already has the argument has no reason to click, so neither reproduces the piece
 it points at.
 
 Paste each body as-is: no markdown headings, link on the last line so the
 preview card resolves.
 
-They do not go out together. The launch announcement goes first, then the
-article's once *Marking My Own Homework* publishes. Announcing a thing and
-reflecting on what building it taught you are two different posts, and running
-them in the same week makes the launch read as a postmortem.
+They go out in order: the launch announcement, then *Penny Wise*, then the
+article's once *Marking My Own Homework* publishes, from 14 September.
+Announcing a thing and reflecting on what building it taught you are two
+different posts, and running them in the same week makes the launch read as a
+postmortem.
 
-Both posts are still in `_drafts/`, so neither URL resolves yet.
+The launch post and *Penny Wise* are live. *Marking My Own Homework* is in
+`_drafts/`, so its URL does not resolve yet.
 
 ---
 
 ## For *tokenwise for Claude Code*
 
-Leads on the usage limit, because on a subscription that is the resource a task
-spends.
+Leads on the escalation rule, which is the most useful thing in the post that is
+not its opening paragraph. An announcement that starts where the piece starts
+has already given a reader the first thing they would have clicked for.
 
 ---
 
-On a subscription the money is settled before the month starts. What you spend during it is your usage limit, and it goes on whatever you happen to point Claude Code at — including phases that would have finished on a cheaper setting.
+When Claude Code gets something wrong there are two failures behind it, and they take different fixes. If it failed with the context it had, it did not know enough, so change the model. If it skipped files or stopped early, it did not try hard enough, so raise the effort. I spent a long time treating those as one problem and reaching for the expensive model either way.
 
-Every API call re-sends the whole conversation. On my own Claude Code transcripts the input side runs 444 tokens for every one of output, almost all of it conversation being re-read from cache. What a task consumes is context size multiplied by call count, and the model and effort level you pick set the rate on top of that.
+That distinction is the spine of a Claude Code plugin I have just put up. You say what phase you are about to start, and it answers with the exact /model and /effort to type, whether to clear the context first, what to push into subagents, and what the cheaper choice gives up.
 
-That second half is what I built a Claude Code plugin for. It recommends a model and effort per phase of work, says what the cheaper choice gives up, and will not switch anything for you, because nothing can change a running session's model.
+It will not switch anything for you. Nothing can change a running session's model or effort, so it recommends and tells you what the recommendation costs.
 
-New piece on the blog, with the install:
+Five of its nine routing rows carry no measurement behind them, and the table says so in the row. The four that are measured come from a benchmark that changed the table: four of the eight claims I had written into it turned out to be wrong.
+
+On a subscription none of this arrives as a bill. It is a share of your month, and running out of limit on work that would have finished on a cheaper setting is what I built this to stop.
+
+Install and the reasoning:
 
 https://blog.sheetsolved.com/save-it-for-the-hard-part.html
+
+---
+
+## For *Penny Wise*
+
+Leads on the plugin costing something to use, which a reader of the launch
+announcement has not been asked to think about. The table and the bands stay in
+the piece.
+
+---
+
+A plugin that tells you which Claude model to use is itself a call to a Claude model, so asking has a cost. On a small enough task that cost is more than the cheaper setting saves, and you would have done better picking a setting yourself.
+
+I measured what a route costs from three Claude Code settings and set it against what the cheaper settings saved on my benchmark. A quick rename barely covered the cost of asking. A feature build, a bug fix and a code review each saved more than twice what the question cost.
+
+The chart, the task sizes where the line falls, and two free commands that check the figures:
+
+https://blog.sheetsolved.com/penny-wise.html
 
 ---
 
@@ -48,7 +73,7 @@ I wrote a framework for picking which Claude model and effort level to use for e
 
 I was wrong four times out of eight. Twice I had recommended a more expensive setting than the work needed, both times for a phase where being wrong felt costly.
 
-My graders were wrong twice before they were right, and both times the error would have made a more flattering story. One version scored a good code review answer at 1 out of 5 because it had formatted its findings across separate lines. Had I trusted it, I would have published that a cheaper model collapses on code review.
+My review grader was wrong four times, and the first two errors would both have made a more flattering story. One version scored a good code review answer at 1 out of 5 because it had formatted its findings across separate lines. Had I trusted it, I would have published that a cheaper model collapses on code review.
 
 Fifty-two graded runs, hidden tests written from the spec before any run, and the pass mark for each claim written down before that claim's data was read. Full write-up on the blog:
 
