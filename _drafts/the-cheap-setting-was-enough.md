@@ -71,7 +71,7 @@ The third error was mine, in the pre-registration. I wrote the test for "raise e
 
 There was also a stretch where 23 runs returned HTTP 429 because I hit my own session limit, and the summariser cheerfully scored every one of them as a task failure. Zero-dollar medians, verdicts flipping. A usage limit is not a failure to do the work, and the runner now says so.
 
-The benchmark also left out the plugin itself. The task runs loaded no plugins, so every saving above ignores what asking for a route costs. Once I measured it, a route in version 1.0.1 left 9.6K tokens in context for every later call, and cost about what moving a small chore to a cheaper model saved. The skill now runs in a forked subagent, so only its answer comes back, and [when a route pays for itself](penny-wise.html) is written up on its own.
+The benchmark also left out the plugin itself. The task runs loaded no plugins, so every saving above ignores what asking for a route costs. Once I measured it, a route in version 1.0.1 left 9.6K tokens in context for every later call, and cost about what moving a small chore to a cheaper model saved. The skill now runs in a forked subagent, so only its answer comes back, and [when a route pays for itself](tokenwise.html) is written up on its own.
 
 ## What I actually changed
 

@@ -6,7 +6,7 @@ title: Tech Perspectives
 
 Writing on tech and stats.
 
-## [Penny Wise: When Asking Which Model to Use Pays for Itself](./penny-wise.html)
+## [tokenwise: When Asking Which Model to Use Pays for Itself](./tokenwise.html)
 
 A tokenwise route has a cost of its own. What asking costs from three Claude Code settings, and the task size below which the answer costs more than it saves.
 

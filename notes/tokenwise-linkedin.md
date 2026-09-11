@@ -9,13 +9,13 @@ it points at.
 Paste each body as-is: no markdown headings, link on the last line so the
 preview card resolves.
 
-They go out in order: the launch announcement, then *Penny Wise*, then the
+They go out in order: the launch announcement, then the route-cost post, then the
 article's once *Marking My Own Homework* publishes, from 14 September.
 Announcing a thing and reflecting on what building it taught you are two
 different posts, and running them in the same week makes the launch read as a
 postmortem.
 
-The launch post and *Penny Wise* are live. *Marking My Own Homework* is in
+The launch post and the route-cost post are live. *Marking My Own Homework* is in
 `_drafts/`, so its URL does not resolve yet.
 
 ---
@@ -44,7 +44,7 @@ https://blog.sheetsolved.com/save-it-for-the-hard-part.html
 
 ---
 
-## For *Penny Wise*
+## For *tokenwise: When Asking Which Model to Use Pays for Itself*
 
 Leads on the plugin costing something to use, which a reader of the launch
 announcement has not been asked to think about. The table and the bands stay in
@@ -58,7 +58,7 @@ I measured what a route costs from three Claude Code settings and set it against
 
 The chart, the task sizes where the line falls, and two free commands that check the figures:
 
-https://blog.sheetsolved.com/penny-wise.html
+https://blog.sheetsolved.com/tokenwise.html
 
 ---
 

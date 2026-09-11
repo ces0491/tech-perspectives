@@ -1,12 +1,12 @@
 ---
-title: 'Penny Wise: When Asking Which Model to Use Pays for Itself'
+title: 'tokenwise: When Asking Which Model to Use Pays for Itself'
 description: >-
   A tokenwise route has a cost of its own. What asking costs from three Claude Code settings, and the task size below which the answer costs more than it saves.
 date: 2026-09-11
 tags: [ai, claude, tooling]
 ---
 
-# Penny Wise: When Asking Which Model to Use Pays for Itself
+# tokenwise: When Asking Which Model to Use Pays for Itself
 
 [tokenwise](save-it-for-the-hard-part.html) answers one question for Claude Code: which model and effort level a piece of work needs. The answer comes from a model as well, so asking has a cost. On a small enough task that cost is more than the cheaper setting saves, and you would have done better picking a setting yourself.
 
@@ -18,7 +18,7 @@ I measured the cost of asking from three session settings and set it against wha
 
 A route runs on whatever model and effort your session is on, in a forked subagent, so only its answer comes back into the conversation.
 
-| Asking from | A route mid-session | Answer left in context |
+| Asking from | A route mid-session | Context carried afterwards |
 |---|---|---|
 | Sonnet 5, medium | $0.04 | 689 tokens |
 | Opus 5, high | $0.10 | 622 tokens |
@@ -26,13 +26,13 @@ A route runs on whatever model and effort your session is on, in a forked subage
 
 Claude Code's model configuration docs put Max, Team Premium, Enterprise and API users on Opus 5 at high effort unless they change it, so the middle row is the default on those plans.
 
-The answer is carried on every later call until you clear. Anthropic's pricing page lists an Opus 5 cache read at $0.50 per million tokens, so 828 tokens comes to $0.0004 a call.
+That context is carried on every later call until you clear. Anthropic's pricing page lists an Opus 5 cache read at $0.50 per million tokens, so 828 tokens comes to $0.0004 a call.
 
-Asking from a cheaper session costs less and gets a shorter answer. Sonnet 5 at medium recommended the same settings as the Opus sessions, in 178 and 200 words against 263 to 360.
+Each session routed the same two short task descriptions. Sonnet 5 at medium recommended the same settings for both as the Opus sessions did, at less than half their cost. Its answers ran to 178 and 200 words against 263 to 360 for Opus, though it left more in context than Opus at high.
 
 ## What a cheaper setting saves
 
-The benchmark ran four tasks against a small invoicing library, each on the expensive setting a routing claim was tested against and on the setting a route recommends. Every run in these cells passed its grader.
+Four of the benchmark's tasks, all against a small invoicing library, ran on the expensive setting a routing claim was tested against and on the setting a route recommends. Every run in these cells passed its grader.
 
 | Task | Moved from | Recommended | Saved |
 |---|---|---|---|
@@ -45,7 +45,7 @@ The median saving across the four is 70%.
 
 ## Where the line falls
 
-A route is told to read only its own instructions and the one-line description you give it, so the size of the work should not reach its cost. The benchmark priced it on two short descriptions. The saving does grow with the work. With a 70% saving, a route breaks even on a task whose cost on your current setting is the route's cost divided by 0.7, and it saves more than twice its cost only on tasks twice that size.
+A route is told to read only its own instructions and the one-line description you give it, so the size of the work should not change its cost, though the benchmark only priced it on short descriptions. What it saves grows with the work. With a 70% saving, a route breaks even on a task whose cost on your current setting is the route's cost divided by 0.7, and it saves more than twice its cost only on tasks twice that size.
 
 | Asking from | Costs more than it saves below | Saves less than twice its cost below |
 |---|---|---|
@@ -53,14 +53,16 @@ A route is told to read only its own instructions and the one-line description y
 | Opus 5, high | $0.15 | $0.30 |
 | Opus 5, xhigh | $0.20 | $0.39 |
 
+The bands are worked from the unrounded route costs, so dividing the rounded ones above can land a cent out.
+
 The rename lands in the middle band. It cost $0.25 on Opus at xhigh, moving it to Sonnet at low saved $0.17, and asking cost $0.14, so asking came out $0.03 ahead. That is a gain too small to be worth the typing. The feature, the bug fix and the review each landed where a route saves more than twice its cost.
 
 A route saves nothing when the session is already on the setting it recommends, and then its whole cost is lost whatever the size of the task.
 
 In practice that comes down to three habits:
 
-- For a quick edit, pick Sonnet or Haiku at low effort yourself.
-- For a feature, a debugging session or a review, ask at the start of the phase, just before a `/clear`, so the answer is not carried into the work.
+- For a quick edit, pick a setting yourself: Sonnet at low effort, or Haiku.
+- For a feature, a debugging session or a review, ask at the start of the phase, then `/clear` before you switch, so the switch does not re-process the conversation on the new setting.
 - When you already know which setting the work needs, skip the question.
 
 ## What the numbers do not cover
@@ -71,6 +73,6 @@ The dollar figures are Claude Code's list prices. On a subscription they are a w
 
 Changing model on a conversation already under way re-processes all of it on the new model, and so does changing effort on most models, according to Claude Code's prompt caching docs. Straight after a `/clear`, only the system prompt and project context are re-processed, as in a new session. A switch without one adds a cost these figures leave out.
 
-The route costs come from one run per setting. The previous version's route, run twice on identical text, cost $0.155 and $0.129, $0.025 apart, which is close to the rename's $0.03 margin. Sonnet 5 at high, the default on Pro and Team Standard plans, was not measured.
+The route costs come from one run per setting. The previous version's route, run twice on identical text, cost $0.155 and $0.129, so two runs of one route can differ by nearly the rename's $0.03 margin. Sonnet 5 at high, the default on Pro and Team Standard plans, was not measured.
 
 *Task runs on Claude Code 2.1.263, 8 September 2026. Routes on tokenwise 1.1.2 and Claude Code 2.1.267, 11 September 2026. The code, the transcripts and the chart's generator are at [github.com/ces0491/tokenwise](https://github.com/ces0491/tokenwise), and two commands check the figures without spending anything: `node bench/breakeven.mjs --check` confirms the chart follows from the committed runs, and `node bench/skill-cost.mjs --compare 1.1.2,1.1.2-opus-high@1.1.2,1.1.2-sonnet-medium@1.1.2` prints the route costs from the saved sessions.*
