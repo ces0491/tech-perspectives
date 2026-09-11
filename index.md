@@ -6,6 +6,12 @@ title: Tech Perspectives
 
 Writing on tech and stats.
 
+## [Penny Wise: When Asking Which Model to Use Pays for Itself](./penny-wise.html)
+
+A tokenwise route has a cost of its own. What asking costs from three Claude Code settings, and the task size below which the answer costs more than it saves.
+
+*(September 11, 2026)*
+
 ## [tokenwise for Claude Code](./save-it-for-the-hard-part.html)
 
 On a subscription the cost of a task is a share of your usage limit. A Claude Code plugin for not spending that share on work that never needed it.
