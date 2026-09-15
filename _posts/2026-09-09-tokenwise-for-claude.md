@@ -19,23 +19,25 @@ That leaves two levers. Context size is mostly a discipline problem: when you cl
 
 ## What it does
 
-It adds one skill:
+Its core is one skill:
 
 ```
 /tokenwise:route implement the plan in docs/plan.md, about 12 files
 ```
 
-The answer names a model and an effort level as the exact `/model` and `/effort` commands to type, says whether to clear the context first and what the switch costs if you don't, says what to push into subagents, says what the cheaper choice gives up, and gives you one check to run to know the phase is finished before you trust it.
+The answer names a model and an effort level and how to switch to them for the session, says whether to clear the context first and what the switch costs if you don't, says what to push into subagents, says what the cheaper choice gives up, and gives you one check to run to know the phase is finished before you trust it.
 
 Every row of the routing table underneath it names where to start, and the seven rows with somewhere to escalate to name what has to go wrong before you move. The escalation rule comes from Anthropic's own guidance: if the model failed with the context it had, it did not know enough, so change the model; if it skipped files or stopped early, it did not try hard enough, so raise the effort. I used to treat those as one problem.
 
 Reviewing a diff starts on the expensive model at low effort. High effort on a diff you can hold in your head buys more turns spent re-reading it, and the bound on what a review can usefully do is the subject of [How Long Is a Piece of String?](bounding-ai-code-reviews.html).
 
+A second skill, `/tokenwise:setup`, makes Sonnet 5 at medium the default for new sessions if you say yes. Two hooks warn when resuming a conversation or switching model is about to re-send it to an empty cache, and write nothing into the conversation.
+
 ## What it will not do
 
 It cannot switch anything for you. Nothing can change a running session's model or effort level — that is `/model` and `/effort`, typed by you. The skill recommends, and tells you what the recommendation gives up.
 
-It ships no hooks either. What it does add to every session is the skill's description, 156 tokens, so that Claude knows the skill is there. That also means Claude can run the skill without being told to, and in testing it did when a session asked in plain words which model and effort to use.
+What the plugin does add to every session is the route skill's description, 153 tokens, so that Claude knows the skill is there. That also means Claude can run the skill without being told to, and in testing it did when a session asked in plain words which model and effort to use.
 
 ## What it does not know
 
