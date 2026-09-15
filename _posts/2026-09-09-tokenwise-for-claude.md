@@ -35,7 +35,7 @@ Reviewing a diff starts on the expensive model at low effort. High effort on a d
 
 It cannot switch anything for you. Nothing can change a running session's model or effort level — that is `/model` and `/effort`, typed by you. The skill recommends, and tells you what the recommendation gives up.
 
-It ships no hooks either. What it does add to every session is the skill's description, 131 tokens, so that Claude knows the skill is there. That also means Claude can run the skill without being told to, and in testing it did when a session asked in plain words which model and effort to use.
+It ships no hooks either. What it does add to every session is the skill's description, 156 tokens, so that Claude knows the skill is there. That also means Claude can run the skill without being told to, and in testing it did when a session asked in plain words which model and effort to use.
 
 ## What it does not know
 

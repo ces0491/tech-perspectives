@@ -21,15 +21,15 @@ A route runs on whatever model and effort your session is on, in a forked subage
 
 | Asking from | A route mid-session | Context carried afterwards |
 |---|---|---|
-| Sonnet 5, medium | $0.04 | 689 tokens |
-| Opus 5, high | $0.10 | 622 tokens |
-| Opus 5, xhigh | $0.14 | 828 tokens |
+| Sonnet 5, medium | $0.04 | 655 tokens |
+| Opus 5, high | $0.10 | 663 tokens |
+| Opus 5, xhigh | $0.11 | 780 tokens |
 
 Claude Code's model configuration docs put Max, Team Premium, Enterprise and API users on Opus 5 at high effort unless they change it, so the middle row is the default on those plans.
 
-That context is carried on every later call until you clear. Anthropic's pricing page lists an Opus 5 cache read at $0.50 per million tokens, so 828 tokens comes to $0.0004 a call.
+That context is carried on every later call until you clear. Anthropic's pricing page lists an Opus 5 cache read at $0.50 per million tokens, so 780 tokens comes to $0.0004 a call.
 
-Each session routed the same two short task descriptions. Sonnet 5 at medium recommended the same settings for both as the Opus sessions did, at less than half their cost. Its answers ran to 178 and 200 words against 263 to 360 for Opus, though it left more in context than Opus at high.
+Each session routed the same two short task descriptions. Sonnet 5 at medium recommended the same settings for both as the Opus sessions did, at less than half their cost. Its answers ran to 160 and 193 words against 267 to 325 for Opus.
 
 ## What a cheaper setting saves
 
@@ -50,13 +50,13 @@ A route is told to read only its own instructions and the one-line description y
 
 | Asking from | Costs more than it saves below | Saves less than twice its cost below |
 |---|---|---|
-| Sonnet 5, medium | $0.06 | $0.12 |
-| Opus 5, high | $0.15 | $0.30 |
-| Opus 5, xhigh | $0.20 | $0.39 |
+| Sonnet 5, medium | $0.05 | $0.11 |
+| Opus 5, high | $0.14 | $0.28 |
+| Opus 5, xhigh | $0.16 | $0.31 |
 
 The bands are worked from the unrounded route costs, so dividing the rounded ones above can land a cent out.
 
-The rename lands in the middle band. It cost $0.25 on Opus at xhigh, moving it to Sonnet at low saved $0.17, and asking cost $0.14, so asking came out $0.03 ahead. That is a gain too small to be worth the typing. The feature, the bug fix and the review each landed where a route saves more than twice its cost.
+The rename lands in the middle band. It cost $0.25 on Opus at xhigh, moving it to Sonnet at low saved $0.17, and asking cost $0.11, so asking came out $0.06 ahead. That is a gain too small to be worth the typing. The feature, the bug fix and the review each landed where a route saves more than twice its cost.
 
 A route saves nothing when the session is already on the setting it recommends, and then its whole cost is lost whatever the size of the task.
 
@@ -74,6 +74,6 @@ The dollar figures are Claude Code's list prices. On a subscription they are a w
 
 Changing model on a conversation already under way re-processes all of it on the new model, and so does changing effort on most models, according to Claude Code's prompt caching docs. Straight after a `/clear`, only the system prompt and project context are re-processed, as in a new session. A switch without one adds a cost these figures leave out.
 
-The route costs come from one run per setting. The previous version's route, run twice on identical text, cost $0.155 and $0.129, so two runs of one route can differ by nearly the rename's $0.03 margin. Sonnet 5 at high, the default on Pro and Team Standard plans, was not measured.
+The route costs come from one run per setting. The 1.1.1 route, run twice on identical text, cost $0.155 and $0.129, so two runs of one route can differ by $0.025, against the rename's $0.06 margin. Sonnet 5 at high, the default on Pro and Team Standard plans, was not measured.
 
-*Task runs on Claude Code 2.1.263, 8 September 2026. Routes on tokenwise 1.1.2 and Claude Code 2.1.267, 11 September 2026. The code, the transcripts and the chart's generator are at [github.com/ces0491/tokenwise](https://github.com/ces0491/tokenwise), and two commands check the figures without spending anything: `node bench/breakeven.mjs --check` confirms the chart follows from the committed runs, and `node bench/skill-cost.mjs --compare 1.1.2,1.1.2-opus-high@1.1.2,1.1.2-sonnet-medium@1.1.2` prints the route costs from the saved sessions.*
+*Task runs on Claude Code 2.1.263, 8 September 2026. Routes on tokenwise 1.2.0 and Claude Code 2.1.270. The code, the transcripts and the chart's generator are at [github.com/ces0491/tokenwise](https://github.com/ces0491/tokenwise), and two commands check the figures without spending anything: `node bench/breakeven.mjs --check` confirms the chart follows from the committed runs, and `node bench/skill-cost.mjs --compare 1.2.0,1.2.0-opus-high@1.2.0,1.2.0-sonnet-medium@1.2.0` prints the route costs from the saved sessions.*
