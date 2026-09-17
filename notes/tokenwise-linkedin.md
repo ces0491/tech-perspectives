@@ -1,6 +1,6 @@
 # LinkedIn announcements for the tokenwise posts
 
-Three posts, so three announcements, per the 9 September 2026 decision in
+Two posts, so two announcements, per the 9 September 2026 decision in
 [blog-structure.md](blog-structure.md): the blog hosts the writing and LinkedIn
 says a new piece is out. Each body below is a hook and a link. A reader who
 already has the argument has no reason to click, so neither reproduces the piece
@@ -9,14 +9,9 @@ it points at.
 Paste each body as-is: no markdown headings, link on the last line so the
 preview card resolves.
 
-They go out in order: the launch announcement, then the route-cost post, then the
-article's once *Marking My Own Homework* publishes, from 14 September.
-Announcing a thing and reflecting on what building it taught you are two
-different posts, and running them in the same week makes the launch read as a
-postmortem.
-
-The launch post and the route-cost post are live. *Marking My Own Homework* is in
-`_drafts/`, so its URL does not resolve yet.
+They go out in order: the launch announcement, then the route-cost post. Both
+posts are live. *Marking My Own Homework* was dropped on 16 September 2026, so
+it has no announcement.
 
 ---
 
@@ -60,21 +55,3 @@ The chart, the task sizes where the line falls, and two free commands that check
 
 https://blog.sheetsolved.com/price-of-asking.html
 
----
-
-## For *Marking My Own Homework*
-
-Leads on being wrong, because that is the reason to click. The tables, the costs
-and the grader failures stay in the article.
-
----
-
-I wrote a framework for picking which Claude model and effort level to use for each kind of coding work. Then I built a benchmark to check whether I was right.
-
-I was wrong four times out of eight. Twice I had recommended a more expensive setting than the work needed, both times for a phase where being wrong felt costly.
-
-My review grader was wrong four times, and the first two errors would both have made a more flattering story. One version scored a good code review answer at 1 out of 5 because it had formatted its findings across separate lines. Had I trusted it, I would have published that a cheaper model collapses on code review.
-
-Fifty-two graded runs, hidden tests written from the spec before any run, and the pass mark for each claim written down before that claim's data was read. Full write-up on the blog:
-
-https://blog.sheetsolved.com/the-cheap-setting-was-enough.html

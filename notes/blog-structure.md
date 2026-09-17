@@ -217,7 +217,9 @@ descriptions) and gains a paragraph on the plugin's own cost that links back to
 the route-cost post. It publishes from 14 September, the week after the launch, with its
 front matter date and filename moved to the day it ships.
 
-**Closes when:** the article is published, dated the day it shipped.
+**Closed 16 September 2026: the article is dropped.** Ces deleted the draft
+unpublished. The launch post and *The Price of Asking* are the tokenwise pieces,
+and neither links to the article.
 
 ---
 
