@@ -2,6 +2,7 @@
 
 ## Articles
 
+- [Lost in Translation: What Your Agent Gets When You Share a Document](./_posts/2026-09-17-lost-in-translation.md) *(September 17, 2026)*
 - [The Price of Asking: When a tokenwise Route Pays for Itself](./_posts/2026-09-11-price-of-asking.md) *(September 11, 2026)*
 - [tokenwise for Claude Code](./_posts/2026-09-09-tokenwise-for-claude.md) *(September 9, 2026)*
 - [Pulling on Threads: Scoring Bands I Never Checked](./_posts/2026-09-04-scoring-bands-i-never-checked.md) *(September 4, 2026)*

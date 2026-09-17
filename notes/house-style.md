@@ -78,3 +78,16 @@ A figure quoted from a source stays that source's claim until it is checked.
 Attribute it, or verify it and state it. This is the CLAUDE.md rule; it is
 repeated here because the blog is where it keeps mattering — a number in prose
 does not read as a claim the way a number in a table does.
+
+## Journey or answer first
+
+**Decide by what the post is for.** If it shows how I went about doing
+something, the journey is the content: what set it off, what I tried, what I
+got wrong and how I found out. *Pulling on Threads: Scoring Bands I Never
+Checked* is this kind. If it offers an insight, the reader wants the so-what:
+a line or two of context, then the takeaway, then the evidence, then the
+limits. How I got there comes out unless the reader needs it to trust the
+result. *Don't Judge a Book by Its Cover: Handing a Review to Claude Code* is
+this kind.
+
+If a post seems to be both, ask which one the reader came for before drafting.

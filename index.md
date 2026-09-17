@@ -6,6 +6,12 @@ title: Tech Perspectives
 
 Writing on tech and stats.
 
+## [Lost in Translation: What Your Agent Gets When You Share a Document](./lost-in-translation.html)
+
+Send an agent the source. In my tests a web link gave it a short summary, an artifact link failed or cost up to twice the page, a Quarto page defeated its Read tool, and PDFs broke file paths.
+
+*(September 17, 2026)*
+
 ## [The Price of Asking: When a tokenwise Route Pays for Itself](./price-of-asking.html)
 
 A tokenwise route has a cost of its own. What asking costs from three Claude Code settings, and the task size below which the answer costs more than it saves.
