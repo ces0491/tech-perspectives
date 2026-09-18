@@ -2,6 +2,8 @@
 
 ## Articles
 
+- [In the Long Run: Which Doomsday Warnings Are Worth Having](./_posts/2026-09-18-doomsday-warnings.md) *(September 18, 2026)*
+- [Running to Stand Still: Why Perfect Code Still Gets Patched](./_posts/2026-09-18-running-to-stand-still.md) *(September 18, 2026)*
 - [Lost in Translation: What Your Agent Gets When You Share a Document](./_posts/2026-09-17-lost-in-translation.md) *(September 17, 2026)*
 - [The Price of Asking: When a tokenwise Route Pays for Itself](./_posts/2026-09-11-price-of-asking.md) *(September 11, 2026)*
 - [tokenwise for Claude Code](./_posts/2026-09-09-tokenwise-for-claude.md) *(September 9, 2026)*

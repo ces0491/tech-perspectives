@@ -4,6 +4,18 @@ title: Tech Perspectives
 
 Writing on tech and stats.
 
+## [In the Long Run: Which Doomsday Warnings Are Worth Having](./doomsday-warnings.html)
+
+Warnings about disaster do the most good when they say how it would happen and what to do about it. What economic history, warning research, forecasting and AI safety know about that.
+
+*(September 18, 2026)*
+
+## [Running to Stand Still: Why Perfect Code Still Gets Patched](./running-to-stand-still.html)
+
+If AI ends up writing near-perfect code, do software updates become new features only? No. Some change you choose and some the world forces on you, and AI may soon handle the forced kind on its own.
+
+*(September 18, 2026)*
+
 ## [Lost in Translation: What Your Agent Gets When You Share a Document](./lost-in-translation.html)
 
 Send an agent the source. In my tests a web link gave it a short summary, an artifact link failed or cost up to twice the page, a Quarto page defeated its Read tool, and PDFs broke file paths.
