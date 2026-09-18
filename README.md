@@ -47,6 +47,12 @@ git config core.hooksPath .githooks
 The deploy workflow regenerates them on push as well, so the hook saves a
 round trip rather than being load-bearing.
 
+The theme is `jekyll-theme-minimal`, with its two layouts overridden in
+`_layouts/` to add a site nav, a contents list on posts with three or more
+sections (`_includes/toc.html`), links to the older and newer post, and a
+back-to-top link. The additions are styled in `assets/css/style.scss`,
+which imports the theme's stylesheet first.
+
 The R article is knitted, not written by hand: its figures, tables and
 printed output come from running the code. The source is
 `_source/tidylearn-reporting.Rmd` and the post is generated from it, so
