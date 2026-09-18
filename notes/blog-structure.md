@@ -56,6 +56,11 @@ so the index copy put it on the home page twice. `_config.yml` stays the only
 place the line lives, so the sidebar, the feed subtitle and the meta description
 still cannot disagree.
 
+**18 September 2026 — the site description is "Ces's random twalks on tech and stats."**
+Ces's wording, replacing "Writing on tech and stats." It borrows the short
+shelf's name for the whole blog. `FALLBACK_DESCRIPTION` in the hub's
+`src/lib/writing.ts` carries the same line, for when the feed can't be read.
+
 **3 September 2026 — IQR #001 is written and not published.** See
 [iqr-001-case-file.md](iqr-001-case-file.md).
 
