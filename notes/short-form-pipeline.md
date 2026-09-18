@@ -1,6 +1,8 @@
 # Short-form pipeline
 
-Banked material for Random Twalk. `IDEAS.md` holds essay concepts — things to
+Banked ideas for short posts. There is no separate shelf for them any more
+(see the 18 September 2026 entry in `blog-structure.md`): a short piece is an
+ordinary post, listed with the rest. `IDEAS.md` holds essay concepts — things to
 think through. These are different: a quick bite that lands on the observation
 itself, in a paragraph, with no set-up and nothing a reader has to have read
 first. Closer to a social post than to a short article.

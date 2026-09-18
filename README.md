@@ -30,11 +30,9 @@ title, description, date and tags in front matter. The permalink drops the
 date prefix, so `_posts/2026-06-02-partly-cloudy.md` publishes at
 `/partly-cloudy.html`.
 
-A post carrying `random-twalk` in its `categories` is a short piece: it is
-listed under that heading on `index.md` and gets its own feed at
-`/feed/random-twalk.xml`. Categories are feed memberships rather than one
-shelf per post, so a short R piece carries `[R, random-twalk]` and appears
-in both that feed and `/feed/R.xml`.
+Short pieces and long ones are listed together, newest first. A post
+carrying `R` in its `categories` also goes into `/feed/R.xml`, the feed
+R-bloggers syndicates.
 
 `README.md` and `index.md` are both written by `scripts/update-readme.js`.
 Edit the articles, not these two files. To regenerate them on every commit,

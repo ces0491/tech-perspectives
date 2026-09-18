@@ -55,9 +55,9 @@ function parseFrontMatter(content) {
     }
 
     // A flow sequence, which is how `categories` and `tags` are written.
-    // Read as an array so a caller can ask whether a category is present
-    // rather than matching against the raw text, where `random-twalk` would
-    // also match a category merely containing it.
+    // Read as an array so a caller can ask whether an item is present rather
+    // than matching against the raw text, where `R` would also match any
+    // item merely containing it.
     if (value.startsWith('[') && value.endsWith(']')) {
       fields[key] = value
         .slice(1, -1)
@@ -131,12 +131,11 @@ function getArticles() {
     const title = front.title || extractTitle(content);
     const date = (front.date && formatIsoDate(front.date)) || extractDate(content);
     const description = front.description || null;
-    const categories = Array.isArray(front.categories) ? front.categories : [];
 
     if (title) {
       const slug = file.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/\.md$/, '');
       articles.push({
-        file, slug, title, date, description, categories, parsedDate: parseDate(date),
+        file, slug, title, date, description, parsedDate: parseDate(date),
       });
     }
   }
@@ -145,16 +144,6 @@ function getArticles() {
   return articles;
 }
 
-
-/**
- * The short-form shelf, which is a category rather than a tag so that
- * jekyll-feed can give it its own feed. See the note in `_config.yml`.
- */
-const SHORT_FORM_CATEGORY = 'random-twalk';
-
-const isShortForm = (article) => article.categories.includes(SHORT_FORM_CATEGORY);
-
 module.exports = {
-  getArticles, parseFrontMatter, formatIsoDate, isShortForm,
-  SHORT_FORM_CATEGORY, POSTS_DIR, ROOT_DIR,
+  getArticles, parseFrontMatter, formatIsoDate, POSTS_DIR, ROOT_DIR,
 };

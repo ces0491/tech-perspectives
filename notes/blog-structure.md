@@ -56,10 +56,18 @@ so the index copy put it on the home page twice. `_config.yml` stays the only
 place the line lives, so the sidebar, the feed subtitle and the meta description
 still cannot disagree.
 
-**18 September 2026 — the site description is "Ces's random twalks on tech and stats."**
-Ces's wording, replacing "Writing on tech and stats." It borrows the short
-shelf's name for the whole blog. `FALLBACK_DESCRIPTION` in the hub's
+**18 September 2026 — Random Twalk is the whole blog, and the short shelf is retired.**
+The site description is "Ces's random twalks on tech and stats.", replacing
+"Writing on tech and stats."
+*Because:* the long-form/short-form split was more structure than the writing
+needs. Some pieces are short and silly, some are long with research and
+references, and they're all random twalks.
+*What follows:* the `random-twalk` category, its feed at
+`/feed/random-twalk.xml` and the index's two-section layout are gone. Nothing
+had been published on the shelf, so the feed was empty when it went. The index
+is one list, newest first. `FALLBACK_DESCRIPTION` in the hub's
 `src/lib/writing.ts` carries the same line, for when the feed can't be read.
+The shelf entries above are kept as the record of what was decided at the time.
 
 **3 September 2026 — IQR #001 is written and not published.** See
 [iqr-001-case-file.md](iqr-001-case-file.md).
