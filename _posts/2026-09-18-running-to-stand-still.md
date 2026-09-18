@@ -6,7 +6,7 @@ date: 2026-09-18
 tags: [ai, software, security]
 ---
 
-It seems that most code is now written by machines rather than people, and it keeps getting better. That got me wondering whether it could get good enough that software updates would only ever add features. Perfect code would have no bugs to fix, and no vulnerabilities to patch either. But could such a thing as perfect code ever exist?
+It seems that a growing share of code is now written by machines rather than people, and it keeps getting better. That got me wondering whether it could get good enough that software updates would only ever add features. Perfect code would have no bugs to fix, and no vulnerabilities to patch either. But could such a thing as perfect code ever exist?
 
 I've concluded not, but for a reason other than I initially expected. Code can get very close to perfect, as long as perfect means doing exactly what it was meant to do at the time it was written. Updates still won't be features only, because some changes you choose and others the world forces on you. What AI may change is who handles the forced ones. They could turn into something closer to an immune response, happening in the background without anyone deciding on it.
 
