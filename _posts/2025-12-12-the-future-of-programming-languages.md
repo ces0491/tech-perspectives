@@ -6,8 +6,6 @@ date: 2025-12-12
 tags: [languages, ai]
 ---
 
-# Musings on the Future of Programming Languages
-
 *A follow-up to [AI: The Final Nail in the Coffin for Proprietary Software Languages?](ai-end-of-proprietary-platforms.html)*
 
 A few months back, I suggested that AI would accelerate the decline of proprietary analysis languages like Stata and MATLAB. But I've been thinking about this more, and went down the rabbit hole of considering the future of programming languages in general. So, putting digital pen to paper, I've jotted down some thoughts on why we may continue to need human-readable code at all.

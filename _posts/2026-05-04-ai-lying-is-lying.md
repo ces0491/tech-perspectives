@@ -6,8 +6,6 @@ date: 2026-05-04
 tags: [ai]
 ---
 
-# Lying Is Lying: AI and the Standard We Already Apply
-
 AI seems to be held to an impossible standard. We expect every output to be flawless — citations correct, claims verified, no hallucinations — while humans make mistakes constantly without facing anything like the same scrutiny. If AI is trying to approximate humanness, isn't fallibility part of the package?
 
 The more I pulled at this — partly in conversation with Anthropic's Claude — the more I think the framing was wrong. The worry underneath it is real enough. The premise doesn't survive contact with how we actually judge each other, and it comes apart in two places.

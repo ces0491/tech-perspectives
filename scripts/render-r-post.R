@@ -86,9 +86,6 @@ yaml_lines <- src[(ends[1] + 1L):(ends[2] - 1L)]
 # `output:` drives the render and has no business in the published post.
 yaml_lines <- yaml_lines[!grepl("^output:", yaml_lines)]
 
-title <- sub("^title:\\s*", "", grep("^title:", yaml_lines, value = TRUE)[1])
-title <- gsub("^['\"]|['\"]$", "", title)
-
 # --- gt: one stylesheet, hoisted, scoped by class ---------------------------
 
 blocks <- regmatches(md, gregexpr("(?s)<style>.*?</style>", md, perl = TRUE))[[1]]
@@ -118,7 +115,9 @@ md <- gsub(paste0("!\\[\\]\\(", FIG_DIR, "([^)]+)\\)"),
 
 # --- assemble ---------------------------------------------------------------
 
-out <- c("---", yaml_lines, "---", "", paste("#", title), "")
+# No `# title` heading: the theme's post layout prints `title` as the page's
+# h1, so one in the body shows the title twice.
+out <- c("---", yaml_lines, "---", "")
 if (nzchar(style)) out <- c(out, style, "")
 out <- c(out, trimws(md, which = "left"))
 

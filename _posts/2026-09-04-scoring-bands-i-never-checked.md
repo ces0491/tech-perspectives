@@ -7,8 +7,6 @@ categories: [R]
 tags: [r, cran, scoring]
 ---
 
-# Pulling on Threads: Scoring Bands I Never Checked
-
 I have a dashboard that [scores CRAN packages](is-this-package-safe-to-depend-on.html) on how reasonable they may be to include in your next project. Monthly downloads are worth 20 of its 100 points, and I banded them by powers of ten: under 100, then 1,000, then 10,000, then 100,000. Five bands across four orders of magnitude, for a quantity that runs from a handful to millions. It looked about right, and I didn't give it any further thought.
 
 What sent me back to it was a different bug. The momentum factor had been dividing a package's lifetime downloads by twelve months whether or not it had been on CRAN that long, so a package four months old got a baseline three times too low and its decline came out as growth. Pulling on that thread began to expose a few other gaps.

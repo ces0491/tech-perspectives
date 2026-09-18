@@ -59,7 +59,11 @@ post to add one is a change to a live page for no reader's benefit.
 
 ## Titles
 
-The front matter `title` and the `# H1` are the same string, in every post.
+The front matter `title` is the post's only title. The theme's post layout
+prints it as the page's h1, above the date and byline, so the body starts with
+its first paragraph and carries no `# heading` of its own. One there shows the
+title twice on the page. `scripts/validate.js` fails a post whose body has one,
+and `scripts/render-r-post.R` no longer writes one into the knitted post.
 
 The `Idiom: descriptive half` shape is established — *Everything Old Is New
 Again: Technology's Fashion Cycles*, *How Long Is a Piece of String? Bounding

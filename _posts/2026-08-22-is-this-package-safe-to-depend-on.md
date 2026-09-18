@@ -7,8 +7,6 @@ categories: [R]
 tags: [r, cran, dependencies, shiny]
 ---
 
-# Is This Package Safe to Depend On?
-
 Adding a package to `DESCRIPTION` takes a few seconds. Taking one back out, three years later, can take weeks (probably just days with some AI assistance).
 
 The decision to depend on something is made in a moment, usually while you're focused on something else entirely — you need a date parser, someone on Stack Overflow (remember Stack Overflow?) used this one, it works, move on. But every so often, the package stops building against the current R release, or the maintainer's email starts bouncing, or CRAN archives it and that glossed-over reverse dependency becomes a proper headache.

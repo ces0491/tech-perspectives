@@ -144,7 +144,9 @@ const SHORT_FORM_HEADING = 'Random Twalk';
 const SHORT_FORM_BLURB = 'Short pieces on whatever turns up, usually something small I went and checked. [Feed](/feed/random-twalk.xml)';
 
 function generateIndex(articles) {
-  let content = '---\ntitle: Tech Perspectives\n---\n\n# Tech Perspectives\n\n';
+  // No `# Tech Perspectives`: the theme's sidebar already prints the site title
+  // as an h1 on every page, so one here shows it twice.
+  let content = '---\ntitle: Tech Perspectives\n---\n\n';
 
   const short = articles.filter(isShortForm);
   const essays = articles.filter((a) => !isShortForm(a));

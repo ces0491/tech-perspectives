@@ -6,8 +6,6 @@ date: 2026-09-03
 tags: [data, charts, ai, interquartile-rage]
 ---
 
-# A Picture of the Hypothesis
-
 This is the first of these, so a word on what it is. I keep seeing charts that look like analysis and aren't. What holds my attention is never the chart itself, it's the gap between what the picture claims to measure and what could be measured at all. Interquartile Rage is me working through those one at a time. The rule I'm holding myself to: go after the artefact, never the person who posted it.
 
 So, the artefact.

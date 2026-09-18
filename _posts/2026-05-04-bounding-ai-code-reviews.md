@@ -6,8 +6,6 @@ date: 2026-05-04
 tags: [ai, code-review]
 ---
 
-# How Long Is a Piece of String? Bounding AI Code Reviews
-
 I've been using Claude Code as my main collaborator on a few tasks for the last few months. Last week I asked it to do an "ultrathink review" of a project — its term for a deeper-than-usual analysis. It came back with 27 findings: critical auth gaps, mislabeled fields, missing test coverage, spec drift, a long tail of nits.
 
 Substantial. Useful. I noted them down. Then I asked something I'd been thinking about but never bothered asking before:

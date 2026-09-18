@@ -5,6 +5,7 @@
 _site/
 .jekyll-cache/
 .jekyll-metadata
+.sass-cache/
 
 # Node (defensive — scripts/update-readme.js has no deps today, but might later)
 node_modules/

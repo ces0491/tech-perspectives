@@ -6,8 +6,6 @@ date: 2026-09-17
 tags: [ai, claude, tooling]
 ---
 
-# Lost in Translation: What Your Agent Gets When You Share a Document
-
 I used to write for people, but now more of the documents I share pass through a person on their way to an agent. I review an engineer's work with Claude, the engineer reads the report (maybe), and then hands it to their own Claude session to make the changes. The engineer wants a page that reads well, and their session needs everything in the report intact. I've been writing in various flavours of Markdown for ages, and that's been a really smooth workflow into this AI era. Sending a beautifully formatted HTML document has always been a no-brainer, but that was when the reader was exclusively human. I'm now starting to think about my non-human readers as well. So I tested a few things and came up with the following, which will all seem pretty intuitive to those of you who work with reproducible documentation flows.
 
 ## Send the source

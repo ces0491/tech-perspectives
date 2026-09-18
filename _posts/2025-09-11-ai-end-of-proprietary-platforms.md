@@ -6,8 +6,6 @@ date: 2025-09-11
 tags: [languages, ai, open-source]
 ---
 
-# AI: The Final Nail in the Coffin for Proprietary Software Languages?
-
 For as long as I've been coding, my preference has always been towards open-source tools. When I started out, more than ten years ago — long before ChatGPT, GitHub Copilot, or any AI copilots existed — open source just felt like the natural choice.
 
 ## What the Open Communities Do Differently

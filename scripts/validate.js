@@ -43,6 +43,13 @@ function checkPosts() {
     const front = parseFrontMatter(raw);
 
     if (!front.title) fail(file, 'no title');
+
+    // The theme's post layout prints `title` as the page's h1, above the
+    // byline. A `# heading` in the body is a second h1, and every post carried
+    // one from before they were Jekyll posts until 18 September 2026.
+    const body = raw.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '');
+    const h1 = body.replace(/^```[\s\S]*?^```/gm, '').match(/^# .*/m);
+    if (h1) fail(file, `body has an h1 ("${h1[0]}"); the layout already prints the title, so it shows twice`);
     if (!front.date) fail(file, 'no date');
     if (!front.description) {
       fail(file, 'no description, so it inherits the site description and reads identically to every other page in a search result');

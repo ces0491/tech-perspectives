@@ -7,8 +7,6 @@ categories: [R]
 tags: [r, machine-learning, tidylearn]
 ---
 
-# From Model to Report: How tidylearn Simplifies ML Reporting
-
 <style>.gt-post-table table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;

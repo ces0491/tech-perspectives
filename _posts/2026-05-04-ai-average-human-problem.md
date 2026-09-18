@@ -6,8 +6,6 @@ date: 2026-05-04
 tags: [ai, writing]
 ---
 
-# The Average Human Problem: Why AI "Sounds Like AI"
-
 I keep seeing critiques of AI-generated writing where I think — but that's how I would have written that. The em-dash. The tripled list. The "it's not just X, it's Y" cadence. The careful hedging. Even the use of bullet points! People point at these as if they're machine fingerprints, and increasingly I want to ask: whose writing do you think the machine learned from in the first place?
 
 The "AI tells" people detect are artefacts learned from us. But there's something interesting in which of us — in which patterns get smoothed out, which get amplified, and who ends up being accused because of it.

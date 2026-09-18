@@ -6,8 +6,6 @@ date: 2026-03-20
 tags: [infrastructure]
 ---
 
-# Everything Old Is New Again: Technology's Fashion Cycles
-
 A while back I was in a maxillofacial surgeon's office, because apparently that's where your thirties take you — and ended up in an unexpected conversation about technology. My surgeon, a man who's been in practice longer than I've been alive, was genuinely baffled at how a phone could do the same things as a much larger, more powerful computer. More RAM, more processing power, bigger everything — and yet this little device in his pocket could do it all?
 
 I explained that, in most cases, his phone isn't actually doing the heavy lifting. It's a frontend. The processing happens somewhere else — on servers in a data centre — and his phone just displays the results. He's consuming outputs, not running computations.

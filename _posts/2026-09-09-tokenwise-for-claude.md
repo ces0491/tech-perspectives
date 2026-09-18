@@ -7,8 +7,6 @@ redirect_from: /save-it-for-the-hard-part.html
 tags: [ai, claude, tooling]
 ---
 
-# tokenwise for Claude Code
-
 On a subscription the money is settled before the month starts. What you spend from then on is your usage limit, and it goes on whatever you happen to point Claude Code at, including phases that would have finished on a cheaper setting.
 
 Every API call re-sends the whole conversation. What a task consumes is context size multiplied by the number of calls, and the model and effort level you pick set the rate on top of that.

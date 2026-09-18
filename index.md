@@ -2,8 +2,6 @@
 title: Tech Perspectives
 ---
 
-# Tech Perspectives
-
 Writing on tech and stats.
 
 ## [Lost in Translation: What Your Agent Gets When You Share a Document](./lost-in-translation.html)

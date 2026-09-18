@@ -6,8 +6,6 @@ date: 2026-06-02
 tags: [cloud, infrastructure]
 ---
 
-# Partly Cloudy: Forecasting Your Needs in a Fragmented Cloud
-
 You can stand up a serious production stack today without ever opening a hyperscaler console. GPU compute from a neocloud, object storage from Cloudflare, ephemeral functions from Modal, deployment from Vercel — each piece a few lines of config, each one live in minutes. Ten years ago that stack was either science fiction or a maintenance burden no small team would take on. Now it's an ordinary afternoon's work.
 
 That shift is easy to miss under the louder noise about AI, but it matters at least as much. The cloud has come apart into components, and the consequence reaches past the technical. It changes what the central question even is. For a long time the question was *can we run this at all?* Now it's *which of dozens of viable options do we pick, and what does it cost us to keep them talking to each other?*
