@@ -5,37 +5,6 @@ const { getArticles, isShortForm, ROOT_DIR } = require('./articles');
 
 const README_PATH = path.join(ROOT_DIR, 'README.md');
 const INDEX_PATH = path.join(ROOT_DIR, 'index.md');
-const CONFIG_PATH = path.join(ROOT_DIR, '_config.yml');
-
-/**
- * The blog's one-line description, read from `_config.yml`.
- *
- * Jekyll already publishes this value as the feed's `<subtitle>` and the meta
- * description, and `sheetsolved.com` reads the feed for its own heading. This
- * file used to hold its own copy, which is how the index came to say "Essays
- * on AI, software and the shape of technical work" — a sentence that named a
- * subject the blog had deliberately not narrowed to, and a form the short
- * shelf was about to break.
- *
- * Only the folded scalar this file actually uses is supported: `description:`
- * followed by indented lines. Enough for one known file, and it fails loudly
- * rather than silently writing an empty intro.
- */
-function siteDescription() {
-  const config = fs.readFileSync(CONFIG_PATH, 'utf8');
-  const match = /^description:\s*>-?\s*\n((?:[ \t]+\S.*\n?)+)/m.exec(config);
-  const text = match?.[1]
-    .split('\n')
-    .map((line) => line.trim())
-    .filter(Boolean)
-    .join(' ');
-
-  if (!text) {
-    throw new Error(`could not read "description" from ${CONFIG_PATH}`);
-  }
-
-  return text;
-}
 
 /** The repo's front page, read on GitHub, where `.md` links resolve. */
 /**
@@ -151,11 +120,8 @@ function generateIndex(articles) {
   const short = articles.filter(isShortForm);
   const essays = articles.filter((a) => !isShortForm(a));
 
-  // One line whether or not the shelf is stocked. It used to be two, so that
-  // the intro could say "essays" until a short piece existed and stop after —
-  // which only worked because the sentence named the form. The description in
-  // `_config.yml` names neither the form nor a subject, so it holds either way.
-  content += `${siteDescription()}\n\n`;
+  // No intro line either. The sidebar prints `description` from `_config.yml`
+  // under the site title on every page, so repeating it here showed it twice.
 
   if (short.length === 0) {
     for (const article of articles) content += renderArticle(article, 2);

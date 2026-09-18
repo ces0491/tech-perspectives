@@ -2,8 +2,6 @@
 title: Tech Perspectives
 ---
 
-Writing on tech and stats.
-
 ## [In the Long Run: Which Doomsday Warnings Are Worth Having](./doomsday-warnings.html)
 
 Warnings about disaster do the most good when they say how it would happen and what to do about it. What economic history, warning research, forecasting and AI safety know about that.

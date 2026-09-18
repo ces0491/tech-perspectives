@@ -50,6 +50,12 @@ only existed because the sentence named the form. `sheetsolved.com` reads the
 feed's `<subtitle>` for its Writing heading, so the hub follows within its
 one-hour revalidate without anyone editing it.
 
+*Updated 18 September 2026:* the index no longer prints the line at all. The
+theme's sidebar already shows `description` under the site title on every page,
+so the index copy put it on the home page twice. `_config.yml` stays the only
+place the line lives, so the sidebar, the feed subtitle and the meta description
+still cannot disagree.
+
 **3 September 2026 — IQR #001 is written and not published.** See
 [iqr-001-case-file.md](iqr-001-case-file.md).
 
