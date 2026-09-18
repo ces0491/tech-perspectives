@@ -1,0 +1,39 @@
+{% comment %}
+  A contents list for a post, read from its rendered HTML.
+
+  kramdown gives every heading an id, so each section heading arrives as
+  `<h2 id="...">...</h2>` and the list is those, split out with Liquid. No
+  plugin: the TOC plugins are not on the GitHub Pages whitelist, and kramdown's
+  own `{:toc}` would need a marker written into every post.
+
+  Only h2s. The subsections are where a list this narrow stops being scannable.
+  And only from three sections up, because a list of one or two is a heading
+  restated.
+
+  `variant="sidebar"` is the list in the fixed sidebar on a wide screen;
+  `variant="inline"` is the collapsed one at the top of the post on a narrow
+  screen. The stylesheet shows one or the other.
+{% endcomment %}
+{% assign toc_sections = include.html | split: '<h2 id="' %}
+{% if toc_sections.size > 3 %}
+{% capture toc_items %}
+  <ul>
+  {% for section in toc_sections offset:1 %}
+    {% assign toc_id = section | split: '"' | first %}
+    {% assign toc_label = section | split: '</h2>' | first | remove_first: toc_id | remove_first: '">' | strip_html | strip %}
+    <li><a href="#{{ toc_id }}">{{ toc_label }}</a></li>
+  {% endfor %}
+  </ul>
+{% endcapture %}
+{% if include.variant == "sidebar" %}
+  <nav class="toc toc-sidebar" aria-label="Contents">
+    <p class="toc-title">Contents</p>
+    {{ toc_items }}
+  </nav>
+{% else %}
+  <details class="toc toc-inline">
+    <summary>Contents</summary>
+    <nav aria-label="Contents">{{ toc_items }}</nav>
+  </details>
+{% endif %}
+{% endif %}

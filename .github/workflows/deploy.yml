@@ -10,6 +10,8 @@ on:
       - "*.md"
       - "_posts/**"
       - "assets/**"
+      - "_layouts/**"
+      - "_includes/**"
       - "_config.yml"
       - "robots.txt"
       - "CNAME"

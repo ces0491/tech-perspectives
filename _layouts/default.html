@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% comment %}
+  The theme's default layout, overridden to give the sidebar some navigation.
+
+  jekyll-theme-minimal ships a sidebar holding the title, the description and a
+  link to the repo, and nothing to get from one page to another. What changed
+  from the theme's copy:
+
+  - a site nav under the description, which replaces the "View the Project on
+    GitHub" line with a GitHub entry in the nav
+  - a contents list for the post being read, from `_includes/toc.html`
+  - the footer moved out of its fixed position under the sidebar and into the
+    flow under the article, because a sidebar carrying a contents list is tall
+    enough to run into it
+  - a back-to-top link, shown once the reader has scrolled a screen's height
+
+  Everything else is the theme's markup, so the theme's stylesheet still
+  applies. The additions are styled in `assets/css/style.scss`.
+{% endcomment %}
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% seo %}
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    {% include head-custom.html %}
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+
+        <p>{{ site.description | default: site.github.project_tagline }}</p>
+
+        <nav class="site-nav" aria-label="Site">
+          <ul>
+            <li><a href="{{ "/" | relative_url }}"{% if page.url == "/" %} aria-current="page"{% endif %}>All writing</a></li>
+            <li><a href="{{ "/feed.xml" | relative_url }}">Feed</a></li>
+            <li><a href="https://sheetsolved.com">Sheet Solved</a></li>
+            <li><a href="{{ site.github.repository_url }}">GitHub</a></li>
+          </ul>
+        </nav>
+
+        {% if page.collection == "posts" %}
+          {% include toc.html html=content variant="sidebar" %}
+        {% endif %}
+      </header>
+      <section>
+
+      {{ content }}
+
+      </section>
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+
+    <a href="#top" class="to-top" hidden>&uarr; Top</a>
+    <script>
+      // Hidden until the reader is a screen's height down, where getting back
+      // up starts to cost something. Without JavaScript it stays hidden, and
+      // the page is no worse than the theme left it.
+      (function () {
+        var link = document.querySelector('.to-top');
+        function update() { link.hidden = window.scrollY < window.innerHeight; }
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+      })();
+    </script>
+    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+  </body>
+</html>

@@ -1,0 +1,186 @@
+---
+---
+
+// The theme's stylesheet, then the navigation added in `_layouts/`.
+//
+// A file at this path replaces the theme's own `assets/css/style.scss`, which
+// is nothing but the import below. Colours are the theme's, so the additions
+// read as part of it.
+
+@import "jekyll-theme-minimal";
+
+$rule: #e5e5e5;
+$link: #267CB9;
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+// The theme styles every `header ul` as its row of download buttons, placed
+// absolutely on narrow screens. The site nav and the contents list are lists
+// too, so they opt out by class.
+header .site-nav ul,
+.toc ul {
+  position: static;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+.site-nav li,
+.toc li {
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+
+.site-nav a[aria-current="page"] {
+  color: #222;
+}
+
+.toc-title,
+.toc summary {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #494949;
+  margin: 0 0 10px;
+}
+
+.toc-sidebar {
+  border-top: 1px solid $rule;
+  padding-top: 16px;
+}
+
+// On a wide screen the sidebar is fixed, so a long contents list scrolls
+// inside it rather than running off the bottom of the window. 100px is the
+// body's padding, top and bottom.
+header {
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+.toc-inline {
+  display: none;
+}
+
+.toc-inline summary {
+  cursor: pointer;
+  margin: 0;
+}
+
+.toc-inline[open] summary {
+  margin-bottom: 10px;
+}
+
+// The theme fixes the footer under the sidebar. With a contents list in the
+// sidebar the two collide, so the footer sits under the article instead.
+footer {
+  position: static;
+  float: right;
+  clear: right;
+  width: 500px;
+}
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid $rule;
+  margin-top: 30px;
+  padding-top: 20px;
+}
+
+.post-nav a {
+  flex: 1 1 0;
+}
+
+.post-nav .newer {
+  text-align: right;
+}
+
+// The theme bolds a link on hover, which reflows a two-line title.
+.post-nav a:hover,
+.post-nav a:focus,
+.to-top:hover,
+.to-top:focus {
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  padding: 6px 12px;
+  font-size: 12px;
+  background: #fff;
+  border: 1px solid $rule;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+// `hidden` loses to any `display` set on the element, so say it again here.
+.to-top[hidden] {
+  display: none;
+}
+
+@media print, screen and (max-width: 960px) {
+  header {
+    padding-right: 0;
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .site-nav li {
+    display: inline-block;
+    margin-right: 16px;
+  }
+
+  .toc-sidebar {
+    display: none;
+  }
+
+  .toc-inline {
+    display: block;
+    border: 1px solid $rule;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 0 0 20px;
+  }
+
+  .toc-inline ul {
+    margin: 0;
+  }
+
+  footer {
+    float: none;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .post-nav {
+    flex-direction: column;
+  }
+
+  .post-nav .newer {
+    text-align: left;
+  }
+
+  .to-top {
+    right: 15px;
+    bottom: 15px;
+  }
+}
+
+@media print {
+  .site-nav,
+  .toc,
+  .post-nav,
+  .to-top {
+    display: none;
+  }
+}

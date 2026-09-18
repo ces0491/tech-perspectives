@@ -1,0 +1,32 @@
+---
+layout: default
+---
+{% comment %}
+  The theme's post layout, plus a contents list for narrow screens and links
+  to the posts either side. On a wide screen the contents list is in the
+  sidebar instead; see `_layouts/default.html`.
+{% endcomment %}
+
+<small>{{ page.date | date: "%-d %B %Y" }}</small>
+<h1>{{ page.title }}</h1>
+
+<p class="view">by {{ page.author | default: site.author }}</p>
+
+{% include toc.html html=content variant="inline" %}
+
+{{ content }}
+
+{% if page.tags %}
+  <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
+{% endif %}
+
+{% if page.previous or page.next %}
+<nav class="post-nav" aria-label="More writing">
+  {% if page.previous %}
+    <a class="older" href="{{ page.previous.url | relative_url }}"><small>&larr; Older</small>{{ page.previous.title }}</a>
+  {% endif %}
+  {% if page.next %}
+    <a class="newer" href="{{ page.next.url | relative_url }}"><small>Newer &rarr;</small>{{ page.next.title }}</a>
+  {% endif %}
+</nav>
+{% endif %}
