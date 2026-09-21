@@ -49,7 +49,9 @@ The theme is `jekyll-theme-minimal`, with its two layouts overridden in
 `_layouts/` to add a site nav, a contents list on posts with three or more
 sections (`_includes/toc.html`), links to the older and newer post, and a
 back-to-top link. The additions are styled in `assets/css/style.scss`,
-which imports the theme's stylesheet first.
+which imports the theme's stylesheet first. `_includes/head-custom.html`
+links the favicon and home screen icon from sheetsolved.com, which
+generates both from its brand definition.
 
 The R article is knitted, not written by hand: its figures, tables and
 printed output come from running the code. The source is

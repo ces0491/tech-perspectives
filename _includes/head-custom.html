@@ -1,0 +1,11 @@
+{% comment %}
+  Replaces the theme's own `head-custom.html`, which held only a commented-out
+  favicon line and a Google Analytics include this site never configured.
+
+  The icons are the hub's, linked rather than copied. sheetsolved.com generates
+  both from its `brand.json` at build and serves them at fixed URLs with
+  `max-age=0, must-revalidate`, so a change to the mark reaches this site with
+  nothing edited here, and there is no second copy of the geometry to go stale.
+{% endcomment %}
+<link rel="icon" href="https://sheetsolved.com/icon" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="https://sheetsolved.com/apple-icon" sizes="180x180">
