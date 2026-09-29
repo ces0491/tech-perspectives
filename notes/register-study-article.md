@@ -162,8 +162,11 @@ with Llama 3 and GPT-4o. Two qualifications:
   "human feedback".
 - The instruct conditions also carry a default system prompt (S2-D1).
 
-*Holds, and was understated:* for these frames the second layer is the
-larger one. Say "post-training" and drop the human-feedback gloss.
+*Holds, and was understated:* post-training roughly doubles the composite
+rate and triples the contrastive rate on top of the base model. It is not the
+larger step on every measure: on the contrastive family the base model is
+about five times its stage-1 input. Say "post-training" and drop the
+human-feedback gloss.
 
 **10. "It's averaged humanness."**
 *Revise.* This is the phrase the article has to replace. The replacement
@@ -318,6 +321,26 @@ Ces approved all five:
 5. **Study 4: designed, not registered.** The design is in the study repo's
    `RESEARCH-PLAN.md`, under *Study 4 — where the excess enters*, with the
    choices that have to be settled before a registration is drafted.
+
+## Publishing it
+
+The draft is `_drafts/too-much-of-a-good-thing.md`. When it goes live:
+
+1. Settle the title and slug against the neighbouring posts before the first
+   push. The draft's are *Too Much of a Good Thing: Testing Why AI "Sounds Like
+   AI"* and `too-much-of-a-good-thing`.
+2. Move it to `_posts/` with the publication date in the filename and the
+   front matter.
+3. Add two entries to `ALLOWED` in `scripts/check-style.js` for the new file:
+   `contrastive-tic` where `a quarter of its posts`, because the line quotes
+   the construction as its subject, and `contrastive-dash` where
+   `cyberneticforests`, a false positive on the slug of Salvaggio's URL.
+4. Add the correction note to *The Average Human Problem* (decision 2), linking
+   `too-much-of-a-good-thing.html`. The draft's last line says the note is
+   there.
+5. Run `node scripts/check-style.js` and `node scripts/validate.js`, and build
+   locally.
+6. In the study repo, tick SCOPE's article boxes.
 
 ## Ideas from the chat that came from me
 
