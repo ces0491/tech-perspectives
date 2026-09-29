@@ -57,6 +57,29 @@ written. A reader arriving at a later piece wants the earlier context; a
 reader of the earlier piece does not need the sequel, and editing a published
 post to add one is a change to a live page for no reader's benefit.
 
+## Corrections to published posts
+
+**A later post that reverses a published claim earns the earlier post one
+note.** Cross-links point backwards because a reader of an earlier piece
+doesn't need its sequel. A reader of a claim since shown wrong is a different
+case: they may repeat it, and nothing on the page tells them to look further.
+So the earlier post gets one dated note at the top saying what no longer
+holds, linking to where that is shown. The body stays as published, and the
+note is the only change to the page.
+
+**How to decide:** would someone who read only the earlier post come away
+believing something the later one shows to be false? If so, add the note. A
+later piece that extends, refines or revisits an argument earns nothing.
+
+One note per post. A third piece on the same subject updates the existing
+note's link rather than adding a second. The note is an italic paragraph
+above the first paragraph, opening *Update, D Month YYYY:*, one to three
+sentences, linking the later post by bare filename like any other cross-link.
+
+Decided 29 September 2026. The first case is *The Average Human Problem*
+(4 May 2026), when the register-study article is published; its wording is
+drafted in `notes/register-study-article.md`.
+
 ## Titles
 
 The front matter `title` is the post's only title. The theme's post layout

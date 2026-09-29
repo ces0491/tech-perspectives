@@ -20,9 +20,11 @@ Most AI today produces equally fluent prose whether it's quoting a textbook or h
 
 The volume / category-mistake argument from [*Lying Is Lying*](./_posts/2026-05-04-ai-lying-is-lying.md) applies to image, audio, video too — anywhere generative AI has compressed production cost. The dynamics differ across media, but the underlying issue (trust mismatch, evidence of thought) probably generalises. Worth a piece that's media-agnostic.
 
-## Centroid as creative constraint
+## Tics that pass between models
 
-The "average humanness" point in [*The Average Human Problem*](./_posts/2026-05-04-ai-average-human-problem.md) was framed as a detection problem. There's a different angle: what does it mean for culture when the median register gets reinforced at scale? Models trained on common patterns produce more common patterns, which then feed the next generation of training data. Does individuality get harder over time, or just more valuable?
+The "average humanness" point in [*The Average Human Problem*](./_posts/2026-05-04-ai-average-human-problem.md) assumed a model sits at the centre of the writing it learned from. The register study found otherwise on the constructions readers flag: Olmo 3 uses a few of them far more often than any human writing does, and drops others ([notes/register-study-article.md](./notes/register-study-article.md)). It also showed where "learned from us" falls short. Part of Olmo 3's training text was written by other models by design: reasoning traces from QwQ, Gemini and Nemotron in midtraining, and GPT-4.1's responses in fine-tuning.
+
+So a device one model over-uses can be taught to the next without passing through human writing at that rate, and people who read and write alongside these models may pick it up in turn. Kobak et al. measured something close: model vocabulary turning up in published PubMed abstracts, which they attribute to authors processing the text with LLMs. Does individuality get harder over time, or just more valuable?
 
 ## Evidence of thought as the new literacy
 
