@@ -88,6 +88,14 @@ imposed — whether something was actually thought about, across writing,
 dependencies, code review and charts. It runs through five posts and both new
 directions. It is a theme to notice and possibly tag, not a constraint.
 
+*Narrower version, 29 September 2026:* checks that exist and were never checked
+themselves. The scoring bands were never set against the data; the register
+study's denominator check had been failing since the deviation that added the
+rows it tests, so nobody had seen it pass; the genre test's result went only to
+the console; a quoted coverage figure came from a run that was never repeated
+from the committed script. Two episodes three weeks apart, the second of them
+carrying three instances, so there is a piece here if it keeps happening.
+
 **3 September 2026 — the study repo is on GitHub, private for now.**
 `ces0491/englishRegisterStudy`, flipping to public when the OSF pre-registration
 is filed and there are results.
