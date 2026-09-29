@@ -2,6 +2,7 @@
 
 ## Articles
 
+- [Too Much of a Good Thing: Testing Why AI "Sounds Like AI"](./_posts/2026-09-29-too-much-of-a-good-thing.md) *(September 29, 2026)*
 - [In the Long Run: Which Doomsday Warnings Are Worth Having](./_posts/2026-09-18-doomsday-warnings.md) *(September 18, 2026)*
 - [Running to Stand Still: Why Perfect Code Still Gets Patched](./_posts/2026-09-18-running-to-stand-still.md) *(September 18, 2026)*
 - [Lost in Translation: What Your Agent Gets When You Share a Document](./_posts/2026-09-17-lost-in-translation.md) *(September 17, 2026)*

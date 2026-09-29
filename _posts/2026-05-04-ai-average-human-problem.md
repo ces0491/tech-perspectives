@@ -6,6 +6,8 @@ date: 2026-05-04
 tags: [ai, writing]
 ---
 
+*Update, 29 September 2026: I tested this argument in four pre-registered studies, written up in [Too Much of a Good Thing](too-much-of-a-good-thing.html). The patterns are learned from human writing, as I said here, but the model measured uses some of them far more often than any group of human writers does, which averaging can't produce, and part of its training text was written by other models.*
+
 I keep seeing critiques of AI-generated writing where I think — but that's how I would have written that. The em-dash. The tripled list. The "it's not just X, it's Y" cadence. The careful hedging. Even the use of bullet points! People point at these as if they're machine fingerprints, and increasingly I want to ask: whose writing do you think the machine learned from in the first place?
 
 The "AI tells" people detect are artefacts learned from us. But there's something interesting in which of us — in which patterns get smoothed out, which get amplified, and who ends up being accused because of it.

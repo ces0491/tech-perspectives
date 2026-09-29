@@ -2,6 +2,12 @@
 title: Tech Perspectives
 ---
 
+## [Too Much of a Good Thing: Testing Why AI "Sounds Like AI"](./too-much-of-a-good-thing.html)
+
+In May I argued AI sounds like AI because it writes like the average of us. Four pre-registered studies found the tells are ours, with an open model using some far more than any human writers do.
+
+*(September 29, 2026)*
+
 ## [In the Long Run: Which Doomsday Warnings Are Worth Having](./doomsday-warnings.html)
 
 Warnings about disaster do the most good when they say how it would happen and what to do about it. What economic history, warning research, forecasting and AI safety know about that.

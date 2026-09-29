@@ -106,6 +106,18 @@ const ALLOWED = [
     where: 'presented as revolutionary',
     why: 'quotes the marketing claim rather than making it',
   },
+  {
+    file: '2026-09-29-too-much-of-a-good-thing.md',
+    rule: 'contrastive-tic',
+    where: 'a quarter of its posts',
+    why: 'the line quotes the construction as its subject',
+  },
+  {
+    file: '2026-09-29-too-much-of-a-good-thing.md',
+    rule: 'contrastive-dash',
+    where: 'cyberneticforests',
+    why: "a false positive on the slug of Salvaggio's URL",
+  },
 ];
 
 /** Prose only. Everything a chunk printed is somebody else's text. */

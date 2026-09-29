@@ -1,11 +1,12 @@
 # Register study article: squaring it with *The Average Human Problem*
 
-Working note, 29 September 2026. The article that reports the three register
+Working note, 29 September 2026. The article that reports the four register
 studies, set against what has already been said in public, so that it
 acknowledges each earlier claim it revises.
 
-The numbers here come from `docs/study2-3-results.qmd` in the study repo
-(`Dev/Rdev/analysis/englishRegisterStudy`), which computes them from the
+The numbers here come from `docs/study2-3-results.qmd` and
+`docs/study4-results.qmd` in the study repo
+(`Dev/Rdev/analysis/englishRegisterStudy`), which compute them from the
 committed counts. They are for checking the argument. The article itself
 should carry very few of them (see *Numbers* below).
 
@@ -43,6 +44,7 @@ were the tests set in advance.
 | 1 | GB, IE, AU and ZA each use the frames less than US | Supported for all four, at 0.50 to 0.69 of the US rate |
 | 2 | Olmo 3 base uses them more than each of GB, IE, AU, ZA | Supported against ZA only |
 | 3 | Olmo 3 base uses them more than its web training input | Not supported: 1.72, interval 0.65 to 4.53 |
+| 4 | Nine stage contrasts, on the contrast family and on all fifteen frames | Family: the four model-to-model rises and chosen over rejected supported; the first-stage model, the midtraining text and the SFT responses against; the Gen-QA mix favoured. All fifteen: only the SFT responses, against |
 
 Studies 2 and 3 have wide intervals because the frames disagree. The model
 is far above the humans on some and below them on others, so an average over
@@ -273,18 +275,22 @@ Ces approved all five:
 
 1. **One article, covering Studies 1 to 3.** Study 1 is not published on its
    own. Study 4 (below) is a later follow-up, and the article doesn't wait for
-   it.
+   it. *Amended the same day:* Study 4 finished before the article was
+   published, and Ces chose to fold it in, so the article covers all four and
+   its *Stage by Stage* section reports Study 4.
 2. **A correction note on the May post**, added when the article is published.
    The rule for when a published post gets one is now in
    `notes/house-style.md` under *Corrections to published posts*. Draft
    wording, to go in with the publication date and the article's filename as
-   the link:
+   the link. As added, dated for publication on 29 September 2026:
 
-   > *Update:* I later tested this argument with a pre-registered study,
-   > written up in the follow-up. It bears out the starting point: these
-   > patterns are learned from human writing. It doesn't bear out the centre.
-   > The model it measured uses some of them far more often than any human
-   > writing does, and part of its training text was written by other models.
+   > *Update, 29 September 2026: I tested this argument in four
+   > pre-registered studies, written up in [Too Much of a Good
+   > Thing](too-much-of-a-good-thing.html). The patterns are learned from
+   > human writing, as I said here, but the model measured uses some of them
+   > far more often than any group of human writers does, which averaging
+   > can't produce, and part of its training text was written by other
+   > models.*
 
 3. **Answer first, with the May claim as the opening context.** The shape:
    1. **Context, two or three sentences.** What the May post argued, linked
@@ -307,9 +313,9 @@ Ces approved all five:
       person's writing isn't.
    7. **Limits.** One model and one prompt, fifteen frames, and no measure of
       perception. The baseline is from 2012.
-   8. **Close by returning to the opening.** Say what's still open: where the
-      excess enters training. That is Study 4's question, and the close can
-      say it is being tested without promising a result.
+   8. **Close by returning to the opening.** Say what's still open. With
+      Study 4 folded in, that is what drives the rise at each stage, which
+      Study 4 locates without explaining.
 
    **Numbers.** Per the house style, an insight post states findings at the
    level a reader acts on, such as "several times the rate of any group of
@@ -319,12 +325,19 @@ Ces approved all five:
    that pass between models", about devices moving from one model to the next
    through synthetic training data.
 5. **Study 4: designed, not registered.** The design is in the study repo's
-   `RESEARCH-PLAN.md`, under *Study 4 — where the excess enters*, with the
-   choices that have to be settled before a registration is drafted.
+   `RESEARCH-PLAN.md`, under *Study 4 — where the excess enters*. It was then
+   registered at <https://osf.io/d79u4>, run and analysed the same day, and
+   written up in the study repo's `docs/study4-results.qmd`.
 
 ## Publishing it
 
-The draft is `_drafts/too-much-of-a-good-thing.md`. When it goes live:
+Steps 1 to 5 were done on 29 September 2026 and committed locally, unpushed,
+for Ces to read first. The article is
+`_posts/2026-09-29-too-much-of-a-good-thing.md`. Publishing on a later day
+means changing the date in four places: the filename, its front matter, the
+May post's note, and the two `ALLOWED` entries' file name. Then push, and do
+step 6.
+
 
 1. Settle the title and slug against the neighbouring posts before the first
    push. The draft's are *Too Much of a Good Thing: Testing Why AI "Sounds Like
