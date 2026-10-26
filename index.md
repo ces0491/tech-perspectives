@@ -2,6 +2,12 @@
 title: Tech Perspectives
 ---
 
+## [Easy Come, Easy Go: Building Software When Anyone Can](./easy-come-easy-go.html)
+
+AI means I can build the tools I need myself. It also means anyone can, so what I build is less likely to add much for anyone else. Both come from the same fall in the cost of building.
+
+*(October 26, 2026)*
+
 ## [Too Much of a Good Thing: Testing Why AI "Sounds Like AI"](./too-much-of-a-good-thing.html)
 
 In May I argued AI sounds like AI because it writes like the average of us. Four pre-registered studies found the tells are ours, with an open model using some far more than any human writers do.

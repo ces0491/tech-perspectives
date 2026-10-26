@@ -7,6 +7,8 @@ redirect_from: /save-it-for-the-hard-part.html
 tags: [ai, claude, tooling]
 ---
 
+*Update, 26 October 2026: Claude Code 2.1.280 made Opus 5.5 the default, and against it Sonnet 5 at medium saved too little on most tasks to recommend, so `/tokenwise:setup` now recommends no change for anyone on that default. Claude Code has since added its own warning before an expensive resume. [Easy Come, Easy Go](easy-come-easy-go.html) says what that leaves of the plugin.*
+
 On a subscription the money is settled before the month starts. What you spend from then on is your usage limit, and it goes on whatever you happen to point Claude Code at, including phases that would have finished on a cheaper setting.
 
 Every API call re-sends the whole conversation. What a task consumes is context size multiplied by the number of calls, and the model and effort level you pick set the rate on top of that.

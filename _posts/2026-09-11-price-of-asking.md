@@ -7,6 +7,8 @@ redirect_from: [/penny-wise.html, /tokenwise.html]
 tags: [ai, claude, tooling]
 ---
 
+*Update, 26 October 2026: Claude Code 2.1.280 moved the default on Max, Team Premium, Enterprise and API plans to Opus 5.5 at medium, which none of the figures below were measured on. Against that default, Sonnet 5 at medium saved too little on most tasks to recommend a switch, so the savings below apply to sessions still on Opus 5. [Easy Come, Easy Go](easy-come-easy-go.html) says what that leaves of the plugin.*
+
 [tokenwise](tokenwise-for-claude.html) answers one question for Claude Code: which model and effort level a piece of work needs. The answer comes from a model as well, so asking has a cost. On a small enough task that cost is more than the cheaper setting saves, and you would have done better picking a setting yourself.
 
 I measured the cost of asking from three session settings and set it against what the cheaper settings saved on the benchmark behind the plugin's routing table.
