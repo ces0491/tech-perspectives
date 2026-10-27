@@ -58,7 +58,7 @@ Adding a dependency takes seconds and removing one can take weeks. CRAN already 
 
 ## [From Model to Report: How tidylearn Simplifies ML Reporting](./tidylearn-reporting.html)
 
-Every R modelling package returns results in a different shape, so reporting code breaks whenever the model changes. What one tidy interface across twenty algorithms buys you.
+R modelling packages return results in different shapes, so reporting code breaks whenever the model changes. What one tidy interface across twenty algorithms buys you.
 
 *(August 21, 2026)*
 

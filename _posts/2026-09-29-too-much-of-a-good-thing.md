@@ -19,7 +19,7 @@ The constructions were fixed before any counting, and are of the variety that we
 - **Study 3** counted the constructions in a sample of the text Olmo 3 learned from, which Ai2 publishes, so the model's rates could be set against its own input. The training text of GPT, Claude or Gemini can't be counted, which is why the model is Olmo.
 - **Study 4** followed the contrast through Olmo 3's training. Ai2 released the model at the end of each stage of training, along with the text each stage used, so nine of those saved versions wrote the same 4,000 posts, and the contrast was counted in each stage's training text as well.
 
-In Study 1, every other country used the constructions less than American writers did, at between half and two-thirds of the American rate. In Study 2, the model's rate was above every country's, but the test only confirmed that against South Africa. In Study 3, the test found no clear evidence that the model uses them more than its training text does. Study 4's results are further down.
+In Study 1, the other four countries used the constructions less than American writers did, at between half and two-thirds of the American rate. In Study 2, the model's rate was above every country's, but the test only confirmed that against South Africa. In Study 3, the test found no clear evidence that the model uses them more than its training text does. Study 4's results are further down.
 
 Studies 2 and 3 were mostly inconclusive, for the same reason. The constructions disagree. The model is far above people on some and below them on others, so a single verdict averaged across all of them carries a wide margin of error. The breakdown by family, which the registrations list as exploratory, is where the disagreement shows, and Study 4 was registered with the contrast family as an outcome of its own for that reason. The full results, with their intervals, are written up study by study at [ces0491.github.io/englishRegisterStudy](https://ces0491.github.io/englishRegisterStudy/), and the counts and the code are in the [study's repository](https://github.com/ces0491/englishRegisterStudy).
 
@@ -36,13 +36,13 @@ The four families, each as a multiple of how often American web writers used the
 
 The 2012 corpus and the model's text are counted with different word rules, so comparisons across that line are approximate. Comparisons within the model's text, and between the model and its training data, use the same rule.
 
-The raw model uses the contrast family about four times as often as American writers did, and the assistant about fourteen times. On the epigrams the raw model is below every country. The web portion of what Olmo 3 learned from sits below American writing on every family, close to the other countries. The raw model uses the contrast family about five times as often as that text, and uses the text's own most common constructions, "turns out" and "and that's", less.
+The raw model uses the contrast family about four times as often as American writers did, and the assistant about fourteen times. On the epigrams the raw model is below all five countries. The web portion of what Olmo 3 learned from sits below American writing on every family, close to the other countries. The raw model uses the contrast family about five times as often as that text, and uses the text's own most common constructions, "turns out" and "and that's", less.
 
 The assistant model uses "isn't just" in about a quarter of its posts, at roughly sixty times the rate of American web writing in 2012. It doesn't come from a few runaway texts. The construction turns up in hundreds of the raw model's posts and more than a thousand of the assistant's, and never more than a few times in any one.
 
 ## The May Post, Claim by Claim
 
-**Held: the tells are learned from us.** Every construction that could be measured in 2012 was already there in ordinary human writing.
+**Held: the tells are learned from us.** The 14 constructions that could be measured in 2012 were already there in ordinary human writing.
 
 **Held: some patterns are amplified and others smoothed out.** In May I wrote that there was "something interesting in which of us — in which patterns get smoothed out, which get amplified". Both happen, and they happen to different families: the contrast goes up, the epigram goes down.
 
@@ -79,10 +79,10 @@ A single instance in someone's writing is evidence of nothing, because people us
 ## What This Doesn't Show
 
 - **Other models.** Olmo 3 was chosen because its training text is published. Nothing here says how GPT, Claude or Gemini write.
-- **Other kinds of writing.** Every text answered one prompt, a blog post from a title. Other prompts and genres may draw on other registers.
+- **Other kinds of writing.** The texts answered a single prompt, a blog post from a title. Other prompts and genres may draw on other registers.
 - **How the constructions are used.** They were counted as fixed strings. Where they sit in a paragraph, and how they pile up, wasn't measured.
 - **Readers.** Whether readers in different countries react differently wasn't tested.
 - **Why a stage raises it.** Each stage changes the learning schedule along with the text, and fine-tuning changes the prompt format too, so Study 4 finds where the rise happens without showing what causes it.
 - **The rest of the May post.** Em-dashes, tripled lists, hedging, bullet points, and my point about people writing in a second language weren't part of this.
 
-The model learned the contrast from us, then used more of it at every stage of training after the first, well past anything in the text it was given. What drives that is still open. I've added a note to the May post pointing here.
+The model learned the contrast from us, then used more of it as training went on, well past anything in the text it was given. What drives that is still open. I've added a note to the May post pointing here.

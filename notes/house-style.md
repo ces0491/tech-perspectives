@@ -36,8 +36,8 @@ years ago" against "Ten years ago" elsewhere (rhetorical, so spelled), and the
 sampling clause above.
 
 No checker rule for this. The test is whether a number is arguing or
-measuring, which a regex cannot see, and it would flag every legitimate "one
-thing, do it correctly" on the way past.
+measuring, which a regex cannot see, and it would flag legitimate uses like
+"one thing, do it correctly" on the way past.
 
 ## Headings
 
@@ -105,6 +105,29 @@ A figure quoted from a source stays that source's claim until it is checked.
 Attribute it, or verify it and state it. This is the CLAUDE.md rule; it is
 repeated here because the blog is where it keeps mattering — a number in prose
 does not read as a claim the way a number in a table does.
+
+## "Every"
+
+**Keep it when the claim is about each one and has been checked, or when the
+point is what happens per item.** "Every graded run passed", "above every
+country's", "carried on every later call until you clear", "every extra
+detail is one more thing that has to come true". Fixed phrases stay too:
+"every time", "every so often", "every few years".
+
+**Otherwise use the plural.** "Every saving above was measured at that size"
+says nothing that "the savings above were measured at that size" doesn't, and
+the extra word reads as emphasis. Where the count is known, give it: "the
+other four countries" over "every other country". A sentence opening "Every
+developer knows" is an uncounted claim about people, which the quantifier rule
+in CLAUDE.md covers.
+
+Two in one paragraph is the cue to re-read both.
+
+Applied across the corpus on 27 October 2026. Posts carrying an update note
+were left as published, per the corrections rule above.
+
+No checker rule. A regex sees the word but not whether the claim is about each
+item, and of the 34 uses in the posts open to editing, 21 passed the test.
 
 ## Journey or answer first
 

@@ -1,7 +1,7 @@
 ---
 title: 'From Model to Report: How tidylearn Simplifies ML Reporting'
 description: >-
-  Every R modelling package returns results in a different shape, so reporting code breaks whenever the model changes. What one tidy interface across twenty algorithms buys you.
+  R modelling packages return results in different shapes, so reporting code breaks whenever the model changes. What one tidy interface across twenty algorithms buys you.
 date: 2026-08-21
 categories: [R]
 tags: [r, machine-learning, tidylearn]
@@ -459,8 +459,8 @@ tags: [r, machine-learning, tidylearn]
 ## The Reporting Problem
 
 Machine learning in R is powerful, but reporting the results often takes
-more effort than building the model itself. Every package returns
-results in a different format — a named vector here, a matrix there, a
+more effort than building the model itself. Packages return
+results in different formats — a named vector here, a matrix there, a
 custom S3 object somewhere else. Even with excellent tidying packages
 like `broom`, the column names and available fields change between model
 types, and many ML packages aren't supported at all.
@@ -470,8 +470,8 @@ tables for a report means writing custom extraction and reshaping code
 for each package you use. Change your model, and your reporting code
 breaks.
 
-**tidylearn** solves this. Every function — across 20 algorithms —
-returns tidy tibbles, ggplot2 plots, and formatted `gt` tables with a
+**tidylearn** solves this. Its functions — across 20 algorithms —
+return tidy tibbles, ggplot2 plots, and formatted `gt` tables with a
 consistent structure. Your reporting pipeline becomes model-agnostic:
 swap the algorithm, and the same plot code, table code, and comparison
 logic work without modification.
@@ -1256,8 +1256,8 @@ plotly without rebuilding them from scratch.
 
 ## What the Uniformity Buys
 
-**Consistent, polished output by default.** Every model — whether it's a
-PCA biplot, a lasso coefficient path, or a confusion matrix — returns
+**Consistent, polished output by default.** Models — whether the output
+is a PCA biplot, a lasso coefficient path, or a confusion matrix — return
 ggplot2 plots and `gt` tables with a consistent visual language. You
 don't need to learn each package's idiosyncratic output format or build
 custom formatting code to get report-quality visuals and tables.

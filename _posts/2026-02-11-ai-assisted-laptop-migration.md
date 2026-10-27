@@ -12,7 +12,7 @@ This time, I tried something different. I used Claude Code to handle the migrati
 
 ## The Old Way
 
-Every developer knows the ritual. You get a new machine and spend the better part of a day (or two) reinstalling everything. You're on your nth new machine so you know the drill for the bulk of the procedures — you've probably got a dusty old bookmark in your browser somewhere telling you all the things that need getting. Then you remember you need to configure Git. Then you realise your Python packages aren't quite right. Then the R libraries. Then the VS Code extensions — all sixty-something of them. Somewhere along the way you forget to set an environment variable and spend an hour debugging why something isn't on PATH.
+Developers know the ritual. You get a new machine and spend the better part of a day (or two) reinstalling everything. You're on your nth new machine so you know the drill for the bulk of the procedures — you've probably got a dusty old bookmark in your browser somewhere telling you all the things that need getting. Then you remember you need to configure Git. Then you realise your Python packages aren't quite right. Then the R libraries. Then the VS Code extensions — all sixty-something of them. Somewhere along the way you forget to set an environment variable and spend an hour debugging why something isn't on PATH.
 
 It's painful. And if you're in data or software development, you likely have a more complex setup than most — multiple languages, database clients, cloud CLIs, package managers, SSH keys. The kind of environment that's easy to use daily but painful to reconstruct from memory.
 
@@ -39,7 +39,7 @@ The orchestration impressed me more than any single script. The AI understood th
 
 **Completeness.** When you set up a machine manually, you inevitably forget things. The AI was methodical in a way I wouldn't have been. It asked clarifying questions about my workflow, then produced a list that included tools I'd have remembered only weeks later.
 
-**Structure.** It designed a folder hierarchy that's cleaner than anything I'd have set up myself — separating interpreters, packages, tools, and projects into logical subdirectories. Every environment variable pointed somewhere intentional rather than wherever an installer happened to default.
+**Structure.** It designed a folder hierarchy that's cleaner than anything I'd have set up myself — separating interpreters, packages, tools, and projects into logical subdirectories. Environment variables pointed somewhere intentional rather than wherever an installer happened to default.
 
 **Documentation.** Each script was clearly commented. There was a README with step-by-step instructions. The credentials migration guide was thorough enough that I didn't have to guess which apps needed re-authentication.
 
