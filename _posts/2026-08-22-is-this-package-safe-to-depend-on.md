@@ -148,7 +148,7 @@ The score is a triage tool. It's good for sorting a shortlist and for noticing t
 
 I built [**cranExploreR**](https://github.com/ces0491/cranExploreR). It's a Shiny app — `bslib`, `plotly`, `httr2` — that pulls the signals above, draws the twelve-month download trend, and lets you put two or three candidate packages side by side, which is usually the actual question.
 
-It's [running here](https://019d3e9e-b1a7-77dc-9266-40ce0b717eb3.share.connect.posit.cloud/). Source code on GitHub.
+It's [running here](https://cranexplorer.sheetsolved.com). Source code on GitHub.
 
 The app is convenient but the question is answerable from data CRAN has been publishing all along.
 
